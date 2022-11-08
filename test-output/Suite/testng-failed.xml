@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="performer(failed)">
+    <classes>
+      <class name="performer.OverdueCount">
+        <methods>
+          <include name="AssignmentReport"/>
+          <include name="AssignedEventsMultiple"/>
+          <include name="StatutoryChecklist"/>
+          <include name="InternalCheckList"/>
+          <include name="Closing"/>
+          <include name="WorkspaceOverdue"/>
+          <include name="CriticalDocuments"/>
+          <include name="DashboardOverdue"/>
+          <include name="AssignedEventsSingle"/>
+          <include name="CalenderCheckList"/>
+          <include name="DetailedReport"/>
+          <include name="ReviseCompliance"/>
+          <include name="setBrowser"/>
+          <include name="MyReminder"/>
+        </methods>
+      </class> <!-- performer.OverdueCount -->
+    </classes>
+  </test> <!-- performer(failed) -->
+  <test thread-count="5" name="cfo1(failed)">
+    <classes>
+      <class name="cfo.CFOcountInternal">
+        <methods>
+          <include name="PieChartInTime_Internal"/>
+          <include name="RiskSummaryMediumInternal"/>
+          <include name="clickPenaltyInternal"/>
+          <include name="Closing"/>
+          <include name="RiskSummaryHighInternal"/>
+          <include name="DepartmentSummaryMediumInternal"/>
+          <include name="BargraphLabourHighInternal"/>
+          <include name="RiskSummaryLowInternal"/>
+          <include name="clickUsersInternal"/>
+          <include name="PieChartAfterDueDate_Internal"/>
+          <include name="DepartmentSummaryLowInternal"/>
+          <include name="ClickCompliancesInternal"/>
+          <include name="BargraphLabourLowInternal"/>
+          <include name="setBrowser"/>
+          <include name="clickCategoriesInternal"/>
+          <include name="PieChartNotCompleted_Internal"/>
+          <include name="BargraphLabourMediumInternal"/>
+          <include name="DepartmentSummaryHighInternal"/>
+        </methods>
+      </class> <!-- cfo.CFOcountInternal -->
+    </classes>
+  </test> <!-- cfo1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

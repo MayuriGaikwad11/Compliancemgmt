@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="248829" started-at="2022-11-08T08:55:29Z" finished-at="2022-11-08T08:59:38Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="248829" started-at="2022-11-08T08:55:29Z" finished-at="2022-11-08T08:59:38Z">
+      <class name="cfo.CFOcountStatutory">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@398b7c]" name="setBrowser" is-config="true" duration-ms="39862" started-at="2022-11-08T08:55:29Z" finished-at="2022-11-08T08:56:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@398b7c]" name="Login" duration-ms="44515" started-at="2022-11-08T08:56:09Z" finished-at="2022-11-08T08:56:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="BargraphLabourHighStatutory()[pri:17, instance:cfo.CFOcountStatutory@398b7c]" name="BargraphLabourHighStatutory" duration-ms="164380" started-at="2022-11-08T08:56:53Z" finished-at="2022-11-08T08:59:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BargraphLabourHighStatutory -->
+        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@398b7c]" name="Closing" is-config="true" duration-ms="1" started-at="2022-11-08T08:59:38Z" finished-at="2022-11-08T08:59:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closing -->
+      </class> <!-- cfo.CFOcountStatutory -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
