@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="248829" started-at="2022-11-08T08:55:29Z" finished-at="2022-11-08T08:59:38Z">
+  <suite name="Default suite" duration-ms="187191" started-at="2022-11-14T15:03:29 IST" finished-at="2022-11-14T15:06:36 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="248829" started-at="2022-11-08T08:55:29Z" finished-at="2022-11-08T08:59:38Z">
-      <class name="cfo.CFOcountStatutory">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@398b7c]" name="setBrowser" is-config="true" duration-ms="39862" started-at="2022-11-08T08:55:29Z" finished-at="2022-11-08T08:56:09Z">
+    <test name="Default test" duration-ms="187191" started-at="2022-11-14T15:03:29 IST" finished-at="2022-11-14T15:06:36 IST">
+      <class name="cfo.CFOcountInternal">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountInternal@bf3d14]" name="setBrowser" is-config="true" duration-ms="16590" started-at="2022-11-14T15:03:29 IST" finished-at="2022-11-14T15:03:46 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@398b7c]" name="Login" duration-ms="44515" started-at="2022-11-08T08:56:09Z" finished-at="2022-11-08T08:56:53Z">
+        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountInternal@bf3d14]" name="Login" duration-ms="35377" started-at="2022-11-14T15:03:46 IST" finished-at="2022-11-14T15:04:21 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="BargraphLabourHighStatutory()[pri:17, instance:cfo.CFOcountStatutory@398b7c]" name="BargraphLabourHighStatutory" duration-ms="164380" started-at="2022-11-08T08:56:53Z" finished-at="2022-11-08T08:59:38Z">
+        <test-method status="PASS" signature="clickCategoriesInternal()[pri:2, instance:cfo.CFOcountInternal@bf3d14]" name="clickCategoriesInternal" duration-ms="70294" started-at="2022-11-14T15:04:21 IST" finished-at="2022-11-14T15:05:32 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BargraphLabourHighStatutory -->
-        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@398b7c]" name="Closing" is-config="true" duration-ms="1" started-at="2022-11-08T08:59:38Z" finished-at="2022-11-08T08:59:38Z">
+        </test-method> <!-- clickCategoriesInternal -->
+        <test-method status="PASS" signature="ClickCompliancesInternal()[pri:3, instance:cfo.CFOcountInternal@bf3d14]" name="ClickCompliancesInternal" duration-ms="13447" started-at="2022-11-14T15:05:32 IST" finished-at="2022-11-14T15:05:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickCompliancesInternal -->
+        <test-method status="PASS" signature="clickUsersInternal()[pri:4, instance:cfo.CFOcountInternal@bf3d14]" name="clickUsersInternal" duration-ms="14925" started-at="2022-11-14T15:05:45 IST" finished-at="2022-11-14T15:06:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickUsersInternal -->
+        <test-method status="PASS" signature="SummaryofOverdueCompliances()[pri:5, instance:cfo.CFOcountInternal@bf3d14]" name="SummaryofOverdueCompliances" duration-ms="36464" started-at="2022-11-14T15:06:00 IST" finished-at="2022-11-14T15:06:36 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SummaryofOverdueCompliances -->
+        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountInternal@bf3d14]" name="Closing" is-config="true" duration-ms="1" started-at="2022-11-14T15:06:36 IST" finished-at="2022-11-14T15:06:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Closing -->
-      </class> <!-- cfo.CFOcountStatutory -->
+      </class> <!-- cfo.CFOcountInternal -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

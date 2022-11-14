@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,6 +24,7 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
@@ -49,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\sandip\AppData\Local\Temp\testng-eclipse-1216993701\testng-customsuite.xml</span>
+                    <span>C:\Users\sandip\AppData\Local\Temp\testng-eclipse--1641160270\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +104,27 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="cfo.CFOcountStatutory" hash-for-method="BargraphLabourHighStatutory">BargraphLabourHighStatutory</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="cfo.CFOcountInternal" hash-for-method="ClickCompliancesInternal">ClickCompliancesInternal</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="cfo.CFOcountStatutory" hash-for-method="Login">Login</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="cfo.CFOcountInternal" hash-for-method="Login">Login</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="cfo.CFOcountInternal" hash-for-method="SummaryofOverdueCompliances">SummaryofOverdueCompliances</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="cfo.CFOcountInternal" hash-for-method="clickCategoriesInternal">clickCategoriesInternal</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="cfo.CFOcountInternal" hash-for-method="clickUsersInternal">clickUsersInternal</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -125,14 +142,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">cfo.CFOcountStatutory</span>
+              <span class="class-name">cfo.CFOcountInternal</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="BargraphLabourHighStatutory">
-                  </a> <!-- BargraphLabourHighStatutory -->
-                  <span class="method-name">BargraphLabourHighStatutory</span>
+                  <a name="ClickCompliancesInternal">
+                  </a> <!-- ClickCompliancesInternal -->
+                  <span class="method-name">ClickCompliancesInternal</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -142,21 +159,42 @@
                   <span class="method-name">Login</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SummaryofOverdueCompliances">
+                  </a> <!-- SummaryofOverdueCompliances -->
+                  <span class="method-name">SummaryofOverdueCompliances</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickCategoriesInternal">
+                  </a> <!-- clickCategoriesInternal -->
+                  <span class="method-name">clickCategoriesInternal</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickUsersInternal">
+                  </a> <!-- clickUsersInternal -->
+                  <span class="method-name">clickUsersInternal</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\sandip\AppData\Local\Temp\testng-eclipse-1216993701\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\sandip\AppData\Local\Temp\testng-eclipse--1641160270\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;cfo.CFOcountStatutory&quot;/&gt;
+      &lt;class name=&quot;cfo.CFOcountInternal&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -196,20 +234,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'BargraphLabourHighStatutory')
-data.setCell(0, 2, 'cfo.CFOcountStatutory')
-data.setCell(0, 3, 164380);
+data.setCell(0, 1, 'clickCategoriesInternal')
+data.setCell(0, 2, 'cfo.CFOcountInternal')
+data.setCell(0, 3, 70294);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Login')
-data.setCell(1, 2, 'cfo.CFOcountStatutory')
-data.setCell(1, 3, 44515);
+data.setCell(1, 1, 'SummaryofOverdueCompliances')
+data.setCell(1, 2, 'cfo.CFOcountInternal')
+data.setCell(1, 3, 36464);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'Login')
+data.setCell(2, 2, 'cfo.CFOcountInternal')
+data.setCell(2, 3, 35377);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'clickUsersInternal')
+data.setCell(3, 2, 'cfo.CFOcountInternal')
+data.setCell(3, 3, 14925);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'ClickCompliancesInternal')
+data.setCell(4, 2, 'cfo.CFOcountInternal')
+data.setCell(4, 3, 13447);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -235,26 +285,39 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">cfo.CFOcountStatutory</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">cfo.CFOcountInternal</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">Login</span>
-                <span class="method-start">39912 ms</span>
+                <span class="method-start">16651 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">BargraphLabourHighStatutory</span>
-                <span class="method-start">84439 ms</span>
+                <span class="method-name">clickCategoriesInternal</span>
+                <span class="method-start">52038 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">ClickCompliancesInternal</span>
+                <span class="method-start">122334 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickUsersInternal</span>
+                <span class="method-start">135786 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SummaryofOverdueCompliances</span>
+                <span class="method-start">150713 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">Closing</span>
-                <span class="method-start">248823 ms</span>
+                <span class="method-start">187180 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

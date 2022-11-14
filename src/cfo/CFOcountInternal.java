@@ -47,22 +47,22 @@ public class CFOcountInternal
 	
 	//Write "CFO-diy" for DIYProduction link.
 	//Write "CFO" for login.avantis
-	public static String link = "MGMT";			//Check link in excel sheet first.
+	public static String link = "CFO";			//Check link in excel sheet first.
 	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
-		String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
+	//	String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
 		fis = new FileInputStream("C:/March2022/PerformerPom/TestData/ComplianceSheet.xlsx");
 		workbook = new XSSFWorkbook(fis);
-		sheet = workbook.getSheetAt(0);					//Retrieving third sheet of Workbook
+		sheet = workbook.getSheetAt(2);					//Retrieving third sheet of Workbook
 		return sheet;
 	}
 	
 	@BeforeTest
 	void setBrowser() throws InterruptedException, IOException
 	{
-		String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
-		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//CFOResultsInternal.html",true);
+	//	String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
+		extent = new com.relevantcodes.extentreports.ExtentReports("C:/March2022/PerformerPom/Reports/CFOResultsInternal.html",true);
 		test = extent.startTest("Verify OpenBrowser");
 		test.log(LogStatus.INFO, "Browser test is initiated");
 		
@@ -81,15 +81,15 @@ public class CFOcountInternal
 	@Test(priority = 1)
 	void Login() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Loging In - MGMT Finance (Internal)");
+		test = extent.startTest("Loging In - CFO Finance (Internal)");
 		test.log(LogStatus.INFO, "Logging into system");
 		
 		XSSFSheet sheet = ReadExcel();
-		Row row1 = sheet.getRow(5);						//Selected 1st index row (Second row)
+		Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
 		Cell c1 = row1.getCell(1);						//Selected cell (1 row,1 column)
 		String uname = c1.getStringCellValue();			//Got the URL stored at position 1,1
 		
-		Row row2 = sheet.getRow(6);						//Selected 2nd index row (Third row)
+		Row row2 = sheet.getRow(2);						//Selected 2nd index row (Third row)
 		Cell c2 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c2.getStringCellValue();		//Got the URL stored at position 2,1
 		
@@ -103,7 +103,7 @@ public class CFOcountInternal
 		
 		Thread.sleep(1000);
 		CFOcountPOM.clickApply(driver).click();
-		
+		Thread.sleep(1000);
 		test.log(LogStatus.PASS, "Test Passed.");
 		extent.endTest(test);
 		extent.flush();
@@ -123,169 +123,144 @@ public class CFOcountInternal
 		}
 	}
 	
-	/*@Test(priority = 2)
+	@Test(priority = 2)
 	void clickCategoriesInternal() throws InterruptedException
 	{
-		test = extent.startTest("'Complainces' Count by Clicking on 'Categories'");
+		test = extent.startTest(" Count by Clicking on 'Categories'");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		int valueCompliances = Integer.parseInt(CFOcountPOM.readCompliancesInternal(driver).getText());	//Storing old value of 'Compliances'.
+		String string_Categories =CFOcountPOM.clickCategories(driver).getText();		//Storing old value of Statutory overdue.
+	int	CategoriesCountDas = Integer.parseInt(string_Categories);
+		CFOcountPOM.clickCategories(driver).click();
+		Thread.sleep(500);
 		
-		CFOcountPOM.clickCategories(driver).click();					//Clicking on 'Categories'.
+		litigationPerformer.MethodsPOM.progress(driver);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(70));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[3]/td[4]/div")));
+		Thread.sleep(3000);
+		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(3000);
+		CFOcountPOM.readTotalItemsD(driver).click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = CFOcountPOM.readTotalItemsD(driver).getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int CatcountGrid = Integer.parseInt(compliancesCount);
+		
+		elementsList1 = CFOcountPOM.readCompliancesList(driver);
+	String comp_cat=	elementsList1.get(1).getText();
+	int	CompCountCat = Integer.parseInt(comp_cat);
+		elementsList1.get(1).click();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));
+		Thread.sleep(1000);
+		CFOcountPOM.clickExportImage(driver).click();                    //export excel
+		Thread.sleep(5000);
+		test.log(LogStatus.PASS, "Excel file Export Successfully");	
 		
 		Thread.sleep(500);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));	//Wait until frame get visible and switch to it.
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-grid-content k-auto-scrollable']")));
+		Thread.sleep(4000);
+		js.executeScript("window.scrollBy(0,3000)");				//Scrolling down window by 2000 px.
+		Thread.sleep(1000);
+		CFOcountPOM.readTotalItemsD(driver).click();
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class = 'k-grid-content k-auto-scrollable']"))); //Wait until first row's Compliance Count to be visible
+		Thread.sleep(1000);
+		String item1 = CFOcountPOM.readTotalItemsD(driver).getText();
+		String[] bits1 = item.split(" ");								//Splitting the String
+		String compliancesCount1 = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		
-		CFOcountPOM.readTotalItems1(driver).click();
-		String s1 = CFOcountPOM.readTotalItems1(driver).getText();
-		String[] bits1 = s1.split(" ");									//Splitting the String
-		String itomsCount = bits1[bits1.length - 2];						//Getting the second last word (total number of items)
-		int count2 = 0;
-		int loop = 0;
-		if(itomsCount.equalsIgnoreCase("to"))							//If items not found
+	int	count = Integer.parseInt(compliancesCount1);
+		js.executeScript("window.scrollBy(0,3000)");
+		if(CompCountCat == count)
 		{
-			for(int i = 0; i < 4; i++)
-			{
-				Thread.sleep(2000);
-				s1 = CFOcountPOM.readTotalItems1(driver).getText();
-				bits1 = s1.split(" ");									//Splitting the String
-				itomsCount = bits1[bits1.length - 2];
-				if(!itomsCount.equalsIgnoreCase("to"))					//If not items found
-				{
-					break;
-				}
-			}
-		}
-		count2 = Integer.parseInt(itomsCount);
-		loop = count2 / 10;									//Dividing by 10, as total number of items in a list is 10
-		
-		elementsList = CFOcountPOM.readCompliancesList(driver);			//Searching all values of Compliance 
-		int n = elementsList.size();
-		int value = 0;
-		int count1 = 0;
-		int CategoriesCount = 0;
-		for(int i = 0; i < n; i++)
-		{
-			elementsList = CFOcountPOM.readCompliancesList(driver);
-			value = Integer.parseInt(elementsList.get(i).getText());	//Reading each Compliance value.
-			count = count + value;										//Calculating the read Compliance values.
-			
-			if(value > 0)
-			{
-				Thread.sleep(500);
-				CategoriesCount = CategoriesCount + 1;
-				elementsList1 = CFOcountPOM.readCompliancesList(driver);
-				elementsList1.get(i).click();
-				
-				Thread.sleep(500);
-				litigationPerformer.MethodsPOM.progress(driver);
-				
-				Thread.sleep(500);
-				try
-				{
-					wait.until(ExpectedConditions.visibilityOf(CFOcountPOM.waitProgress(driver)));
-					Thread.sleep(300);
-					wait.until(ExpectedConditions.invisibilityOf(CFOcountPOM.waitProgress(driver)));
-				}
-				catch(Exception e)
-				{
-					
-				}
-				
-				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));	//Wait until frame get visible and switch to it.
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-grid-content k-auto-scrollable']")));
-				
-				js.executeScript("window.scrollBy(0,500)");				//Scrolling down window by 2000 px.
-				
-				CFOcountPOM.readTotalItems1(driver).click();
-				
-				Thread.sleep(1000);
-				String item = CFOcountPOM.readTotalItems1(driver).getText();
-				String[] bits = item.split(" ");								//Splitting the String
-				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-				
-				if(compliancesCount.equalsIgnoreCase("to"))
-				{
-					Thread.sleep(2500);
-					item = CFOcountPOM.readTotalItems1(driver).getText();
-					bits = item.split(" ");								//Splitting the String
-					compliancesCount = bits[bits.length - 2];
-				}
-				if(compliancesCount.equalsIgnoreCase("to"))
-				{
-					Thread.sleep(2500);
-					item = CFOcountPOM.readTotalItems1(driver).getText();
-					bits = item.split(" ");								//Splitting the String
-					compliancesCount = bits[bits.length - 2];
-				}
-				count1 = Integer.parseInt(compliancesCount);
-				
-				if(value == count1)
-				{
-					test.log(LogStatus.PASS, "Compliances count matches. Clicked Value = " + value+ " | Grid Records = "+count1);
-				}
-				else
-				{
-					test.log(LogStatus.FAIL, "Compliances count does not matches. Clicked Value = "+value+" | Grid Records = "+count1);
-				}
-				
-				driver.switchTo().parentFrame();								//Switching back to parent frame.
-				Thread.sleep(100);
-				CFOcountPOM.closeCategories_Compliances(driver).click();		//Closing the 'Compliances' pup up.
-			}
-			
-			if(i == n-1)
-			{
-				if(CFOcountPOM.clickNextPage1(driver).isEnabled())
-				{
-					if(loop <= 0)						//Loop calculated from total number of elements.
-					{
-						break;							//If loop is 0 then break.
-					}
-					
-					elementsList1 = CFOcountPOM.checkTotalIndexes(driver);	//Checking the total indexes available to click.
-					if(elementsList1.size() <= 2)							//First element is label so the count two represents 1 index.
-					{
-						break;							//If we have only one page index then break.
-					}
-					
-					loop --;
-					Thread.sleep(500);
-					CFOcountPOM.clickNextPage1(driver).click();
-					Thread.sleep(250);
-					elementsList = CFOcountPOM.readCompliancesList(driver);
-					n = elementsList.size();
-					i = -1;
-				}
-			}
-		}
-		
-		Thread.sleep(200);
-		js.executeScript("window.scrollBy(500,0)");						//Scrolling UP window by 2000 px.
-		driver.switchTo().parentFrame();								//Switching back to parent frame.
-		Thread.sleep(500);
-		CFOcountPOM.closeCategories(driver).click();					//Closing the 'Categories' pup up.
-		
-		if(count == valueCompliances)
-		{
-			test.log(LogStatus.PASS, "Categories Count = " + CategoriesCount);
-			test.log(LogStatus.PASS, "'Compliances' count of Dashboard matches to 'Categories'. Dashboard value = " + valueCompliances + " | Sum of Compliances from 'Categories' click = "+ count);
+			test.log(LogStatus.PASS, "Compliances count matches. Clicked value = " + CompCountCat+ ", Grid Records = "+count);
 		}
 		else
 		{
-			test.log(LogStatus.PASS, "Categories Count = " + CategoriesCount);
-			test.log(LogStatus.FAIL, "'Compliances' count of Dashboard doesn't matches to 'Categories'. Dashboard value = " + valueCompliances + " | Sum of Compliances from 'Categories' click = "+ count);
+			test.log(LogStatus.FAIL, "Compliances count does not matches. Clicked value = "+CompCountCat+", Grid Records = "+count);
 		}
+		
+		driver.switchTo().parentFrame();								//Switching back to parent frame.
+		Thread.sleep(3000);
+		CFOcountPOM.closeCategories_Compliances(driver).click();		//Closing the 'Compliances' pup up.
+		Thread.sleep(2000);
+	
+		
+		elementsList1 = CFOcountPOM.readUserList(driver);
+		String user_cat=	elementsList1.get(1).getText();
+		int	userCountCat = Integer.parseInt(user_cat);
+			elementsList1.get(1).click();
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));
+			Thread.sleep(3000);                                             
+			CFOcountPOM.clickExportImage(driver).click();                    //export excel
+			Thread.sleep(5000);
+			test.log(LogStatus.PASS, "Excel file Export Successfully");	
+			
+			Thread.sleep(500);
+			litigationPerformer.MethodsPOM.progress(driver);
+			
+		//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));	//Wait until frame get visible and switch to it.
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-grid-content k-auto-scrollable']")));
+			Thread.sleep(4000);
+			js.executeScript("window.scrollBy(0,3000)");				//Scrolling down window by 2000 px.
+			Thread.sleep(1000);
+			CFOcountPOM.readTotalItemsD(driver).click();
+			
+			Thread.sleep(1000);
+			String item2 = CFOcountPOM.readTotalItemsD(driver).getText();
+			String[] bits2 = item.split(" ");								//Splitting the String
+			String userCount2 = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			
+		int	count1 = Integer.parseInt(userCount2);
+			js.executeScript("window.scrollBy(0,3000)");
+			if(userCountCat == count1)
+			{
+				test.log(LogStatus.PASS, "Users count matches. Clicked value = " + userCountCat+ ", Grid Records = "+count1);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Users count does not matches. Clicked value = "+userCountCat+", Grid Records = "+count1);
+			}
+			
+			driver.switchTo().parentFrame();								//Switching back to parent frame.
+			Thread.sleep(3000);
+			CFOcountPOM.closeCategories_Compliances(driver).click();		//Closing the 'Compliances' pup up.
+			Thread.sleep(2000);
+		
+			
+		if(CategoriesCountDas == CatcountGrid)
+		{
+			test.log(LogStatus.PASS, "Number of Categories grid matches to Dashboard Categories  Count.");
+			test.log(LogStatus.INFO, "No of Categories in the grid = "+CatcountGrid+" | Dashboard Categories  Count = "+CategoriesCountDas);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Number of Categories does not matches to Dashboard Categories  Count.");
+			test.log(LogStatus.INFO, "No of Categories in the grid = "+CatcountGrid+" | Dashboard Categories  Count = "+CategoriesCountDas);
+		}
+		Thread.sleep(3000);
+		js.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
+		Thread.sleep(3000);
+		driver.switchTo().defaultContent();
+		
+		Thread.sleep(4000);
+		
+		CFOcountPOM.closeCategories(driver).click();
+		Thread.sleep(2000);
 		extent.endTest(test);
 		extent.flush();
 	}
+	
 	
 	@Test(priority = 3)
 	void ClickCompliancesInternal() throws InterruptedException
@@ -309,13 +284,18 @@ public class CFOcountInternal
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));
 		
+		Thread.sleep(1000);
+		CFOcountPOM.clickExportImage(driver).click();                    //export excel
+		Thread.sleep(5000);
+		test.log(LogStatus.PASS, "Excel file Export Successfully");	
+		
 		Thread.sleep(500);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");				//Scrolling down window by 2000 px.
 		
 		Thread.sleep(1000);
-		CFOcountPOM.readTotalItems1(driver).click();				//Clicking on Total items count to scroll down.
-		String getCount = CFOcountPOM.readTotalItems1(driver).getText();	//Storing 'Compliances' count as string.
+		CFOcountPOM.readTotalItemsD(driver).click();				//Clicking on Total items count to scroll down.
+		String getCount = CFOcountPOM.readTotalItemsD(driver).getText();	//Storing 'Compliances' count as string.
 		String[] bits = getCount.split(" ");							//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		
@@ -365,19 +345,25 @@ public class CFOcountInternal
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
 		
+		Thread.sleep(1000);
+		CFOcountPOM.clickExportImage(driver).click();                    //export excel
+		Thread.sleep(5000);
+		test.log(LogStatus.PASS, "Excel file Export Successfully");	
+		
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");					//Scrolling down window by 1000 px.
 		
 		Thread.sleep(3000);
-		CFOcountPOM.readUsersCount2(driver).click();
+		CFOcountPOM.readTotalItemsD(driver).click();
 		
-		String getCount = CFOcountPOM.readUsersCount2(driver).getText();	//Storing no of Items 'Users' count as string.
+		String getCount = CFOcountPOM.readTotalItemsD(driver).getText();	//Storing no of Items 'Users' count as string.
 		String[] bits = getCount.split(" ");							//Splitting the String
 		String usersCount = bits[bits.length - 2];						//Getting the second last word (total number of users)
 		if(usersCount.equalsIgnoreCase("to"))
 		{
 			Thread.sleep(2500);
-			getCount = CFOcountPOM.readUsersCount2(driver).getText();
+			getCount = CFOcountPOM.readTotalItemsD(driver).getText();
 			bits = getCount.split(" ");								//Splitting the String
 			usersCount = bits[bits.length - 2];
 		}
@@ -400,6 +386,55 @@ public class CFOcountInternal
 	}
 	
 	@Test(priority = 5)
+	void SummaryofOverdueCompliances() throws InterruptedException
+	{
+		test = extent.startTest(" Summary of Overdue Compliances Internal");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		Thread.sleep(4000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		CFOcountPOM.ClickShowAllIn(driver).click();        //Clicking on Show All
+		Thread.sleep(3000);
+		litigationPerformer.MethodsPOM.progress(driver);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
+	WebElement farme=	driver.findElement(By.xpath("//*[@id='showdetails']"));
+      driver.switchTo().frame(farme);
+      Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']")));
+		 Thread.sleep(3000); 
+	//	elementsList1=	CFOcountPOM.ActionviewList(driver);
+		//elementsList1.get(1).click();                   //Clicking on OverdueView  button
+	//	driver.findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[16]/a[1]")).click();
+	//	Thread.sleep(3000);
+	//	CFOcountPOM.closeDocument(driver).click();						//Closing the View Document
+		 CFOcountPOM.clickExportImage(driver).click();
+			Thread.sleep(4000);
+			test.log(LogStatus.PASS, "Excel file Export Successfully");
+			Thread.sleep(4000);
+			By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td/a[1]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			// retrieving "foo-button" HTML element
+			List<WebElement> ViewButtons = driver.findElements(locator);							
+			ViewButtons.get(1).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.INFO, "overView success");
+			CFOcountPOM.closeDocument(driver).click();
+			Thread.sleep(3000);
+			driver.switchTo().defaultContent();
+			Thread.sleep(3000);
+			CFOcountPOM.closeCategories(driver).click();
+			Thread.sleep(1000);
+		extent.endTest(test);
+		extent.flush();			
+		
+	}
+	
+	
+/*	@Test(priority = 5)
 	void NotCompleted_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart - 'Not Completed' Count Verification");
