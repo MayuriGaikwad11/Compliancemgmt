@@ -1127,15 +1127,15 @@ public class MethodsPOM
 	{
 		Thread.sleep(500);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickStatutoryChecklist(driver)));
-		int oldStatutoryChecklistValue = Integer.parseInt(OverduePOM.clickStatutoryChecklist(driver).getText());	//Storing old value of Statutory Checkilist.
-		int oldOverdueStatutoryValue = Integer.parseInt(OverduePOM.clickStatutoryOverdue(driver).getText());
+	//	wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickStatutoryChecklist(driver)));
+	//	int oldStatutoryChecklistValue = Integer.parseInt(OverduePOM.clickStatutoryChecklist(driver).getText());	//Storing old value of Statutory Checkilist.
+	//	int oldOverdueStatutoryValue = Integer.parseInt(OverduePOM.clickStatutoryOverdue(driver).getText());
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,650)");					//Scrolling down window by 2600 px.
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='badge badge-warning overdue'])[1]")));	//Waiting till the cornered count of compliance get visible.
-		Thread.sleep(300);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='badge badge-warning overdue'])[1]")));	//Waiting till the cornered count of compliance get visible.
+		Thread.sleep(3000);
 		CFOcountPOM.readDateComliance(driver).click();					//Clicking on the compliance value on top corner
 		elementsList = CFOcountPOM.clickDateCalendar1(driver);			//Getting all red compliances
 		elementsList.get(0).click();							//Clicking on first Red Compliance of the calendar.		
@@ -1266,8 +1266,8 @@ public class MethodsPOM
 			OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard
 			
 			Thread.sleep(500);
-			wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickStatutoryChecklist(driver)));
-			int newValue = 0;
+		//	wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickStatutoryChecklist(driver)));
+		/*	int newValue = 0;
 			if(flag == 1)
 			{
 				newValue = Integer.parseInt(OverduePOM.clickStatutoryChecklist(driver).getText());	//Storing new value of Statutory Checkilist.
@@ -1293,7 +1293,7 @@ public class MethodsPOM
 				{
 					test.log(LogStatus.FAIL, "Overdue count doesn't decreased. Old count = "+oldOverdueStatutoryValue+ " | New count = "+newValue);
 				}
-			}
+			}*/
 		}
 		else
 		{

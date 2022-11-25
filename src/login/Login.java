@@ -17,7 +17,7 @@ public class Login
 	
 	public static void BrowserSetup(String URL)
 	{
-		System.setProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver1/chromedriver.exe");
 		//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver"); //Set the Chrome driver variable
 		driver = new ChromeDriver();					//Created new Chrome driver instance. 
 		driver.manage().window().maximize();			//Set window size to maximum.
@@ -63,6 +63,17 @@ public class Login
 			if(method.equalsIgnoreCase("cfo"))
 			{
 				ans1 = getAnswerCFO(que1);						//Storing the answer in ans variable.
+			}else if(method.equalsIgnoreCase("fe"))
+			{
+				ans1 = getAnswerFE(que1);						//Storing the answer in ans variable.
+			}
+			else if(method.equalsIgnoreCase("MGMT") )
+			{
+				ans1 = getAnswerMGMT(que1);						//Storing the answer in ans variable.
+			}
+			else if(method.equalsIgnoreCase("Auditor") )
+			{
+				ans1 = getAnswerAuditor(que1);						//Storing the answer in ans variable.
 			}
 			else if(method.equalsIgnoreCase("cfo-diy"))
 			{
@@ -86,6 +97,17 @@ public class Login
 			if(method.equalsIgnoreCase("cfo"))
 			{
 				ans2 = getAnswerCFO(que2);						//Storing the answer in ans variable.
+			}else if(method.equalsIgnoreCase("fe"))
+			{
+				ans2 = getAnswerFE(que2);						//Storing the answer in ans variable.
+			}
+			else if(method.equalsIgnoreCase("MGMT") )
+			{
+				ans2 = getAnswerMGMT(que2);						//Storing the answer in ans variable.
+			}
+			else if(method.equalsIgnoreCase("Auditor") )
+			{
+				ans2 = getAnswerAuditor(que2);						//Storing the answer in ans variable.
 			}
 			else if(method.equalsIgnoreCase("cfo-diy") )
 			{
@@ -123,6 +145,7 @@ public class Login
 			else
 			{
 				LoginPOM.clickComplicane(driver).click();			//Clicking on Compliance Image.
+				Thread.sleep(5000);
 			}
 			
 			try
@@ -172,4 +195,45 @@ public class Login
 			ans = "red";
 		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
 	}
+	
+	public static String getAnswerFE(String que)			//Method created to extract last word from question
+	{														//as it is the answer of the question.
+		String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
+		int len = last.length();							
+		String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+		if(ans.equalsIgnoreCase("pet"))
+			ans = "dog";
+		if(ans.equalsIgnoreCase("car"))
+			ans = "red";
+		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	}
+	
+	public static String getAnswerMGMT(String que)			//Method created to extract last word from question
+	{														//as it is the answer of the question.
+		String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
+		int len = last.length();							
+		String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+		if(ans.equalsIgnoreCase("pet"))
+			ans = "pet";
+		if(ans.equalsIgnoreCase("car"))
+			ans = "car";
+		if(ans.equalsIgnoreCase("power"))
+			ans = "power";
+		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	}
+	
+	public static String getAnswerAuditor(String que)			//Method created to extract last word from question
+	{														//as it is the answer of the question.
+		String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
+		int len = last.length();							
+		String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+		if(ans.equalsIgnoreCase("pet"))
+			ans = "pet";
+		if(ans.equalsIgnoreCase("car"))
+			ans = "car";
+		if(ans.equalsIgnoreCase("place"))
+			ans = "place";
+		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	}
+	
 }

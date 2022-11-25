@@ -49,14 +49,16 @@ public class CFOcountStatutory
 	
 	//Write "CFO-diy" for DIYProduction link.
 	//Write "CFO" for login.avantis for CFO Finance
-	public static String link = "CFO";		//Check link in excel sheet first.
+	//public static String link = "CFO";           //Check link in excel sheet first.
+	public static String link = "Auditor";		
+		
 	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
 		fis = new FileInputStream("C:/March2022/PerformerPom/TestData/ComplianceSheet.xlsx");
 		workbook = new XSSFWorkbook(fis);
-		sheet = workbook.getSheetAt(2);					//Retrieving third sheet of Workbook
+		sheet = workbook.getSheetAt(5);					//Retrieving third sheet of Workbook
 		return sheet;
 	}
 	
@@ -120,7 +122,7 @@ public class CFOcountStatutory
 			
 		}
 	}
-	/*
+/*
 	@Test(priority = 2)
 	void CategoriesCountMatch() throws InterruptedException
 	{
@@ -403,8 +405,8 @@ public class CFOcountStatutory
 		extent.flush();			
 		
 	}
-	
-	@Test(priority = 7)
+	*/
+//	@Test(priority = 7)
 	void NotCompleted_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Not Completed' Count Verification");
@@ -413,8 +415,8 @@ public class CFOcountStatutory
 		Thread.sleep(500);
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)");			//Scrolling down window by 1000 px.
-		
+	//	js.executeScript("window.scrollBy(0,500)");			//Scrolling down window by 1000 px.cfo
+		js.executeScript("window.scrollBy(0,100)");
 		Thread.sleep(3000);
 		int NotCompletedValue = Integer.parseInt(CFOcountPOM.clickNotCompleted(driver).getText());	//Reading value of 'Not Completed'
 		CFOcountPOM.clickNotCompleted(driver).click();									//CLicking on 'Not Completed' count
@@ -491,7 +493,7 @@ public class CFOcountStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	
+	/*
 	@Test(priority = 8)
 	void ClosedDelayed_PieChart() throws InterruptedException
 	{
@@ -1581,14 +1583,14 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	*/
-	//@Test(priority = 20)
+	@Test(priority = 20)
 	void RiskSummaryCriticalStatutory() throws InterruptedException
 	{
 		driver.navigate().refresh();
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1450)");					//Scrolling down window by 1000 px.
-		
+	//	js.executeScript("window.scrollBy(0,1450)");					//Scrolling down window by 1000 px.cfo
+		js.executeScript("window.scrollBy(0,700)");
 		test = extent.startTest("Risk Summary - 'Critical' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
@@ -1636,8 +1638,8 @@ public class CFOcountStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	//@Test(priority = 21)
+	/*
+	@Test(priority = 21)
 	void RiskSummaryHighStatutory() throws InterruptedException
 	{		
 		test = extent.startTest("Risk Summary - 'High' Count Verification");
@@ -1662,7 +1664,7 @@ public class CFOcountStatutory
 			test.log(LogStatus.SKIP, "'High - Not Completed' Count = "+RiskHigh_NotCompleted);
 		}
 		*/
-		Thread.sleep(2000);
+	/*	Thread.sleep(2000);
 		int RiskHigh_ClosedDelayed = Integer.parseInt(CFOcountPOM.clickRiskHighClosedDelayed(driver).getText());	//Reading the High Risk value of Not Completed compliance
 		if(RiskHigh_ClosedDelayed > 0)
 		{
@@ -1693,7 +1695,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	//@Test(priority = 22)
+	@Test(priority = 22)
 	void RiskSummaryMediumStatutory() throws InterruptedException
 	{
 		test = extent.startTest("Risk Summary - 'Medium' Count Verification");
@@ -1718,7 +1720,7 @@ public class CFOcountStatutory
 			test.log(LogStatus.SKIP, "'Medium - Not Completed' Count = "+RiskMedium_NotCompleted);
 		}
 	*/	
-		driver.navigate().refresh();
+	/*	driver.navigate().refresh();
 		Thread.sleep(4000);
 		int RiskMedium_ClosedDelayed = Integer.parseInt(CFOcountPOM.clickRiskMediumClosedDelayed(driver).getText());	//Reading the High Risk value of Not Completed compliance
 		if(RiskMedium_ClosedDelayed > 0)
@@ -1750,7 +1752,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 23)
+	@Test(priority = 23)
 	void RiskSummaryLowStatutory() throws InterruptedException
 	{		
 		test = extent.startTest("Risk Summary - 'Low' Count Verification");
@@ -1774,7 +1776,7 @@ public class CFOcountStatutory
 			test.log(LogStatus.SKIP, "'Low - Not Completed' Count = "+RiskLow_NotCompleted);
 		}
 		*/
-		Thread.sleep(2000);
+	/*	Thread.sleep(2000);
 		int RiskLow_ClosedDelayed = Integer.parseInt(CFOcountPOM.clickRiskLowClosedDelayed(driver).getText());	//Reading the High Risk value of Not Completed compliance
 		if(RiskLow_ClosedDelayed > 0)
 		{
@@ -1809,7 +1811,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	//@Test(priority = 24)
+	@Test(priority = 24)
 	void DepartmentSummaryHumanResourceStatutory() throws InterruptedException
 	{
 		Thread.sleep(500);		
@@ -1906,13 +1908,13 @@ public class CFOcountStatutory
 		{
 			
 		}*/
-		Thread.sleep(500);
+	/*	Thread.sleep(500);
 		performer.OverduePOM.clickDashboard(driver).click();			//Clicking on Dashboard
 		
 		extent.endTest(test);
 		extent.flush();
 	}
-	
+	*/
 //	@Test(priority = 25)
 	void PenaltySummaryStatutory() throws InterruptedException
 	{		
@@ -2199,7 +2201,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[2]/td[6]/a");
 				// retrieving "foo-button" HTML element
 				WebElement ViewButton1 = driver.findElement(locator1);	
 				Thread.sleep(4000);
-		//	JavascriptExecutor jse=(JavascriptExecutor)driver;
+		//	
 			Thread.sleep(2000);
 			jse.executeScript("arguments[0].click();", ViewButton1);
 				Thread.sleep(4000);
@@ -2215,11 +2217,412 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[2]/td[6]/a");
 			extent.flush();
 	}
 	
+//	@Test(priority = 28)
+	void DetailedReport() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Detailed Report Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.DetailedReport1(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+//	@Test(priority = 29)
+	void AssignmentReport() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Assignment Report verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.AssignmentReport(test, driver);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+//	@Test(priority = 30)
+	void UsageReport() throws InterruptedException
+	{
+		test = extent.startTest("Usage Report verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		Thread.sleep(1000);
+		CFOcountPOM.clickReports(driver).click();				//Clicking on 'My Reports'
+		
+		Thread.sleep(500);
+		CFOcountPOM.clickUsageReport(driver).click();			//Clicking on 'Usage Reports'
+		
+		Thread.sleep(5000);
+		CFOcountPOM.clickStartDate(driver).click();				//CLicking on Start Date input box
+		Thread.sleep(3000);
+		performer.OverduePOM.selectDate(driver).click();		//Method to click on date at second row and fourth column
+		Thread.sleep(1000);
+		Thread.sleep(500);
+		CFOcountPOM.clickEndDate(driver).click();				//CLicking on Start Date input box
+		Thread.sleep(4000);
+		performer.OverduePOM.selectDate(driver).click();		//Method to click on date at second row and fourth column
+		Thread.sleep(3000);
+		File dir = new File("C:/Users/sandip/Downloads");
+		File[] dirContents = dir.listFiles();					//Counting number of files in directory before download
+		
+		Thread.sleep(500);
+		CFOcountPOM.clickExport(driver).click();				//CLicking on 'Export to Excel' button
+		
+		Thread.sleep(3000);
+		File dir1 = new File("C:/Users/sandip/Downloads");
+		File[] dirContents1 = dir1.listFiles();					//Counting number of files in directory after download
+		
+		if(dirContents.length < dirContents1.length)
+		{
+			test.log(LogStatus.PASS, "File downloaded successfully.");	
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File does not downloaded.");
+		}
+		
+		Thread.sleep(500);
+		performer.OverduePOM.clickDashboard(driver).click();
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+//	@Test(priority = 31)
+	void ActRepository() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act Repository  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(160));
+	    
+		Thread.sleep(500);
+		CFOcountPOM.clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,100)");						//Scrolling down window by 1000 px.
+			Thread.sleep(2000);
+		CFOcountPOM.clickActRepository(driver).click();			//Clicking on 'Detailed Reports' 
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
+		Thread.sleep(1000);//*[@id="divOverView1"]/div/div/div[1]/button
+		driver.findElement(By.xpath("//*[@id='grid']/div[4]/table/tbody/tr[1]/td[11]/a")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@id='divOverView1']/div/div/div[1]/button")).click();
+		Thread.sleep(3000);
+		OverduePOM.clickDashboard(driver).click();
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+	//@Test(priority = 32)
+	void ComplianceDocuments() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Documents  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
+	    
+		Thread.sleep(500);
+		CFOcountPOM.clickDocuments(driver).click();					//Clicking on 'My Documents'
+		Thread.sleep(3000);
+		CFOcountPOM.clickComplianceDocuments(driver).click();			//Clicking on 'Compliance Documents ' 
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
+		Thread.sleep(2000);
+		 By locator = By.xpath("//*[@id='grid']/div[4]/table/tbody/tr[1]/td[14]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			List<WebElement> ViewButton = driver.findElements(locator);	
+			Thread.sleep(3000);
+			ViewButton.get(0).click();
+			Thread.sleep(4000);
+			CFOcountPOM.closeViewDoc(driver).click();
+			Thread.sleep(3000);
+			ViewButton.get(1).click();
+			Thread.sleep(4000);
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("DownloadViews"));
+			CFOcountPOM.clickDownloadBtn(driver).click();
+			Thread.sleep(2000);
+			driver.switchTo().defaultContent();
+			CFOcountPOM.closeDownloadTab(driver).click();
+			Thread.sleep(3000);
+			ViewButton.get(2).click();
+			Thread.sleep(5000);
+			CFOcountPOM.closeOverViewDoc(driver).click();
+			Thread.sleep(5000);
+			 By locator1 = By.xpath("//*[@id='sel_chkbxMain']");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+				Thread.sleep(4000);
+				// retrieving "foo-button" HTML element
+				List<WebElement> ChechBoxes = driver.findElements(locator1);	
+				Thread.sleep(3000);
+				ChechBoxes.get(0).click();
+				Thread.sleep(500);
+				ChechBoxes.get(1).click();
+				Thread.sleep(500);
+				ChechBoxes.get(3).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@id='dvbtndownloadDocumentMain']")).click();
+				Thread.sleep(3000);
+				CFOcountPOM.clickAdvancedSearch(driver).click();
+				Thread.sleep(3000);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='k-selectable'])[2]")));	//Wait till records table gets visible
+			Thread.sleep(3000);
+			By locator2 = By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr[1]/td[22]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			List<WebElement> ViewButton1 = driver.findElements(locator2);	
+			Thread.sleep(3000);
+			ViewButton1.get(0).click();
+			Thread.sleep(5000);
+			CFOcountPOM.closeDocument1(driver).click();
+			Thread.sleep(3000);
+			ViewButton1.get(1).click();
+			Thread.sleep(4000);
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("DownloadViews1"));
+			CFOcountPOM.clickDownloadBtn(driver).click();
+			Thread.sleep(2000);
+			driver.switchTo().defaultContent();
+			CFOcountPOM.closeDownloadTab1(driver).click();
+			Thread.sleep(3000);
+			ViewButton1.get(2).click();
+			Thread.sleep(5000);
+			CFOcountPOM.closeDocument2(driver).click();
+			Thread.sleep(5000);
+			 By locator3 = By.xpath("//*[@id='sel_chkbx']");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(locator3));
+				Thread.sleep(4000);
+				// retrieving "foo-button" HTML element
+				List<WebElement> ChechBoxes1 = driver.findElements(locator3);	
+				Thread.sleep(3000);
+				ChechBoxes1.get(0).click();
+				Thread.sleep(500);
+				ChechBoxes1.get(1).click();
+				Thread.sleep(500);
+				ChechBoxes1.get(2).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//*[@id='dvbtndownloadDocument']")).click();
+				Thread.sleep(4000);
+				CFOcountPOM.closeDocumentAS(driver).click();
+				Thread.sleep(3000);
+				OverduePOM.clickDashboard(driver).click();
+				extent.endTest(test);
+				extent.flush();
+	}
 	
+//	@Test(priority = 33) //	pass	
+	void CriticalDocuments() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Critical Document Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		OverduePOM.CriticalDocuments(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	//@Test(priority = 34)
+	void ActDocuments() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act Documents  verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
+	    
+		Thread.sleep(500);
+		CFOcountPOM.clickDocuments(driver).click();					//Clicking on 'My Documents'
+		Thread.sleep(3000);
+		CFOcountPOM.clickActDocuments(driver).click();			//Clicking on 'Act Documents ' 
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
+		Thread.sleep(2000);
+		
+		 By locator = By.xpath("//*[@id='grid']/div[4]/table/tbody/tr[2]/td[5]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			List<WebElement> ViewButton = driver.findElements(locator);	
+			Thread.sleep(3000);
+			ViewButton.get(0).click();
+			Thread.sleep(4000);
+			CFOcountPOM.closeDocument1(driver).click();
+			Thread.sleep(3000);
+			ViewButton.get(1).click();
+			Thread.sleep(4000);
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("DownloadViews"));
+			driver.findElement(By.xpath("//*[@id='basic']/tbody/tr[2]/td[2]")).click();
+			Thread.sleep(4000);
+			driver.switchTo().defaultContent();
+			CFOcountPOM.closeDownloadTab(driver).click();
+			Thread.sleep(3000);
+		
+			performer.OverduePOM.clickDashboard(driver).click();
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	//@Test(priority = 35) // pass
+	void MyReminderStatutory() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Reminder - Statutory Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		OverduePOM.MyReminder(driver, test, "Statutory");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	//@Test(priority = 36) //pass
+	void MyReminderInternal() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Reminder - Internal Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickMyReminder(driver)));
+	//	OverduePOM.MyReminder(driver, test, "Internal");
+		OverduePOM.clickMyReminder(driver).click();
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickComplianceType(driver)));
+		OverduePOM.clickComplianceType(driver).click();
+		OverduePOM.clickInternalCheckbox(driver).click();
+		Thread.sleep(500);
+		OverduePOM.clickAddNewReminder(driver).click();								//Clicking on 'Add New' button 
+		
+               Thread.sleep(500);
+		
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectComplianceType1(driver)));
+		OverduePOM.selectComplianceType1(driver).click();				//Clicking on 'Compliance Type' drop down 
+		Thread.sleep(500);
+		OverduePOM.selectInternalType(driver).click();					//Clicking on 'Internal' menu.
+		Thread.sleep(1500);
+		Thread.sleep(1000);
+		OverduePOM.clickLocation(driver).click();							//Clicking on 'Location' drop down
+		Thread.sleep(500);
+		elementsList = OverduePOM.selectLocation1(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		elementsList.get(2).click();							//Selecting third menu from drop down.
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickCompliance1(driver)));
+		OverduePOM.clickCompliance1(driver).click();						//Clicking on 'Compliance' drop down
+		elementsList = OverduePOM.selectCompliance1(driver);
+		elementsList.get(2).click();							//Selecting second menu from drop down.
+		
+		Thread.sleep(500);
+		litigationPerformer.MethodsPOM.progress(driver);
+		
+		Thread.sleep(500);
+		OverduePOM.clickRole(driver).click();								//Clicking on 'Role' drop down.
+		elementsList = OverduePOM.selectRole1(driver);
+		elementsList.get(1).click();							//Selecting second menu from drop down.
+		
+		Thread.sleep(500);
+		litigationPerformer.MethodsPOM.progress(driver);
+		
+		Thread.sleep(500);
+		OverduePOM.selectDateStatutory(driver).click();					//Clicking on 'Date' input box
+		Thread.sleep(300);
+		OverduePOM.selectNextMonth(driver).click();						//Clicking on Next month arrow on calendar
+		Thread.sleep(300);
+		OverduePOM.selectDate(driver).click();								//Clicking on date at second row and fourth column
+		
+		Thread.sleep(500);
+		OverduePOM.clickSaveButton(driver).click();						//Clicking 'Save' button.
+		
+		Thread.sleep(500);
+		litigationPerformer.MethodsPOM.progress(driver);
+		
+		Thread.sleep(500);
+		String actualMsg = OverduePOM.readReminderMsg1(driver).getText();	//Reading Message after Save
+		String expectedMsg1 = "Reminder Saved Sucessfully.";	//Expected message
+		
+		driver.switchTo().parentFrame();
+		OverduePOM.closeReminder(driver).click();							//Closing the Reminder popped window
+		//*[@id = 'ValidationSummary1']/ul/li
+		test.log(LogStatus.INFO, actualMsg);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	//@Test(priority = 37) // pass
+	void MyEscalation() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My  Escalation - Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		CFOcountPOM.clickMyEscalation(driver).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table")));	//Wait till records table gets visible
+		Thread.sleep(1000);
+		List<WebElement> CheckBox=	driver.findElements(By.xpath("//*[@id='sel_chkbx']"));
+	CheckBox.get(5).click();
+	Thread.sleep(500);
+	List<WebElement> Actions=	driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[8]/a"));
+	Actions.get(5).click();
+	Thread.sleep(4000);
+	driver.switchTo().alert().accept();
+	Thread.sleep(2000);
+	performer.OverduePOM.clickDashboard(driver).click();
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 38) // pass
+	void MyNotifications() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Notifications - Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		Thread.sleep(8000);
+		CFOcountPOM.clickMyNotifications(driver).click();
+		Thread.sleep(4000);
+		CFOcountPOM.clickViewBtnNO(driver).click();
+		Thread.sleep(4000);
+		CFOcountPOM.CloseViewNO(driver).click();
+		Thread.sleep(4000);
+		test.log(LogStatus.INFO, "View Successfully");	
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_GridNotifications_chkCompliances_0']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_GridNotifications_chkCompliances_1']")).click();
+		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");					//Scrolling down window by 2100 px.
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnMarkasRead']")).click();
+		test.log(LogStatus.PASS, "Read Successfully");	
+		Thread.sleep(1000);
+		performer.OverduePOM.clickDashboard(driver).click();
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 39) // pass
+	void MessageCenter() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Message Center - Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		Thread.sleep(8000);
+		CFOcountPOM.clickMessageCenter(driver).click();
+		Thread.sleep(4000);
+		CFOcountPOM.clickViewMsg(driver).click();
+		Thread.sleep(4000);
+		test.log(LogStatus.PASS, "View Button is clickable");
+		Thread.sleep(1000);
+		performer.OverduePOM.clickDashboard(driver).click();
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	
@@ -2255,75 +2658,6 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[2]/td[6]/a");
 	
 	
 	/*
-	@Test(priority = 21)
-	void DetailedReport() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Detailed Report Count Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		CFOcountPOM.DetailedReport(test, driver, "cfo");
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 22)
-	void AssignmentReport() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Assignment Report verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		CFOcountPOM.AssignmentReport(test, driver);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 23)
-	void UsageReport() throws InterruptedException
-	{
-		test = extent.startTest("Usage Report verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		
-		Thread.sleep(1000);
-		CFOcountPOM.clickReports(driver).click();				//Clicking on 'My Reports'
-		
-		Thread.sleep(500);
-		CFOcountPOM.clickUsageReport(driver).click();			//Clicking on 'Usage Reports'
-		
-		Thread.sleep(1000);
-		CFOcountPOM.clickStartDate(driver).click();				//CLicking on Start Date input box
-		performer.OverduePOM.selectDate(driver).click();		//Method to click on date at second row and fourth column
-		
-		Thread.sleep(500);
-		CFOcountPOM.clickEndDate(driver).click();				//CLicking on Start Date input box
-		performer.OverduePOM.selectDate(driver).click();		//Method to click on date at second row and fourth column
-		
-		File dir = new File("//home//ashitosh-avantis//Downloads//");
-		File[] dirContents = dir.listFiles();					//Counting number of files in directory before download
-		
-		Thread.sleep(500);
-		CFOcountPOM.clickExport(driver).click();				//CLicking on 'Export to Excel' button
-		
-		Thread.sleep(3000);
-		File dir1 = new File("//home//ashitosh-avantis//Downloads//");
-		File[] dirContents1 = dir1.listFiles();					//Counting number of files in directory after download
-		
-		if(dirContents.length < dirContents1.length)
-		{
-			test.log(LogStatus.PASS, "File downloaded successfully.");	
-		}
-		else
-		{
-			test.log(LogStatus.FAIL, "File does not downloaded.");
-		}
-		
-		Thread.sleep(500);
-		performer.OverduePOM.clickDashboard(driver).click();
-		
-		extent.endTest(test);
-		extent.flush();
-	}
 	
 	@Test(priority = 24)
 	void AuditReport() throws InterruptedException, IOException

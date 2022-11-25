@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -95,6 +96,12 @@ public class OverduePOM
 		dropdown = driver.findElement(By.xpath("//select[@id='ddlStatus']"));
 		return dropdown;
 	}
+	
+	public static WebElement selectStatutoryDropdown1(WebDriver driver)		//Method to search dropdown box
+	{
+		dropdown = driver.findElement(By.xpath("//*[@id='ddlStatus2']"));
+		return dropdown;
+	}
 	//*[@id="ddlStatus"]
 	public static WebElement complianceDocLink(WebDriver driver)
 	{
@@ -120,9 +127,21 @@ public class OverduePOM
 		return upload;
 	}
 	
+	public static WebElement fileUploadStatutory2(WebDriver driver)			//Method to search Choose File button. 
+	{
+		upload = driver.findElement(By.xpath("//*[@id='fuSampleFile2']"));
+		return upload;
+	}
+	
 	public static WebElement selectDateStatutory(WebDriver driver)			//Method to search Date Box
 	{
 		date = driver.findElement(By.xpath("//*[@id='tbxDate']"));
+		return date;
+	}
+	
+	public static WebElement selectDateStatutory1(WebDriver driver)			//Method to search Date Box
+	{
+		date = driver.findElement(By.xpath("//*[@id='tbxDate2']"));
 		return date;
 	}
 	
@@ -141,6 +160,12 @@ public class OverduePOM
 	public static WebElement remark(WebDriver driver)						//Method created to search text area 
 	{
 		value = driver.findElement(By.xpath("//textarea[@id='tbxRemarks']"));
+		return value;//*[@id="tbxRemarks"]
+	}
+	
+	public static WebElement remark1(WebDriver driver)						//Method created to search text area 
+	{
+		value = driver.findElement(By.xpath("//*[@id='tbxRemarks2']"));
 		return value;//*[@id="tbxRemarks"]
 	}
 	
@@ -329,14 +354,32 @@ public class OverduePOM
 	public static WebElement readActivatedEvents(WebDriver driver)		//Method to click on Internal Checklist value
 	{
 		activatedEvents = driver.findElement(By.xpath("//div[@id='ContentPlaceHolder1_divActivatedEventPREOcount']"));
-		return activatedEvents;
+		return activatedEvents;                        //*[@id="ContentPlaceHolder1_divActivatedEventPEOcount"]
+	}
+	
+	public static WebElement readActivatedEventsOw(WebDriver driver)		//Method to click on Internal Checklist value
+	{
+		activatedEvents = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divActivatedEventPEOcount']"));
+		return activatedEvents;                       
 	}
 	
 	public static WebElement clickAssignedEvents(WebDriver driver)		//Method to click on Internal Checklist value
 	{
 		assignedEvents = driver.findElement(By.xpath("//div[@id='ContentPlaceHolder1_divAssignedEventPREOcount']"));
-		return assignedEvents;
+		return assignedEvents;                        //*[@id="ContentPlaceHolder1_divAssignedEventPEOcount"]
 	}
+	
+	public static WebElement clickAssignedEventsOw(WebDriver driver)		//Method to click on Internal Checklist value
+	{
+		assignedEvents = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divAssignedEventPEOcount']"));
+		return assignedEvents;                        //*[@id="ContentPlaceHolder1_divAssignedEventPEOcount"]
+	}
+	
+	public static WebElement readTotalItemsD(WebDriver driver)		//Method to click on Internal Checklist value
+	{
+		assignedEvents = driver.findElement(By.xpath("//*[@id='grid']/div[4]/span[2]"));
+		return assignedEvents;                        //*[@id="ContentPlaceHolder1_divAssignedEventPEOcount"]
+	}                                                
 	
 	public static List<WebElement> clickCheckBoxes(WebDriver driver)	//Method to search multiple check boxes for CheckList count
 	{
@@ -347,14 +390,14 @@ public class OverduePOM
 	public static List<WebElement> clickTextBoxes(WebDriver driver)		//Method to search multiple text boxes for CheckList count
 	{
 		textboxes = driver.findElements(By.xpath("//input[@type='text'][@class='k-textbox']"));
-		return textboxes;
+		return textboxes;//*[@id="grid"]/div[3]/table/tbody/tr[1]/td[5]/input
 	}
 	
 	public static List<WebElement> clickDates(WebDriver driver)			//Method to search multiple date textboxes
-	{
+	{//tbody/tr[1]/td[5]/input[1]
 		//dates = driver.findElements(By.xpath("//input[@type='date'][@class='k-textbox']"));
 		dates = driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[6]/input"));
-	//	dates = driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[6]"));
+		//dates = driver.findElements(By.xpath("//tbody/tr[1]/td[5]/input[1]"));
 		return dates;
 	}
 	
@@ -362,12 +405,12 @@ public class OverduePOM
 	{
 		viewEvent = driver.findElements(By.xpath("//a[@class = 'k-button k-button-icontext ob-overview k-grid-edit1']"));
 		return viewEvent;
-	}//label[@class='k-checkbox-label k-no-text']
+	}//label[@class='k-checkbox-label k-no-text']//*[@id="grid"]/div[3]/table/tbody/tr[1]/td[6]/a[2]
 	
 	public static WebElement closeViewEvent(WebDriver driver)			//Method to search 'Back' button of opened view.
 	{
 		closeView = driver.findElement(By.xpath("//a[@class='k-button k-bare k-button-icon k-window-action']"));
-		return closeView;
+		return closeView;                       
 	}
 	
 	public static List<WebElement> clickActivate(WebDriver driver)		//Method to search multiple Activate buttons.
@@ -513,12 +556,18 @@ public class OverduePOM
 	public static List<WebElement> clickCalenderAction(WebDriver driver)		//Searching action button on form near to calendar
 	{
 		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overview k-grid-edit2']"));
-		return elementsList;
+		return elementsList;                        
 	}//*[@role='button'][@class='k-button k-button-icontext ob-overview k-grid-edit2']]
 	
 	public static WebElement clickMyReminder(WebDriver driver)			//Searching 'My Reminder' button
 	{
 		performer = driver.findElement(By.xpath("//*[@id='leftremindersmenu']"));
+		return performer;
+	}
+	
+	public static WebElement CalenderGrid(WebDriver driver)				//Searching 'Add New' button to add reminder
+	{
+		performer = driver.findElement(By.xpath("//*[@id='grid']/div[3]"));
 		return performer;
 	}
 	
@@ -684,6 +733,12 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement clickMyEscalation(WebDriver driver)			//Searching 'My Documents'
+	{
+		performer = driver.findElement(By.xpath("//*[@id='leftescalationmenu']"));
+		return performer;
+	}
+	
 	public static WebElement clickCriticalDocuments(WebDriver driver)	//Searching 'Critical Document' under My Documents
 	{
 		performer = driver.findElement(By.xpath("//*[@id='DocumentShareListNew']"));
@@ -758,8 +813,8 @@ public class OverduePOM
 	
 	public static WebElement clickPeopleCheckBox(WebDriver driver)		//Clicking on Checkbox in front of name
 	{
-		performer = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[131]/a/label"));
-		return performer;
+		performer = driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]/div[3]/div/span/div/ul/li[25]/a/label"));
+		return performer;                        //*[@id="divOpenPermissionPopup"]/div/div/div[2]/div[3]/div/span/div/ul/li[25]/a/label/text()
 	}
 	
 	public static WebElement clickLabel(WebDriver driver)				//Searching label to click on it.
@@ -1427,14 +1482,15 @@ public class OverduePOM
 		clickLocation(driver).click();							//Clicking on 'Location' drop down
 		Thread.sleep(500);
 		elementsList = selectLocation1(driver);
+	//	JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
-		elementsList.get(4).click();							//Selecting third menu from drop down.
+		elementsList.get(2).click();							//Selecting third menu from drop down.
 		
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOf(clickCompliance1(driver)));
 		clickCompliance1(driver).click();						//Clicking on 'Compliance' drop down
 		elementsList = selectCompliance1(driver);
-		elementsList.get(1).click();							//Selecting second menu from drop down.
+		elementsList.get(2).click();							//Selecting second menu from drop down.
 		
 		Thread.sleep(500);
 		litigationPerformer.MethodsPOM.progress(driver);
@@ -1466,7 +1522,7 @@ public class OverduePOM
 		
 		driver.switchTo().parentFrame();
 		closeReminder(driver).click();							//Closing the Reminder popped window
-		
+		//*[@id = 'ValidationSummary1']/ul/li
 		test.log(LogStatus.INFO, actualMsg);
 		
 		Thread.sleep(1000);
@@ -1560,26 +1616,26 @@ public class OverduePOM
 		Thread.sleep(500);
 		String name = readFolderName(driver).getText();		//Reading the folder name to create new folder.
 		
-		String folder = name+"T"; 
+		String folder = name+"E"; 
 		
 		clickNew(driver).click();							//Clicking on '+New' button.
 		
-		Thread.sleep(300);
+		Thread.sleep(1000);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
 		Thread.sleep(500);
 		clickNewFolder(driver).click();						//Clicking on 'New Folder'
 		
-		Thread.sleep(300);
+		Thread.sleep(2000);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
 		Thread.sleep(300);
 		clickIsUniversal(driver).click();
 		
-		Thread.sleep(300);
+		Thread.sleep(1000);
 		writeFolderName(driver).sendKeys(folder);			//Writing Folder name.
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		clickCreate(driver).click();						//Clicking on create button.
 		
 		Thread.sleep(500);
@@ -1605,10 +1661,10 @@ public class OverduePOM
 		
 		Thread.sleep(500);
 		readFolderName(driver).click();						//Clicking on folder name we had created.
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		readFolderName(driver).click();						//Clicking on folder name we had created.
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
 		Thread.sleep(500);
@@ -1622,7 +1678,7 @@ public class OverduePOM
 		wait.until(ExpectedConditions.elementToBeClickable(clickNewFile(driver)));
 		clickNewFile(driver).click();						//CLicking on 'New File'
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
 		Thread.sleep(500);
@@ -1648,7 +1704,7 @@ public class OverduePOM
 		Thread.sleep(500);
 		clickShareFolder(driver).click();					//Clicking on Share Folder image.
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
 		Thread.sleep(500);
@@ -1663,17 +1719,17 @@ public class OverduePOM
 		clickPeopleCheckBox(driver).click();				//Clicking on label to get out from people search box
 		driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]")).click();
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		clickDone(driver).click();	//Clicking on 'Done' to share folder.
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.switchTo().alert().accept();
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		readFolderName(driver).click();						//Clicking on file name we had uploaded.
 		
 		Thread.sleep(500);
 		clickShareFolder(driver).click();					//Clicking on Share File image.
-		
+		Thread.sleep(500);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_myRepeater_LnkDeletShare_0']")));	//Waiting till the share element gets visible
 		
 		//Thread.sleep(1000);
@@ -1684,8 +1740,30 @@ public class OverduePOM
 		
 		Thread.sleep(500);
 		closeSharePoppup(driver).click();
-		
 		Thread.sleep(500);
+		Thread.sleep(1000);
+		readFolderName(driver).click();	
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[5]")).click();
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkMyDrive']")).click();
+		Thread.sleep(3000);
+		//driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilter']")).sendKeys(folder,Keys.ENTER);   //search folder
+	/*	
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail_lnkEditFolder_0']")).click();
+		Thread.sleep(1000);
+	
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).clear();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).sendKeys("Automated");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnCreateFolder1']")).click();
+	*/	Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilter']")).sendKeys(folder,Keys.ENTER);   //search folder
+
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard(driver)));
 		OverduePOM.clickDashboard(driver).click();			//Clicking on Dashboard
 	}
