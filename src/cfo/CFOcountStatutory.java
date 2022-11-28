@@ -49,8 +49,8 @@ public class CFOcountStatutory
 	
 	//Write "CFO-diy" for DIYProduction link.
 	//Write "CFO" for login.avantis for CFO Finance
-	//public static String link = "CFO";           //Check link in excel sheet first.
-	public static String link = "Auditor";		
+	public static String link = "CFO";           //Check link in excel sheet first.
+			
 		
 	
 	public static XSSFSheet ReadExcel() throws IOException
@@ -58,7 +58,7 @@ public class CFOcountStatutory
 		//String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
 		fis = new FileInputStream("C:/March2022/PerformerPom/TestData/ComplianceSheet.xlsx");
 		workbook = new XSSFWorkbook(fis);
-		sheet = workbook.getSheetAt(5);					//Retrieving third sheet of Workbook
+		sheet = workbook.getSheetAt(2);					//Retrieving third sheet of Workbook
 		return sheet;
 	}
 	

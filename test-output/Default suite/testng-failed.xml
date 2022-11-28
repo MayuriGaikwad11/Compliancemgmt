@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="cfo.CFOcountStatutory">
+      <class name="auditor.AuditorcountInternal">
         <methods>
-          <include name="Closing"/>
-          <include name="RiskSummaryCriticalStatutory"/>
+          <include name="Overdue_PieChartInternal"/>
+          <include name="Rejected_PieChartInternal"/>
           <include name="setBrowser"/>
+          <include name="PFR_PieChartInternal"/>
         </methods>
-      </class> <!-- cfo.CFOcountStatutory -->
+      </class> <!-- auditor.AuditorcountInternal -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
