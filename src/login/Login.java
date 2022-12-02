@@ -26,7 +26,7 @@ public class Login
 	
 	public static WebDriver UserLogin(String username, String password, String method) throws InterruptedException
 	{		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
 		
 		LoginPOM.setUname(driver).sendKeys(username);		//Sent username to input box 
@@ -75,6 +75,10 @@ public class Login
 			{
 				ans1 = getAnswerAuditor(que1);						//Storing the answer in ans variable.
 			}
+			else if(method.equalsIgnoreCase("Shivraj") )
+			{
+				ans1 = getAnswerApproval(que1);						//Storing the answer in ans variable.
+			}
 			else if(method.equalsIgnoreCase("cfo-diy"))
 			{
 				ans1 = "123";						//Storing the answer in ans variable.
@@ -108,6 +112,10 @@ public class Login
 			else if(method.equalsIgnoreCase("Auditor") )
 			{
 				ans2 = getAnswerAuditor(que2);						//Storing the answer in ans variable.
+			}
+			else if(method.equalsIgnoreCase("Shivraj") )
+			{
+				ans2 = getAnswerApproval(que2);						//Storing the answer in ans variable.
 			}
 			else if(method.equalsIgnoreCase("cfo-diy") )
 			{
@@ -145,12 +153,12 @@ public class Login
 			else
 			{
 				LoginPOM.clickComplicane(driver).click();			//Clicking on Compliance Image.
-				Thread.sleep(5000);
+				Thread.sleep(6000);
 			}
 			
 			try
 			{
-				Thread.sleep(500);
+				Thread.sleep(2000);
 				if(OverduePOM.closeMessage(driver).isDisplayed())	//If Compliance Updation message popped up,
 				{
 					wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage(driver)));
@@ -229,6 +237,20 @@ public class Login
 		String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
 		if(ans.equalsIgnoreCase("pet"))
 			ans = "pet";
+		if(ans.equalsIgnoreCase("car"))
+			ans = "car";
+		if(ans.equalsIgnoreCase("place"))
+			ans = "place";
+		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	}
+	
+	public static String getAnswerApproval(String que)			//Method created to extract last word from question
+	{														//as it is the answer of the question.
+		String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
+		int len = last.length();							
+		String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+		if(ans.equalsIgnoreCase("power"))
+			ans = "power";
 		if(ans.equalsIgnoreCase("car"))
 			ans = "car";
 		if(ans.equalsIgnoreCase("place"))

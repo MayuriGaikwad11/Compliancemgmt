@@ -1490,8 +1490,8 @@ public class OverduePOM
 		wait.until(ExpectedConditions.visibilityOf(clickCompliance1(driver)));
 		clickCompliance1(driver).click();						//Clicking on 'Compliance' drop down
 		elementsList = selectCompliance1(driver);
-		elementsList.get(2).click();							//Selecting second menu from drop down.
-		
+	//	elementsList.get(2).click();							//Selecting second menu from drop down.CFO
+		elementsList.get(1).click();                           //Auditor
 		Thread.sleep(500);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
@@ -1610,7 +1610,7 @@ public class OverduePOM
 		Thread.sleep(500);
 		clickCriticalDocuments(driver).click();				//Clicking on 'Critical Documents'
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail']")));	//Wating till the content table gets visible
 		
 		Thread.sleep(500);
@@ -1713,8 +1713,8 @@ public class OverduePOM
 		clickSearchPeople(driver).click();					//Clicking on Search People drop down.
 		
 		Thread.sleep(500);
-		clickSearchPeople(driver).sendKeys("amol");			//Writing user name to search for
-		
+	//	clickSearchPeople(driver).sendKeys("amol");			//Writing user name to search for  CFO
+		clickSearchPeople(driver).sendKeys("Company");	        // Auditor
 		Thread.sleep(500);
 		clickPeopleCheckBox(driver).click();				//Clicking on label to get out from people search box
 		driver.findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]")).click();
