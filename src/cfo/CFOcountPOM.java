@@ -489,6 +489,12 @@ public class CFOcountPOM
 	{
 		piechart = driver.findElement(By.xpath("(//*[@class=' highcharts-button-box'])[4]"));
 		return piechart;
+	}//*[@id="highcharts-4"]/svg/g[5]
+	
+	public static WebElement clickBack3(WebDriver driver)
+	{
+		piechart = driver.findElement(By.xpath("//*[@id='highcharts-4']/svg/g[5]"));
+		return piechart;
 	}
 	
 	public static WebElement clickIndustrySpeCritical(WebDriver driver)			//"Statutory" Method to search Labour compliance High risk value.
@@ -609,7 +615,7 @@ public class CFOcountPOM
 	{
 		bargraph = driver.findElement(By.xpath("//*[@id='divOverView']/div/div/div[1]/button"));
 		return bargraph;                        //*[@id="divOverView"]/div/div/div[1]/button                
-	}                                          
+	}                                  //*[@id="divGRreports"]/div/div/div[1]/button        
 	  
 	public static WebElement closeDocument2(WebDriver driver)				//Method to search cross of document to close it.
 	{
@@ -626,6 +632,12 @@ public class CFOcountPOM
 	public static WebElement closeViewDoc(WebDriver driver)				//Method to search cross of document to close it.
 	{
 		bargraph = driver.findElement(By.xpath("//*[@id='divOverViewMain']/div/div/div[1]/button"));
+		return bargraph;                           
+	}  
+	
+	public static WebElement closeViewDocGR(WebDriver driver)				//Method to search cross of document to close it.
+	{
+		bargraph = driver.findElement(By.xpath(" //*[@id='divGRreports']/div/div/div[1]/button"));
 		return bargraph;                           
 	}  
 	
@@ -683,6 +695,12 @@ public class CFOcountPOM
 	public static WebElement clickRiskHighClosedDelayed(WebDriver driver)	//Method to search 'High Risk - After Due Date' compliance of Risk Summary.
 	{
 		risksummary = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[6]"));
+		return risksummary;
+	}
+	
+	public static WebElement clickRiskHighClosedDelayedA(WebDriver driver)	//Method to search 'High Risk - After Due Date' compliance of Risk Summary.
+	{
+		risksummary = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[10]"));
 		return risksummary;
 	}
 	
@@ -857,6 +875,12 @@ public class CFOcountPOM
 		return department;
 	}
 	
+	public static WebElement clickAccountClosedDelayed(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[34]"));
+		return department;
+	}
+	
 	public static WebElement clickFinanceClosedDelayed(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[39]"));
@@ -866,6 +890,12 @@ public class CFOcountPOM
 	public static WebElement clickHumanClosedTimely(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[48]"));
+		return department;
+	}
+	
+	public static WebElement clickAccountClosedTimely(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[31]"));
 		return department;
 	}
 	
@@ -881,6 +911,12 @@ public class CFOcountPOM
 		return department;
 	}
 	
+	public static WebElement clickAccountOverdue(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[32]"));
+		return department;
+	}
+	
 	public static WebElement clickFinanceOverdue(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[53]"));
@@ -890,6 +926,18 @@ public class CFOcountPOM
 	public static WebElement clickHumanPendingReview(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[76]"));
+		return department;
+	}
+	
+	public static WebElement clickAccountPendingReview(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[33]"));
+		return department;
+	}
+	
+	public static WebElement clickAccountRejected(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[34]"));
 		return department;
 	}
 	
@@ -2068,7 +2116,7 @@ public class CFOcountPOM
 			Thread.sleep(3000);
 			
   By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[16]/a");
-			
+
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
 			// retrieving "foo-button" HTML element

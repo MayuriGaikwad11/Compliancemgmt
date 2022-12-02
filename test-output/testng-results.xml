@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="208852" started-at="2022-12-01T19:27:53 IST" finished-at="2022-12-01T19:31:22 IST">
+  <suite name="Default suite" duration-ms="82072" started-at="2022-12-02T19:31:34 IST" finished-at="2022-12-02T19:32:56 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="208852" started-at="2022-12-01T19:27:53 IST" finished-at="2022-12-01T19:31:22 IST">
-      <class name="approval.ApprovalcountStatutory">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:approval.ApprovalcountStatutory@5185bd]" name="setBrowser" is-config="true" duration-ms="11742" started-at="2022-12-01T19:27:53 IST" finished-at="2022-12-01T19:28:05 IST">
+    <test name="Default test" duration-ms="82072" started-at="2022-12-02T19:31:34 IST" finished-at="2022-12-02T19:32:56 IST">
+      <class name="cfo.CFOcountStatutory">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="setBrowser" is-config="true" duration-ms="34619" started-at="2022-12-02T19:31:34 IST" finished-at="2022-12-02T19:32:09 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:approval.ApprovalcountStatutory@5185bd]" name="Login" duration-ms="34424" started-at="2022-12-01T19:28:05 IST" finished-at="2022-12-01T19:28:39 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@bf3d14]" name="Login" duration-ms="28597" started-at="2022-12-02T19:32:09 IST" finished-at="2022-12-02T19:32:37 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="NotCompleted_PieChart()[pri:7, instance:approval.ApprovalcountStatutory@5185bd]" name="NotCompleted_PieChart" duration-ms="59125" started-at="2022-12-01T19:28:39 IST" finished-at="2022-12-01T19:29:38 IST">
+        <test-method status="PASS" signature="CompliancesCountMatch()[pri:3, instance:cfo.CFOcountStatutory@bf3d14]" name="CompliancesCountMatch" duration-ms="18734" started-at="2022-12-02T19:32:37 IST" finished-at="2022-12-02T19:32:56 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NotCompleted_PieChart -->
-        <test-method status="PASS" signature="ClosedDelayed_PieChart()[pri:8, instance:approval.ApprovalcountStatutory@5185bd]" name="ClosedDelayed_PieChart" duration-ms="55625" started-at="2022-12-01T19:29:38 IST" finished-at="2022-12-01T19:30:34 IST">
+        </test-method> <!-- CompliancesCountMatch -->
+        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="Closing" is-config="true" duration-ms="0" started-at="2022-12-02T19:32:56 IST" finished-at="2022-12-02T19:32:56 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ClosedDelayed_PieChart -->
-        <test-method status="PASS" signature="ClosedTimely_PieChart()[pri:9, instance:approval.ApprovalcountStatutory@5185bd]" name="ClosedTimely_PieChart" duration-ms="47832" started-at="2022-12-01T19:30:34 IST" finished-at="2022-12-01T19:31:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ClosedTimely_PieChart -->
-      </class> <!-- approval.ApprovalcountStatutory -->
+        </test-method> <!-- Closing -->
+      </class> <!-- cfo.CFOcountStatutory -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

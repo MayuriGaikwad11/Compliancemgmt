@@ -228,7 +228,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	
+	*/
 	@Test(priority = 3)
 	void CompliancesCountMatch() throws InterruptedException
 	{
@@ -275,7 +275,7 @@ public class CFOcountStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	
+	/*
 	@Test(priority = 4)
 	void UsersCountMatch() throws InterruptedException
 	{
@@ -1916,7 +1916,7 @@ public class CFOcountStatutory
 	}
 	*/
 	
-	@Test(priority = 25)
+//	@Test(priority = 25)
 	void NotCompleted_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Completion Status- 'Not Completed' Count Verification");
@@ -2016,7 +2016,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	@Test(priority = 26)
+//	@Test(priority = 26)
 	void ClosedDelayed_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Closed Delayed' Count Verification");
@@ -2113,7 +2113,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	@Test(priority = 27)
+	//@Test(priority = 27)
 	void ClosedTimely_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Completion Status- 'Closed Timely' Count Verification");
@@ -2213,10 +2213,10 @@ public class CFOcountStatutory
 		}
 	}
 	
-	@Test(priority = 28)
+//	@Test(priority = 28)
 	void NotApplicable_PieChartPeriod() throws InterruptedException
 	{
-		test = extent.startTest("Pie Chart -Completion Status- 'Not Applicable' Count Verification");
+		test = extent.startTest("Period-Pie Chart -Completion Status- 'Not Applicable' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		Actions action = new Actions(driver);
@@ -2304,7 +2304,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	@Test(priority = 29)
+//	@Test(priority = 29)
 	void Overdue_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- 'Overdue' Count Verification");
@@ -2406,7 +2406,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	@Test(priority = 30)
+//	@Test(priority = 30)
 	void dueToday_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- 'dueToday' Count Verification");
@@ -2507,7 +2507,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	@Test(priority = 31)
+	//@Test(priority = 31)
 	void pendingForReview_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- 'Pending For Review' Count Verification");
@@ -2609,7 +2609,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	@Test(priority = 32)
+	//@Test(priority = 32)
 	void rejected_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- ' Rejected' Count Verification");
