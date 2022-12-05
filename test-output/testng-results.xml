@@ -1,29 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="14" passed="14">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="82072" started-at="2022-12-02T19:31:34 IST" finished-at="2022-12-02T19:32:56 IST">
+  <suite name="Default suite" duration-ms="658591" started-at="2022-12-05T16:36:26 IST" finished-at="2022-12-05T16:47:24 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="82072" started-at="2022-12-02T19:31:34 IST" finished-at="2022-12-02T19:32:56 IST">
-      <class name="cfo.CFOcountStatutory">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="setBrowser" is-config="true" duration-ms="34619" started-at="2022-12-02T19:31:34 IST" finished-at="2022-12-02T19:32:09 IST">
+    <test name="Default test" duration-ms="658591" started-at="2022-12-05T16:36:26 IST" finished-at="2022-12-05T16:47:24 IST">
+      <class name="approval.ApprovalcountInternal">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:approval.ApprovalcountInternal@bf3d14]" name="setBrowser" is-config="true" duration-ms="18696" started-at="2022-12-05T16:36:26 IST" finished-at="2022-12-05T16:36:44 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@bf3d14]" name="Login" duration-ms="28597" started-at="2022-12-02T19:32:09 IST" finished-at="2022-12-02T19:32:37 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:approval.ApprovalcountInternal@bf3d14]" name="Login" duration-ms="50410" started-at="2022-12-05T16:36:44 IST" finished-at="2022-12-05T16:37:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="CompliancesCountMatch()[pri:3, instance:cfo.CFOcountStatutory@bf3d14]" name="CompliancesCountMatch" duration-ms="18734" started-at="2022-12-02T19:32:37 IST" finished-at="2022-12-02T19:32:56 IST">
+        <test-method status="PASS" signature="clickCategoriesInternal()[pri:2, instance:approval.ApprovalcountInternal@bf3d14]" name="clickCategoriesInternal" duration-ms="70896" started-at="2022-12-05T16:37:35 IST" finished-at="2022-12-05T16:38:46 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CompliancesCountMatch -->
-        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="Closing" is-config="true" duration-ms="0" started-at="2022-12-02T19:32:56 IST" finished-at="2022-12-02T19:32:56 IST">
+        </test-method> <!-- clickCategoriesInternal -->
+        <test-method status="PASS" signature="ClickCompliancesInternal()[pri:3, instance:approval.ApprovalcountInternal@bf3d14]" name="ClickCompliancesInternal" duration-ms="13788" started-at="2022-12-05T16:38:46 IST" finished-at="2022-12-05T16:39:00 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Closing -->
-      </class> <!-- cfo.CFOcountStatutory -->
+        </test-method> <!-- ClickCompliancesInternal -->
+        <test-method status="PASS" signature="clickUsersInternal()[pri:4, instance:approval.ApprovalcountInternal@bf3d14]" name="clickUsersInternal" duration-ms="15490" started-at="2022-12-05T16:39:00 IST" finished-at="2022-12-05T16:39:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickUsersInternal -->
+        <test-method status="PASS" signature="SummaryofOverdueCompliances()[pri:5, instance:approval.ApprovalcountInternal@bf3d14]" name="SummaryofOverdueCompliances" duration-ms="36570" started-at="2022-12-05T16:39:15 IST" finished-at="2022-12-05T16:39:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SummaryofOverdueCompliances -->
+        <test-method status="PASS" signature="NotCompleted_PieChart()[pri:6, instance:approval.ApprovalcountInternal@bf3d14]" name="NotCompleted_PieChart" duration-ms="35923" started-at="2022-12-05T16:39:52 IST" finished-at="2022-12-05T16:40:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NotCompleted_PieChart -->
+        <test-method status="PASS" signature="Overdue_PieChartInternal()[pri:7, instance:approval.ApprovalcountInternal@bf3d14]" name="Overdue_PieChartInternal" duration-ms="34922" started-at="2022-12-05T16:40:28 IST" finished-at="2022-12-05T16:41:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Overdue_PieChartInternal -->
+        <test-method status="PASS" signature="PFR_PieChartInternal()[pri:8, instance:approval.ApprovalcountInternal@bf3d14]" name="PFR_PieChartInternal" duration-ms="71989" started-at="2022-12-05T16:41:03 IST" finished-at="2022-12-05T16:42:14 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PFR_PieChartInternal -->
+        <test-method status="PASS" signature="Rejected_PieChartInternal()[pri:11, instance:approval.ApprovalcountInternal@bf3d14]" name="Rejected_PieChartInternal" duration-ms="62411" started-at="2022-12-05T16:42:14 IST" finished-at="2022-12-05T16:43:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Rejected_PieChartInternal -->
+        <test-method status="PASS" signature="NotCompleted_PieChartPeriod()[pri:13, instance:approval.ApprovalcountInternal@bf3d14]" name="NotCompleted_PieChartPeriod" duration-ms="50879" started-at="2022-12-05T16:43:17 IST" finished-at="2022-12-05T16:44:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NotCompleted_PieChartPeriod -->
+        <test-method status="PASS" signature="Overdue_PieChartInternalPeriod()[pri:14, instance:approval.ApprovalcountInternal@bf3d14]" name="Overdue_PieChartInternalPeriod" duration-ms="36826" started-at="2022-12-05T16:44:08 IST" finished-at="2022-12-05T16:44:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Overdue_PieChartInternalPeriod -->
+        <test-method status="PASS" signature="PFR_PieChartInternalPeriod()[pri:15, instance:approval.ApprovalcountInternal@bf3d14]" name="PFR_PieChartInternalPeriod" duration-ms="75724" started-at="2022-12-05T16:44:45 IST" finished-at="2022-12-05T16:46:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PFR_PieChartInternalPeriod -->
+        <test-method status="PASS" signature="Rejected_PieChartInternalPeriod()[pri:16, instance:approval.ApprovalcountInternal@bf3d14]" name="Rejected_PieChartInternalPeriod" duration-ms="62527" started-at="2022-12-05T16:46:00 IST" finished-at="2022-12-05T16:47:03 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Rejected_PieChartInternalPeriod -->
+        <test-method status="PASS" signature="AssignmentReportInternal()[pri:17, instance:approval.ApprovalcountInternal@bf3d14]" name="AssignmentReportInternal" duration-ms="21365" started-at="2022-12-05T16:47:03 IST" finished-at="2022-12-05T16:47:24 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssignmentReportInternal -->
+      </class> <!-- approval.ApprovalcountInternal -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

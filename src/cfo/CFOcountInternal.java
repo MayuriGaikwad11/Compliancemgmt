@@ -2114,14 +2114,6 @@ public class CFOcountInternal
 		extent.flush();
 	}
 	
-		
-	
-	
-	
-	
-	
-	
-	
 	//@Test(priority = 19)
 	void GradingReportInternal() throws InterruptedException, IOException
 	{

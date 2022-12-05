@@ -363,6 +363,12 @@ public class CFOcountPOM
 		return piechart;
 	}
 	
+	public static WebElement clickOverdueInternalApp(WebDriver driver)					//Method to search In Time count to click on from Pie Chart.
+	{
+		piechart = driver.findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 ']"));
+		return piechart;
+	}
+	
 	public static WebElement clickdueToday(WebDriver driver)					//Method to search In Time count to click on from Pie Chart.
 	{
 		piechart = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label'])[2]"));
@@ -398,6 +404,13 @@ public class CFOcountPOM
 		piechart = driver.findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-4 highcharts-drilldown-data-label']"));
 		return piechart;
 	}
+	
+	public static WebElement clickRejectedPe1(WebDriver driver)					//Method to search In Time count to click on from Pie Chart.
+	{
+		piechart = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-4 highcharts-drilldown-data-label'])[2]"));
+		return piechart;
+	}
+	
 	
 	public static WebElement readCritical(WebDriver driver)						//Method to read High risk Value (For all types)
 	{
@@ -820,6 +833,7 @@ public class CFOcountPOM
 		return department;
 	}
 	
+	
 	public static WebElement clickFinanceClosedTimelyInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[28]"));
@@ -832,11 +846,24 @@ public class CFOcountPOM
 		return department;
 	}
 	
+	public static WebElement clickAccountOverdueInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[32]"));
+		return department;
+	}
+	
 	public static WebElement clickFinancePenFReviewInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[34]"));
 		return department;
 	}
+	
+	public static WebElement clickAccountPenFReviewInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[33]"));
+		return department;
+	}
+	
 	
 	public static WebElement clickFinanceInProgressInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
@@ -847,6 +874,12 @@ public class CFOcountPOM
 	public static WebElement clickFinanceRejectedInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[40]"));
+		return department;
+	}
+	
+	public static WebElement clickAccountRejectedInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[35]"));
 		return department;
 	}
 	
@@ -2374,7 +2407,7 @@ public class CFOcountPOM
 			test.log(LogStatus.INFO, "'"+risk+"' risk compliance count = " + complianceCount + " | Total number of items from grid = "+count);
 		}
 	}
-	
+ 	
  	public static void GraphCountInPe1(WebDriver driver, ExtentTest test, String risk, int complianceCount, String Compliance)throws InterruptedException
 	{
 		Thread.sleep(500);
@@ -3494,7 +3527,6 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		CFOcountPOM.clickExportImage(driver).click();			//Exporting (Downloading) file
 		Thread.sleep(5000);
 		By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[23]/a");
-		  
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		Thread.sleep(4000);
 		// retrieving "foo-button" HTML element
@@ -3838,7 +3870,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		selectType2(driver).click();					//Clicking on Type drop down
 		Thread.sleep(500);
 		elementsList = clickType2(driver);
-		elementsList.get(3).click();					//Unselecting preselected 'Event Based' checkbox
+		//elementsList.get(3).click();					//Unselecting preselected 'Event Based' checkbox
 		elementsList.get(4).click();					//Selecting 'Internal' checkbox.
 	//	elementsList.get(5).click();
 		Thread.sleep(500);
