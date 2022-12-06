@@ -265,7 +265,7 @@ public class CFOcountStatutory
 		}
 		else
 		{
-			test.log(LogStatus.FAIL, "Number of compliances does not matches to Dashboard Statutory Overdue Count.");
+			test.log(LogStatus.FAIL, "Number of compliances does not matches to Dashboard Statutory Compliances Count.");
 			test.log(LogStatus.INFO, "No of Compliances in the grid = "+ComcountGrid+" | Dashboard Compliances  Count = "+CompliancesCountDas);
 		}
 		js.executeScript("window.scrollBy(500,0)");						//Scrolling UP window by 2000 px.
@@ -358,7 +358,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	*/
-//	@Test(priority = 6)
+	@Test(priority = 6)
 	void SummaryofOverdueCompliances() throws InterruptedException
 	{
 		test = extent.startTest(" Summary of Overdue Compliances");
@@ -406,7 +406,7 @@ public class CFOcountStatutory
 		
 	}
 	
-//	@Test(priority = 7)
+	@Test(priority = 7)
 	void NotCompleted_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Not Completed' Count Verification");

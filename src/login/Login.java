@@ -79,6 +79,10 @@ public class Login
 			{
 				ans1 = getAnswerApproval(que1);						//Storing the answer in ans variable.
 			}
+			else if(method.equalsIgnoreCase("Department") )
+			{
+				ans1 = getAnswerDept(que1);						//Storing the answer in ans variable.
+			}
 			else if(method.equalsIgnoreCase("cfo-diy"))
 			{
 				ans1 = "123";						//Storing the answer in ans variable.
@@ -116,6 +120,10 @@ public class Login
 			else if(method.equalsIgnoreCase("Shivraj") )
 			{
 				ans2 = getAnswerApproval(que2);						//Storing the answer in ans variable.
+			}
+			else if(method.equalsIgnoreCase("Department") )
+			{
+				ans2 = getAnswerDept(que2);						//Storing the answer in ans variable.
 			}
 			else if(method.equalsIgnoreCase("cfo-diy") )
 			{
@@ -217,6 +225,20 @@ public class Login
 	}
 	
 	public static String getAnswerMGMT(String que)			//Method created to extract last word from question
+	{														//as it is the answer of the question.
+		String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
+		int len = last.length();							
+		String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+		if(ans.equalsIgnoreCase("pet"))
+			ans = "pet";
+		if(ans.equalsIgnoreCase("car"))
+			ans = "car";
+		if(ans.equalsIgnoreCase("power"))
+			ans = "power";
+		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	}
+	
+	public static String getAnswerDept(String que)			//Method created to extract last word from question
 	{														//as it is the answer of the question.
 		String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
 		int len = last.length();							
