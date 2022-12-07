@@ -138,7 +138,7 @@ public class CFOcountPOM
 	//	categories = driver.findElement(By.xpath("//div[@id='divApiOverView']/div/div/div[1]/button"));
 		categories = driver.findElement(By.xpath("//*[@id='divApiOverView']/div/div/div[1]/button"));
 		
-		return categories;
+		return categories;//*[@id="divApiOverView"]/div/div/div[1]/button
 	}
 	
 	public static WebElement readCompliancesItems(WebDriver driver)			//Method for read total items in Compliances.
@@ -174,7 +174,7 @@ public class CFOcountPOM
 	public static WebElement ClickShowAllIn(WebDriver driver)				//Method to read total users items in Users.
 	{
 		SummaryofOverdueCom = driver.findElement(By.xpath("//*[@id='lnkInternalOverdueCompliance']"));
-		return SummaryofOverdueCom;                       
+		return SummaryofOverdueCom;                   
 	}
 	
 	public static List<WebElement> ActionviewList(WebDriver driver)			//Method to read all interests in Penalty.
@@ -400,6 +400,12 @@ public class CFOcountPOM
 		return piechart;
 	}
 	
+	public static WebElement clickpendingForReviewIND(WebDriver driver)					//Method to search In Time count to click on from Pie Chart.
+	{
+		piechart = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label'])[2]"));
+		return piechart;
+	}
+	
 	public static WebElement clickinProgress(WebDriver driver)					//Method to search In Time count to click on from Pie Chart.
 	{
 		piechart = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-3 highcharts-drilldown-data-label'])[2]"));
@@ -411,6 +417,14 @@ public class CFOcountPOM
 		piechart = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-4 highcharts-drilldown-data-label'])[2]"));
 		return piechart;
 	}
+	
+	public static WebElement clickRejectedIn(WebDriver driver)					//Method to search In Time count to click on from Pie Chart.
+	{
+		piechart = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-3 highcharts-drilldown-data-label'])[2]"));
+		return piechart;
+	}
+	
+	
 	
 	public static WebElement clickRejectedPe(WebDriver driver)					//Method to search In Time count to click on from Pie Chart.
 	{
@@ -893,6 +907,12 @@ public class CFOcountPOM
 		return department;
 	}
 	
+	public static WebElement clickAccountOverdueInternalD(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[22]"));
+		return department;
+	}
+	
 	public static WebElement clickFinancePenFReviewInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[34]"));
@@ -902,6 +922,12 @@ public class CFOcountPOM
 	public static WebElement clickAccountPenFReviewInternal(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
 	{
 		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[33]"));
+		return department;
+	}
+	
+	public static WebElement clickAccountPenFReviewInternalD(WebDriver driver)		//Method to search 'High Risk' bar of Department Summary.
+	{
+		department = driver.findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[29]"));
 		return department;
 	}
 	

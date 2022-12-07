@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import performer.OverduePOM;
-//https://meet.google.com/fpm-wbmt-eis
+
 public class Login 
 {
 	public static WebDriver driver = null;				//WebDriver instance created
