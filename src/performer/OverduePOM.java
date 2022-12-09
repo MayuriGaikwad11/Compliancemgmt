@@ -1746,7 +1746,7 @@ public class OverduePOM
 		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[5]")).click();
 		Thread.sleep(3000);
 		driver.switchTo().alert().accept();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkMyDrive']")).click();
 		Thread.sleep(3000);
 		//driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilter']")).sendKeys(folder,Keys.ENTER);   //search folder

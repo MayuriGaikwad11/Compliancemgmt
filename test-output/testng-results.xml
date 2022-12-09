@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="308746" started-at="2022-12-07T17:44:33 IST" finished-at="2022-12-07T17:49:41 IST">
+  <suite name="Default suite" duration-ms="116496" started-at="2022-12-09T18:54:08 IST" finished-at="2022-12-09T18:56:05 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="308746" started-at="2022-12-07T17:44:33 IST" finished-at="2022-12-07T17:49:41 IST">
-      <class name="departmentHead.DeptcountInternal">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:departmentHead.DeptcountInternal@5185bd]" name="setBrowser" is-config="true" duration-ms="23817" started-at="2022-12-07T17:44:33 IST" finished-at="2022-12-07T17:44:56 IST">
+    <test name="Default test" duration-ms="116496" started-at="2022-12-09T18:54:08 IST" finished-at="2022-12-09T18:56:05 IST">
+      <class name="departmentHead.DeptcountStatutory">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:departmentHead.DeptcountStatutory@5185bd]" name="setBrowser" is-config="true" duration-ms="14970" started-at="2022-12-09T18:54:08 IST" finished-at="2022-12-09T18:54:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:departmentHead.DeptcountInternal@5185bd]" name="Login" duration-ms="67436" started-at="2022-12-07T17:44:56 IST" finished-at="2022-12-07T17:46:04 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:departmentHead.DeptcountStatutory@5185bd]" name="Login" duration-ms="50274" started-at="2022-12-09T18:54:23 IST" finished-at="2022-12-09T18:55:14 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="GradingReportInternal()[pri:15, instance:departmentHead.DeptcountInternal@5185bd]" name="GradingReportInternal" duration-ms="125964" started-at="2022-12-07T17:46:04 IST" finished-at="2022-12-07T17:48:10 IST">
+        <test-method status="PASS" signature="DetailedReport()[pri:26, instance:departmentHead.DeptcountStatutory@5185bd]" name="DetailedReport" duration-ms="51142" started-at="2022-12-09T18:55:14 IST" finished-at="2022-12-09T18:56:05 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GradingReportInternal -->
-        <test-method status="PASS" signature="DailyUpdatesInternal()[pri:16, instance:departmentHead.DeptcountInternal@5185bd]" name="DailyUpdatesInternal" duration-ms="41543" started-at="2022-12-07T17:48:10 IST" finished-at="2022-12-07T17:48:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DailyUpdatesInternal -->
-        <test-method status="PASS" signature="NewsLetterInternal()[pri:17, instance:departmentHead.DeptcountInternal@5185bd]" name="NewsLetterInternal" duration-ms="49852" started-at="2022-12-07T17:48:51 IST" finished-at="2022-12-07T17:49:41 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NewsLetterInternal -->
-      </class> <!-- departmentHead.DeptcountInternal -->
+        </test-method> <!-- DetailedReport -->
+      </class> <!-- departmentHead.DeptcountStatutory -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3028,7 +3028,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[2]/td[6]/a");
 		extent.flush();
 	}
 	
-//	@Test(priority = 29)
+	//@Test(priority = 29)
 	void AssignmentReport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Assignment Report verification");
@@ -3116,7 +3116,7 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(160));
 		extent.flush();
 	}
 	
-	//@Test(priority = 32)
+//	@Test(priority = 32)
 	void ComplianceDocuments() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Documents  verification");
@@ -3228,7 +3228,7 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
 		extent.flush();
 	}
 	
-	//@Test(priority = 34)
+//	@Test(priority = 34)
 	void ActDocuments() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Act Documents  verification");
@@ -3268,7 +3268,7 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
 		extent.flush();
 	}
 	
-	//@Test(priority = 35) // pass
+//	@Test(priority = 35) // pass
 	void MyReminderStatutory() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reminder - Statutory Count Verification");
@@ -3280,81 +3280,8 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
 		extent.flush();
 	}
 
-	//@Test(priority = 36) //pass
-	void MyReminderInternal() throws InterruptedException, IOException
-	{
-		test = extent.startTest("My Reminder - Internal Count Verification");
-		test.log(LogStatus.INFO, "Test Initiated");
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickMyReminder(driver)));
-	//	OverduePOM.MyReminder(driver, test, "Internal");
-		OverduePOM.clickMyReminder(driver).click();
-		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickComplianceType(driver)));
-		OverduePOM.clickComplianceType(driver).click();
-		OverduePOM.clickInternalCheckbox(driver).click();
-		Thread.sleep(500);
-		OverduePOM.clickAddNewReminder(driver).click();								//Clicking on 'Add New' button 
-		
-               Thread.sleep(500);
-		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ContentPlaceHolder1_showReminderDetail"));
-		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectComplianceType1(driver)));
-		OverduePOM.selectComplianceType1(driver).click();				//Clicking on 'Compliance Type' drop down 
-		Thread.sleep(500);
-		OverduePOM.selectInternalType(driver).click();					//Clicking on 'Internal' menu.
-		Thread.sleep(1500);
-		Thread.sleep(1000);
-		OverduePOM.clickLocation(driver).click();							//Clicking on 'Location' drop down
-		Thread.sleep(500);
-		elementsList = OverduePOM.selectLocation1(driver);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,1000)");
-		elementsList.get(2).click();							//Selecting third menu from drop down.
-		
-		Thread.sleep(2000);
-		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickCompliance1(driver)));
-		OverduePOM.clickCompliance1(driver).click();						//Clicking on 'Compliance' drop down
-		elementsList = OverduePOM.selectCompliance1(driver);
-		elementsList.get(2).click();							//Selecting second menu from drop down.
-		
-		Thread.sleep(500);
-		litigationPerformer.MethodsPOM.progress(driver);
-		
-		Thread.sleep(500);
-		OverduePOM.clickRole(driver).click();								//Clicking on 'Role' drop down.
-		elementsList = OverduePOM.selectRole1(driver);
-		elementsList.get(1).click();							//Selecting second menu from drop down.
-		
-		Thread.sleep(500);
-		litigationPerformer.MethodsPOM.progress(driver);
-		
-		Thread.sleep(500);
-		OverduePOM.selectDateStatutory(driver).click();					//Clicking on 'Date' input box
-		Thread.sleep(300);
-		OverduePOM.selectNextMonth(driver).click();						//Clicking on Next month arrow on calendar
-		Thread.sleep(300);
-		OverduePOM.selectDate(driver).click();								//Clicking on date at second row and fourth column
-		
-		Thread.sleep(500);
-		OverduePOM.clickSaveButton(driver).click();						//Clicking 'Save' button.
-		
-		Thread.sleep(500);
-		litigationPerformer.MethodsPOM.progress(driver);
-		
-		Thread.sleep(500);
-		String actualMsg = OverduePOM.readReminderMsg1(driver).getText();	//Reading Message after Save
-		String expectedMsg1 = "Reminder Saved Sucessfully.";	//Expected message
-		
-		driver.switchTo().parentFrame();
-		OverduePOM.closeReminder(driver).click();							//Closing the Reminder popped window
-		//*[@id = 'ValidationSummary1']/ul/li
-		test.log(LogStatus.INFO, actualMsg);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
 	
-	//@Test(priority = 37) // pass
+//	@Test(priority = 36) // pass
 	void MyEscalation() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My  Escalation - Verification");
