@@ -2,6 +2,7 @@ package login;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -143,7 +144,7 @@ public class Login
 			LoginPOM.SubmitAnswer(driver).click();			//Clicking on Submit button.
 		}
 		
-			if(!method.equalsIgnoreCase("Implementation"))
+	/*		if(!method.equalsIgnoreCase("Implementation"))
 		{
 			wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickComplicane(driver)));
 		if(method.equalsIgnoreCase("License"))
@@ -178,7 +179,7 @@ public class Login
 				
 			}
 		}
-			//LoginPOM.ClickLitigation(driver).click();
+		*/	//LoginPOM.ClickLitigation(driver).click();
 		
 
 		return driver;
@@ -278,6 +279,22 @@ public class Login
 		if(ans.equalsIgnoreCase("place"))
 			ans = "place";
 		return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	}
+	
+	public static WebDriver UserLogin1(String username, String password, String method) throws InterruptedException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(60));
+		
+		LoginPOM.setUname(driver).sendKeys(username);		//Sent username to input box 
+		Thread.sleep(500);
+		LoginPOM.setPassword(driver).sendKeys(password);	//Sent password to input box
+		//LoginPOM.clickSubmit(driver).click();				//Clicked on Sign-in button
+		
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//	js.executeScript("window.scrollBy(0,200)");
+			Thread.sleep(2000);
+		return driver;
 	}
 	
 }

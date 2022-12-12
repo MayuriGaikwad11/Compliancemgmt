@@ -3805,8 +3805,12 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 			driver.findElement(By.xpath("//*[@id='Applybtn']")).click();
 			Thread.sleep(1000);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
-
-			performer.OverduePOM.clickDashboard(driver).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id='divLocationMain']/div")).click();
+			Thread.sleep(4000);
+			driver.findElement(By.xpath("//*[@id='db873bda-b92d-4edb-91c3-e644f7d4b04d_tv_active']/div/span[1]")).click();
+			Thread.sleep(4000);
+		//	performer.OverduePOM.clickDashboard(driver).click();
 	}
 	
 	

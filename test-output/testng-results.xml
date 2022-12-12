@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="116496" started-at="2022-12-09T18:54:08 IST" finished-at="2022-12-09T18:56:05 IST">
+  <suite name="Default suite" duration-ms="62868" started-at="2022-12-12T18:13:40 IST" finished-at="2022-12-12T18:14:43 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="116496" started-at="2022-12-09T18:54:08 IST" finished-at="2022-12-09T18:56:05 IST">
-      <class name="departmentHead.DeptcountStatutory">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:departmentHead.DeptcountStatutory@5185bd]" name="setBrowser" is-config="true" duration-ms="14970" started-at="2022-12-09T18:54:08 IST" finished-at="2022-12-09T18:54:23 IST">
+    <test name="Default test" duration-ms="62868" started-at="2022-12-12T18:13:40 IST" finished-at="2022-12-12T18:14:43 IST">
+      <class name="login.TestCase">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:login.TestCase@5185bd]" name="setBrowser" is-config="true" duration-ms="17126" started-at="2022-12-12T18:13:40 IST" finished-at="2022-12-12T18:13:57 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:departmentHead.DeptcountStatutory@5185bd]" name="Login" duration-ms="50274" started-at="2022-12-09T18:54:23 IST" finished-at="2022-12-09T18:55:14 IST">
+        <test-method status="PASS" signature="forgotPass()[pri:7, instance:login.TestCase@5185bd]" name="forgotPass" duration-ms="24016" started-at="2022-12-12T18:13:57 IST" finished-at="2022-12-12T18:14:21 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="DetailedReport()[pri:26, instance:departmentHead.DeptcountStatutory@5185bd]" name="DetailedReport" duration-ms="51142" started-at="2022-12-09T18:55:14 IST" finished-at="2022-12-09T18:56:05 IST">
+        </test-method> <!-- forgotPass -->
+        <test-method status="PASS" signature="forgotPass1()[pri:8, instance:login.TestCase@5185bd]" name="forgotPass1" duration-ms="21593" started-at="2022-12-12T18:14:21 IST" finished-at="2022-12-12T18:14:43 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DetailedReport -->
-      </class> <!-- departmentHead.DeptcountStatutory -->
+        </test-method> <!-- forgotPass1 -->
+      </class> <!-- login.TestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

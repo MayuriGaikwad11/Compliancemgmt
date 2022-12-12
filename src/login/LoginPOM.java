@@ -28,6 +28,36 @@ package login;
 			return pass;
 		}
 		
+		public static WebElement readMsg(WebDriver driver)	//Method for searching Password input
+		{
+			pass =driver.findElement(By.xpath("//*[@id='vsLogin']/ul/li"));
+			return pass;
+		}
+		
+		public static WebElement readMsg1(WebDriver driver)	//Method for searching Password input
+		{
+			pass =driver.findElement(By.xpath("//*[@id='ValidationSummary2']/ul/li"));
+			return pass;
+		}
+		
+		public static WebElement readMsg2(WebDriver driver)	//Method for searching Password input
+		{
+			pass =driver.findElement(By.xpath("//*[@id='vsLogin']/ul/li"));
+			return pass;
+		}
+		
+		public static WebElement readMsg3(WebDriver driver)	//Method for searching Password input
+		{
+			pass =driver.findElement(By.xpath("//*[@id='ValidationSummary3']/ul/li"));
+			return pass;
+		}
+		
+		public static WebElement readMsg4(WebDriver driver)	//Method for searching Password input
+		{
+			pass =driver.findElement(By.xpath("//*[@id='ValidationSummary3']/ul/li"));
+			return pass;
+		}
+		
 		public static WebElement clickSubmit(WebDriver driver)	//Method for searching button for Save/Sign-in
 		{
 			submit = driver.findElement(By.xpath("//input[@name='Submit']"));
