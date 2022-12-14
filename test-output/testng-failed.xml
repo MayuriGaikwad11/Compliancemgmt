@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="login.TestCase">
+      <class name="performer.OverdueCount">
         <methods>
-          <include name="forgotPass"/>
           <include name="setBrowser"/>
+          <include name="Closing"/>
+          <include name="DashboardRejectStatutory"/>
         </methods>
-      </class> <!-- login.TestCase -->
+      </class> <!-- performer.OverdueCount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -144,7 +144,7 @@ public class Login
 			LoginPOM.SubmitAnswer(driver).click();			//Clicking on Submit button.
 		}
 		
-	/*		if(!method.equalsIgnoreCase("Implementation"))
+			if(!method.equalsIgnoreCase("Implementation"))
 		{
 			wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickComplicane(driver)));
 		if(method.equalsIgnoreCase("License"))
@@ -179,7 +179,7 @@ public class Login
 				
 			}
 		}
-		*/	//LoginPOM.ClickLitigation(driver).click();
+			//LoginPOM.ClickLitigation(driver).click();
 		
 
 		return driver;

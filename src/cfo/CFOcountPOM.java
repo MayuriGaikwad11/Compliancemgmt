@@ -498,6 +498,13 @@ public class CFOcountPOM
 	//	piechart = driver.findElement(By.xpath("//*[@class='k-pager-info k-label']"));
 		piechart=driver.findElement(By.xpath("//*[@id='grid']/div[5]/span[2]"));
 		return piechart;//*[@id="grid"]/div[4]/span[2]
+	}//*[@id="grid1"]/div[4]/span[2]
+	
+	public static WebElement readTotalItems2(WebDriver driver)				//Method to read total no of items.
+	{
+	
+		piechart=driver.findElement(By.xpath("//*[@id='grid1']/div[4]/span[2]"));
+		return piechart;
 	}
 	
 	public static WebElement readTotalItemsD(WebDriver driver)				//Method to read total no of items.

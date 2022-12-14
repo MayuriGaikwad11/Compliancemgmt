@@ -225,7 +225,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 5)  //pass
+	//@Test(priority = 5)  //pass
 	void DashboardInternalOverdue() throws InterruptedException
 	{
 		test = extent.startTest("Dashboard Internal Overdue Value Verification");
@@ -312,7 +312,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	//@Test(priority = 6) //pass
+//	@Test(priority = 6) //pass
 	void StatutoryChecklistAction() throws InterruptedException
 	{
 		test = extent.startTest("Statutory Checklist Count Through Action");
@@ -324,7 +324,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 7)  //pass
+	@Test(priority = 7)  //pass
 	void InternalCheckListAction() throws InterruptedException
 	{
 		test = extent.startTest("Internal Checklist Count Through Action");
@@ -336,7 +336,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 8) // pass
+	@Test(priority = 8) // pass
 	void DashboardRejectStatutory() throws InterruptedException
 	{
 		test = extent.startTest("Statutory Rejected Compliance Count - Dashboard");
@@ -348,7 +348,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 9)  // pass
+	@Test(priority = 9)  // pass
 	void DashboardRejectInternal() throws InterruptedException
 	{
 		test = extent.startTest("Internal Rejected Compliance Count - Dashboard");
@@ -631,13 +631,14 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 17)		//Sever is blocking and not allowing to upload the file.
+	@Test(priority = 17)		//Sever is blocking and not allowing to upload the file.
 	void ComplianceUpdateTask() throws InterruptedException
 	{
 		test = extent.startTest("My Workspace - 'Update Tasks' Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		MethodsPOM.UpdateTask(driver, test, workbook, "Statutory");
+	//	MethodsPOM.UpdateTask(driver, test, workbook, "Statutory");
+		MethodsPOM.EditTask(driver,test);
 		OverduePOM.clickDashboard(driver).click();
 	//	MethodsPOM.UpdateTask(driver, test, workbook, "Internal");
 		test.log(LogStatus.PASS, "Test Passed.");
@@ -1824,7 +1825,7 @@ public class OverdueCount
 			}
 			
 			
-		@Test(priority = 24) //pass
+	//	@Test(priority = 24) //pass
 		       void ComplianceCalender() throws InterruptedException
 			{
 				test = extent.startTest("My Compliance Calender Count Verification");
@@ -1887,7 +1888,7 @@ public class OverdueCount
 				extent.flush();
 			}
 		       
-      @Test(priority = 25) //pass
+   //   @Test(priority = 25) //pass
       void MyEscalation() throws InterruptedException
 			{
 				test = extent.startTest("My Escalation Verification");
@@ -1913,6 +1914,18 @@ public class OverdueCount
 				extent.endTest(test);
 				extent.flush();
 				
+			}
+      
+      @Test(priority = 26) 
+      void PenaltyUpdation() throws InterruptedException
+			{
+    	  test = extent.startTest("My Workspace - Penalty Updation");
+  		test.log(LogStatus.INFO, "Test Initiated");
+  		
+  		MethodsPOM.WorkspacePenaltyUpdation(driver, test);
+  		
+  		extent.endTest(test);
+  		extent.flush();
 			}
 		       
 		       

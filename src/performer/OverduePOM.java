@@ -85,11 +85,24 @@ public class OverduePOM
 		return elementsList;
 	}
 	
+	public static List<WebElement> clickStatutoryActionButton1(WebDriver driver)
+	{
+		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overviewMain k-grid-edit2']"));
+		return elementsList;
+	}
+	
 	public static List<WebElement> ActionButtons(WebDriver driver)
 	{
 		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overview k-grid-edit2']"));
 		return elementsList;
 	}
+	
+	public static List<WebElement> ActionButtons1(WebDriver driver)
+	{
+		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overviewMain k-grid-edit2']"));
+		return elementsList;
+	}
+	
 	
 	public static WebElement selectStatutoryDropdown(WebDriver driver)		//Method to search dropdown box
 	{
@@ -210,6 +223,15 @@ public class OverduePOM
 		return elementsList;
 	}
 	
+	public static List<WebElement> clickActionButtonList1(WebDriver driver) 	//Method to get list of action buttons on web page
+	{
+		//elementsList = driver.findElements(By.xpath("//*[@role='button'][@class='k-button k-button-icontext ob-overview k-grid-edit2']"));
+		elementsList = driver.findElements(By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr/td[23]/a[1]"));
+		//elementsList = driver.findElements(By.xpath("//*[@id='grid']/div[4]/table/tbody/tr[1]/td[24]/a[1]"));
+		
+		return elementsList;
+	}
+	
 	public static WebElement msgCheck(WebDriver driver)						//Method to check message -"Compliance related task is not yet completed."
 	{
 		msgElement = driver.findElement(By.xpath("//span[@id='lbltaskinternal']"));
@@ -324,6 +346,13 @@ public class OverduePOM
 	{
 		//elementsList = driver.findElements(By.xpath("//a[@class='k-button k-button-icontext ob-edit k-grid-edit3']"));
 		elementsList = driver.findElements(By.xpath("//*[@id='grid']/div[4]/table/tbody/tr/td[20]/a[1]"));
+		return elementsList;
+	}
+	
+	public static List<WebElement> clickStatutoryChecklistAction1(WebDriver driver)	//Method to click on Action button. (Independent of Statutory or Internal)
+	{
+		//elementsList = driver.findElements(By.xpath("//a[@class='k-button k-button-icontext ob-edit k-grid-edit3']"));
+		elementsList = driver.findElements(By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr/td[20]/a[1]"));
 		return elementsList;
 	}
 	
@@ -534,6 +563,31 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement ClickMoreActions(WebDriver driver)				//Searching Status dropdown
+	{
+		performer = driver.findElement(By.xpath("//*[@id='example']/div[2]/span[2]"));
+		return performer;
+	}
+	
+	public static WebElement ClickUpdatePenalty(WebDriver driver)				//Searching Status dropdown
+	{
+		performer = driver.findElement(By.xpath("//*[@id='dropdownlistMoreLink_listbox']/li[2]"));
+		return performer;
+	}
+	
+	public static WebElement ReadCount(WebDriver driver)				//Searching Status dropdown
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lblTotalRecord']"));
+		return performer;
+	}
+	
+	public static List<WebElement> clickActionBtn(WebDriver driver)		//Searching action button on form near to calendar
+	{
+		elementsList = driver.findElements(By.xpath("//*[@id='ContentPlaceHolder1_grdRviseCompliances']/tbody/tr/td[8]/a[2]/img"));
+		return elementsList;                        
+	}
+	
+	
 	public static WebElement clickOverdue(WebDriver driver)				//Searching 'Overdue' sub menu status of dropdown
 	{
 		performer = driver.findElement(By.xpath("//*[@id='example']/div[1]/span[2]/span"));
@@ -558,6 +612,13 @@ public class OverduePOM
 		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overview k-grid-edit2']"));
 		return elementsList;                        
 	}//*[@role='button'][@class='k-button k-button-icontext ob-overview k-grid-edit2']]
+	
+	public static List<WebElement> clickCalenderAction1(WebDriver driver)		//Searching action button on form near to calendar
+	{
+		elementsList = driver.findElements(By.xpath("//*[@class='k-button k-button-icontext ob-overviewMain k-grid-edit2']"));
+		return elementsList;                        
+	}
+	
 	
 	public static WebElement clickMyReminder(WebDriver driver)			//Searching 'My Reminder' button
 	{
@@ -1053,6 +1114,13 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement EditSavedMsg(WebDriver driver)				//Searching element of Successful Save of task.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ctl04']/ul/li"));
+		
+		return performer;
+	}
+	
 	public static WebElement taskSavedMsg1(WebDriver driver)				//Searching element of Successful Save of task.
 	{
 		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ctl03']/ul/li"));
@@ -1282,6 +1350,12 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement checkTable1(WebDriver driver)				//Searching table
+	{
+		performer = driver.findElement(By.xpath("(//*[@class='k-grid-content k-auto-scrollable'])[2]"));
+		return performer;
+	}
+	
 	public static List<WebElement> readStatus(WebDriver driver)			//Searching all Upcoming status
 	{
 		elementsList = driver.findElements(By.xpath("//*[@id='grid']/div[4]/table/tbody/tr/td[8]"));
@@ -1309,6 +1383,12 @@ public class OverduePOM
 	public static WebElement ClickTaskCreation(WebDriver driver)		//
 	{
 		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_liTaskCreation']"));
+		return performer;
+	}
+	
+	public static WebElement ClickEditBtn(WebDriver driver)		//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdTask_lbtEdit_1']"));
 		return performer;
 	}
 	
