@@ -1485,6 +1485,75 @@ public class MethodsPOM
 		
 	}
 	
+	public static void EditInternalTask(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(80));
+		OverduePOM.clickMyWorkspace1(driver).click();		//Clicking on 'My Workspace'
+		
+		Thread.sleep(1000);
+		OverduePOM.clickCompliance(driver).click();			//Clicking on 'Compliance' under My Workspace
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@role='grid'][@data-role='selectable'])[1]")));	//Waiting for records table to get visible.
+		
+		OverduePOM.clickMoreActions(driver).click();				//Clicking on 'More Actions' drop down.
+		
+		Thread.sleep(500);
+		elementsList = OverduePOM.selectAction(driver);				//Getting all 'More Action' drop down option
+		elementsList.get(4).click();								//Clicking on fifth option "Update Tasks"
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer']")));	//Waiting for records table to get visible
+		
+		Thread.sleep(500);
+		OverduePOM.ClickTaskCreation(driver).click();				//Clicking on 'Task Creation' tab
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTask']")));	//Waiting for records table to get visible
+		
+		OverduePOM.ClickEditBtn(driver).click();
+		Thread.sleep(5000);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickInternaRadioButton(driver)));
+		Thread.sleep(500); 
+		OverduePOM.clickInternaRadioButton(driver).click();	//Clicking on Radio button of 'Internal' tasks
+		Thread.sleep(500); 
+		Select drp = new Select(OverduePOM.clickInternalCompliance(driver));
+		drp.selectByIndex(1);
+		Thread.sleep(500); 
+		OverduePOM.clickDueDay(driver).sendKeys("55");
+		Thread.sleep(500); 
+		OverduePOM.clickTaskTitle(driver).clear();
+		Thread.sleep(1000);
+		OverduePOM.clickTaskTitle(driver).sendKeys("Auto1816");
+		Thread.sleep(1000);
+		OverduePOM.clickDescription(driver).clear();
+		Thread.sleep(1000);
+		OverduePOM.clickDescription(driver).sendKeys("AutomationTesting1312");
+		Thread.sleep(1000);
+		Thread.sleep(2000);
+		OverduePOM.clickSaveButton(driver).click();		//Clicking on 'Save' Button
+		
+		Thread.sleep(4000);
+		String saveMsg = OverduePOM.EditSavedMsg(driver).getText();
+		OverduePOM.EditSavedMsg(driver).click();
+		Thread.sleep(3000);
+		if(saveMsg.equalsIgnoreCase("Task Updated Successfully."))
+		{
+			test.log(LogStatus.INFO, "Message displayed - 'Task Updated Successfully.'");
+		}
+		else
+		{
+			test.log(LogStatus.INFO, "Message displayed - 'Task Updated Successfully.'");
+		}
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='divTaskDetailsDialog']/div/div/div[1]/button")).click();
+		Thread.sleep(1000);
+		
+		
+		
+	}
+	
+	
 	static void EventBased_Statutory(WebDriver driver) throws InterruptedException
 	{
 		Thread.sleep(1000);
@@ -2403,6 +2472,479 @@ public class MethodsPOM
 		Thread.sleep(1000);
 		
 	}
+
+	public static void PerformUpcomingStatutory(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		test.log(LogStatus.INFO, "***********Upcoming Statutory Performer Task-perform************ ");
+		
+		js.executeScript("window.scrollBy(0,500)");	//Scrolling down window by 2000 px.
+		
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickPTUpcomingStatutory(driver)));
+		int DasCount = Integer.parseInt(OverduePOM.clickPTUpcomingStatutory(driver).getText());
+		Thread.sleep(500);
+		OverduePOM.clickPTUpcomingStatutory(driver).click();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer']")));	//Waiting for records table to get visible
+		Thread.sleep(3000);
+		int GridCount=	Integer.parseInt(OverduePOM.ReadCountUpcoming(driver).getText());
+		Thread.sleep(500);
+		elementsList=OverduePOM.ActionBtns(driver);
+		elementsList.get(1).click();
+		Thread.sleep(4000);
+	
+		driver.switchTo().frame("showdetails");						//Switching 1st iFrame.
+	
+		Select status = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting dropdown box
+		status.selectByIndex(1);											//Selecting 2nd value from dropdown.
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.fileUploadUpStatutory(driver)));
+		Thread.sleep(3000);
+		OverduePOM.fileUploadUpStatutory(driver).sendKeys("C:/Users/sandip/Downloads/Holiday List 2022.xlsx");	//Providing Compliance Documents link
+	//	OverduePOM.buttonAddLink(driver).click();						//Clicking on 'Add Link' button of Compliance Documents
+		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,500)");
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectDateStatutory(driver)));
+		OverduePOM.selectDateStatutory(driver).click();					//Click on the Date text box
+		OverduePOM.selectLastMonth(driver).click();						//Clicking to get last month
+		Thread.sleep(1000);
+		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		
+		Thread.sleep(500);
+		OverduePOM.remark(driver).sendKeys("Automation Testing");			//Sending Remark
+		js.executeScript("window.scrollBy(0,100)");
+		Thread.sleep(4000);
+	//	OverduePOM.clickComplianceSubmit1(driver).click();				//Click on Submit button.
+		 By locator = By.xpath("//*[@id='btnSave']");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(3000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		Thread.sleep(2000);
+	//	driver.switchTo().alert().accept();								//Accepting msg of Successful Submittion.
+		driver.switchTo().parentFrame();
+		driver.findElement(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button")).click();
+		Thread.sleep(3000);
+		if(DasCount ==GridCount)
+		{
+			test.log(LogStatus.PASS, "Dashboard count matches to grid count");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Dashboard count does not matches to grid count");
+		}
+		
+		Thread.sleep(1000);
+		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+		
+	}
+	
+	public static void PerformUpcomingInternal(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		test.log(LogStatus.INFO, "***********Upcoming Internal Performer Task-perform************ ");
+		
+		js.executeScript("window.scrollBy(0,500)");	//Scrolling down window by 2000 px.
+		
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickPTUpcomingInternal(driver)));
+		int DasCount = Integer.parseInt(OverduePOM.clickPTUpcomingInternal(driver).getText());
+
+		Thread.sleep(500);
+		litigationPerformer.MethodsPOM.progress(driver);
+		OverduePOM.clickPTUpcomingInternal(driver).click();
+		
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer']")));	//Waiting for records table to get visible
+		int GridCount=	Integer.parseInt(OverduePOM.ReadCountUpcoming(driver).getText());
+		Thread.sleep(500);
+		elementsList=OverduePOM.ActionBtns(driver);
+		elementsList.get(1).click();
+		Thread.sleep(4000);
+		
+		driver.switchTo().frame("showdetails");	
+		Thread.sleep(500);
+		Select status1 = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting dropdown box.
+		status1.selectByIndex(1);								//Selecting 2nd value from dropdown.
+		
+	//	js.executeScript("window.scrollBy(0,2000)"," ");		//Scrolling down window by 2000 px.
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.fileUploadUpStatutory(driver)));
+		Thread.sleep(3000);
+		OverduePOM.fileUploadUpStatutory(driver).sendKeys("C:/Users/sandip/Downloads/Holiday List 2022.xlsx");	//Providing Compliance Documents link
+	//	OverduePOM.buttonAddLink(driver).click();						//Clicking on 'Add Link' button of Compliance Documents
+		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,500)");
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectDateStatutory(driver)));
+		OverduePOM.selectDateStatutory(driver).click();					//Click on the Date text box
+		OverduePOM.selectLastMonth(driver).click();						//Clicking to get last month
+		Thread.sleep(1000);
+		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		
+		Thread.sleep(500);
+		OverduePOM.remark(driver).sendKeys("Automation Testing");			//Sending Remark
+		js.executeScript("window.scrollBy(0,100)");
+		Thread.sleep(1000);
+	//	OverduePOM.clickComplianceSubmit1(driver).click();				//Click on Submit button.
+		 By locator = By.xpath("//*[@id='btnSave']");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(2000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(3000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		Thread.sleep(2000);
+	//	driver.switchTo().alert().accept();								//Accepting msg of Successful Submittion.
+		driver.switchTo().parentFrame();
+		driver.findElement(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button")).click();
+		Thread.sleep(3000);
+		if(DasCount ==GridCount)
+		{
+			test.log(LogStatus.PASS, "Dashboard count-" +DasCount+" matches to grid count-" +GridCount);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Dashboard count does not matches to grid count");
+		}
+		
+		Thread.sleep(1000);
+		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+		
+	}
+	
+	public static void PerformOverdueStatutory(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		test.log(LogStatus.INFO, "***********Overdue Statutory Performer Task-perform************ ");
+		
+		js.executeScript("window.scrollBy(0,500)");	//Scrolling down window by 2000 px.
+		
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickPTOverdueStatutory(driver)));
+		int DasCount = Integer.parseInt(OverduePOM.clickPTOverdueStatutory(driver).getText());
+		Thread.sleep(500);
+		OverduePOM.clickPTOverdueStatutory(driver).click();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer']")));	//Waiting for records table to get visible
+		Thread.sleep(3000);
+		int GridCount=	Integer.parseInt(OverduePOM.ReadCountUpcoming(driver).getText());
+		Thread.sleep(500);
+		elementsList=OverduePOM.ActionBtns(driver);
+		elementsList.get(1).click();
+		Thread.sleep(4000);
+	
+		driver.switchTo().frame("showdetails");						//Switching 1st iFrame.
+	
+		Select status = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting dropdown box
+		status.selectByIndex(1);											//Selecting 2nd value from dropdown.
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.fileUploadUpStatutory(driver)));
+		Thread.sleep(3000);
+		OverduePOM.fileUploadUpStatutory(driver).sendKeys("C:/Users/sandip/Downloads/Holiday List 2022.xlsx");	//Providing Compliance Documents link
+	//	OverduePOM.buttonAddLink(driver).click();						//Clicking on 'Add Link' button of Compliance Documents
+		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,500)");
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectDateStatutory(driver)));
+		OverduePOM.selectDateStatutory(driver).click();					//Click on the Date text box
+		OverduePOM.selectLastMonth(driver).click();						//Clicking to get last month
+		Thread.sleep(1000);
+		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		
+		Thread.sleep(500);
+		OverduePOM.remark(driver).sendKeys("Automation Testing");			//Sending Remark
+		js.executeScript("window.scrollBy(0,100)");
+		Thread.sleep(1000);
+	//	OverduePOM.clickComplianceSubmit1(driver).click();				//Click on Submit button.
+		 By locator = By.xpath("//*[@id='btnSave']");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(2000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(2000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		Thread.sleep(2000);
+	//	driver.switchTo().alert().accept();								//Accepting msg of Successful Submittion.
+		driver.switchTo().parentFrame();
+		driver.findElement(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button")).click();
+		Thread.sleep(3000);
+		if(DasCount ==GridCount)
+		{
+			test.log(LogStatus.PASS, "Dashboard count-" +DasCount+" matches to grid count-" +GridCount);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Dashboard count does not matches to grid count");
+		}
+		
+		Thread.sleep(1000);
+		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+		
+	}
+	
+	public static void PerformOverdueInternal(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		test.log(LogStatus.INFO, "***********Overdue Internal Performer Task-perform************ ");
+		
+		js.executeScript("window.scrollBy(0,500)");	//Scrolling down window by 2000 px.
+		
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickPTOverdueInternal(driver)));
+		int DasCount = Integer.parseInt(OverduePOM.clickPTOverdueInternal(driver).getText());
+
+		Thread.sleep(500);
+		litigationPerformer.MethodsPOM.progress(driver);
+		OverduePOM.clickPTOverdueInternal(driver).click();
+		
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer']")));	//Waiting for records table to get visible
+		int GridCount=	Integer.parseInt(OverduePOM.ReadCountUpcoming(driver).getText());
+		Thread.sleep(500);
+		elementsList=OverduePOM.ActionBtns(driver);
+		elementsList.get(1).click();
+		Thread.sleep(4000);
+		
+		driver.switchTo().frame("showdetails");	
+		Thread.sleep(500);
+		Select status1 = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting dropdown box.
+		status1.selectByIndex(1);								//Selecting 2nd value from dropdown.
+		
+	//	js.executeScript("window.scrollBy(0,2000)"," ");		//Scrolling down window by 2000 px.
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.fileUploadUpStatutory(driver)));
+		Thread.sleep(3000);
+		OverduePOM.fileUploadUpStatutory(driver).sendKeys("C:/Users/sandip/Downloads/Holiday List 2022.xlsx");	//Providing Compliance Documents link
+	//	OverduePOM.buttonAddLink(driver).click();						//Clicking on 'Add Link' button of Compliance Documents
+		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,500)");
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectDateStatutory(driver)));
+		OverduePOM.selectDateStatutory(driver).click();					//Click on the Date text box
+		OverduePOM.selectLastMonth(driver).click();						//Clicking to get last month
+		Thread.sleep(1000);
+		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		
+		Thread.sleep(500);
+		OverduePOM.remark(driver).sendKeys("Automation Testing");			//Sending Remark
+		js.executeScript("window.scrollBy(0,100)");
+		Thread.sleep(1000);
+	//	OverduePOM.clickComplianceSubmit1(driver).click();				//Click on Submit button.
+		 By locator = By.xpath("//*[@id='btnSave']");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(2000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(3000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		Thread.sleep(2000);
+	//	driver.switchTo().alert().accept();								//Accepting msg of Successful Submittion.
+		driver.switchTo().parentFrame();
+		driver.findElement(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button")).click();
+		Thread.sleep(3000);
+		if(DasCount ==GridCount)
+		{
+			test.log(LogStatus.PASS, "Dashboard count-"+DasCount+" matches to grid count-"+GridCount);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Dashboard count does not matches to grid count");
+		}
+		
+		Thread.sleep(1000);
+		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+		
+	}
+	
+	public static void PerformRejectedStatutory(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		test.log(LogStatus.INFO, "***********Overdue Rejected Performer Task-perform************ ");
+		
+		js.executeScript("window.scrollBy(0,500)");	//Scrolling down window by 2000 px.
+		
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickPTRejectedStatutory(driver)));
+		int DasCount = Integer.parseInt(OverduePOM.clickPTRejectedStatutory(driver).getText());
+		Thread.sleep(500);
+		OverduePOM.clickPTRejectedStatutory(driver).click();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer']")));	//Waiting for records table to get visible
+		Thread.sleep(3000);
+		int GridCount=	Integer.parseInt(OverduePOM.ReadCountUpcoming(driver).getText());
+		Thread.sleep(500);
+		elementsList=OverduePOM.ActionBtns(driver);
+		elementsList.get(1).click();
+		Thread.sleep(4000);
+	//driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer_btnChangeStatus_0']")).click();
+	Thread.sleep(4000);
+	driver.switchTo().frame("showdetails");						//Switching 1st iFrame.
+	
+		Select status = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting dropdown box
+		status.selectByIndex(1);											//Selecting 2nd value from dropdown.
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.fileUploadUpStatutory(driver)));
+		Thread.sleep(3000);
+		OverduePOM.fileUploadUpStatutory(driver).sendKeys("C:/Users/sandip/Downloads/Holiday List 2022.xlsx");	//Providing Compliance Documents link
+	//	OverduePOM.buttonAddLink(driver).click();						//Clicking on 'Add Link' button of Compliance Documents
+		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,500)");
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectDateStatutory(driver)));
+		OverduePOM.selectDateStatutory(driver).click();					//Click on the Date text box
+		OverduePOM.selectLastMonth(driver).click();						//Clicking to get last month
+		Thread.sleep(1000);
+		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		
+		Thread.sleep(500);
+		OverduePOM.remark(driver).sendKeys("Automation Testing");			//Sending Remark
+		js.executeScript("window.scrollBy(0,100)");
+		Thread.sleep(1000);
+	//	OverduePOM.clickComplianceSubmit1(driver).click();				//Click on Submit button.
+		 By locator = By.xpath("//*[@id='btnSave']");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(2000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(2000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		Thread.sleep(2000);
+	//	driver.switchTo().alert().accept();								//Accepting msg of Successful Submittion.
+		driver.switchTo().parentFrame();
+		driver.findElement(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button")).click();
+		Thread.sleep(3000);
+		if(DasCount ==GridCount)
+		{
+			test.log(LogStatus.PASS, "Dashboard count-" +DasCount+" matches to grid count-" +GridCount);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Dashboard count does not matches to grid count");
+		}
+		
+		Thread.sleep(1000);
+		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+		
+	}
+	
+	public static void PerformRejectedInternal(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		test.log(LogStatus.INFO, "***********Rejected Internal Performer Task-perform************ ");
+		
+		js.executeScript("window.scrollBy(0,500)");	//Scrolling down window by 2000 px.
+		
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickPTRejectedInternal(driver)));
+		int DasCount = Integer.parseInt(OverduePOM.clickPTRejectedInternal(driver).getText());
+
+		Thread.sleep(500);
+		litigationPerformer.MethodsPOM.progress(driver);
+		OverduePOM.clickPTRejectedInternal(driver).click();
+		
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTaskPerformer']")));	//Waiting for records table to get visible
+		int GridCount=	Integer.parseInt(OverduePOM.ReadCountUpcoming(driver).getText());
+		Thread.sleep(500);
+		elementsList=OverduePOM.ActionBtns(driver);
+		elementsList.get(1).click();
+		Thread.sleep(4000);
+		
+		driver.switchTo().frame("showdetails");	
+		Thread.sleep(500);
+		Select status1 = new Select(OverduePOM.selectStatutoryDropdown(driver));	//Selecting dropdown box.
+		status1.selectByIndex(1);								//Selecting 2nd value from dropdown.
+		
+	//	js.executeScript("window.scrollBy(0,2000)"," ");		//Scrolling down window by 2000 px.
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.fileUploadUpStatutory(driver)));
+		Thread.sleep(3000);
+		OverduePOM.fileUploadUpStatutory(driver).sendKeys("C:/Users/sandip/Downloads/Holiday List 2022.xlsx");	//Providing Compliance Documents link
+	//	OverduePOM.buttonAddLink(driver).click();						//Clicking on 'Add Link' button of Compliance Documents
+		Thread.sleep(2000);
+		js.executeScript("window.scrollBy(0,500)");
+		wait.until(ExpectedConditions.visibilityOf(OverduePOM.selectDateStatutory(driver)));
+		OverduePOM.selectDateStatutory(driver).click();					//Click on the Date text box
+		OverduePOM.selectLastMonth(driver).click();						//Clicking to get last month
+		Thread.sleep(1000);
+		OverduePOM.selectDate(driver).click(); 							//Selecting date - second row and fifth column date from calendar
+		
+		Thread.sleep(500);
+		OverduePOM.remark(driver).sendKeys("Automation Testing");			//Sending Remark
+		js.executeScript("window.scrollBy(0,100)");
+		Thread.sleep(1000);
+	//	OverduePOM.clickComplianceSubmit1(driver).click();				//Click on Submit button.
+		 By locator = By.xpath("//*[@id='btnSave']");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(2000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(3000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		Thread.sleep(2000);
+	//	driver.switchTo().alert().accept();								//Accepting msg of Successful Submittion.
+		driver.switchTo().parentFrame();
+		driver.findElement(By.xpath("//*[@id='divShowDialog']/div/div/div[1]/button")).click();
+		Thread.sleep(3000);
+		if(DasCount ==GridCount)
+		{
+			test.log(LogStatus.PASS, "Dashboard count-"+DasCount+" matches to grid count-"+GridCount);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Dashboard count does not matches to grid count");
+		}
+		
+		Thread.sleep(1000);
+		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+		
+	}
+	
 
 	
 }

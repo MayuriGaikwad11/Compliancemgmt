@@ -134,6 +134,12 @@ public class OverduePOM
 		return upload;
 	}
 	
+	public static WebElement fileUploadUpStatutory(WebDriver driver)			//Method to search Choose File button. 
+	{
+		upload = driver.findElement(By.xpath("//*[@id='fuTaskDoc']"));
+		return upload;
+	}
+	
 	public static WebElement fileUploadStatutory1(WebDriver driver)			//Method to search Choose File button. 
 	{
 		upload = driver.findElement(By.xpath("//input[@id='FileUpload1']"));
@@ -185,7 +191,13 @@ public class OverduePOM
 	public static WebElement clickComplianceSubmit(WebDriver driver)		//Method for searching button for Submit Form
 	{
 		submit = driver.findElement(By.xpath("//input[@value ='Submit']"));
-		return submit;
+		return submit;//*[@id="btnSave"]
+	}
+	
+	public static WebElement clickComplianceSubmit1(WebDriver driver)		//Method for searching button for Submit Form
+	{
+		submit = driver.findElement(By.xpath("//*[@id='btnSave']"));
+		return submit;//*[@id="btnSave"]
 	}
 	
 	public static WebElement clickDashboard(WebDriver driver)				//Method to search Dashboard Link
@@ -1415,6 +1427,19 @@ public class OverduePOM
 		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_DivPerformerUpcomingStat']"));
 		return performer;
 	}
+	
+	public static WebElement ReadCountUpcoming(WebDriver driver)	//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lblTotalRecord']"));
+		return performer;//*[@id="ContentPlaceHolder1_lblTotalRecord"]
+	}
+	
+	public static List<WebElement> ActionBtns(WebDriver driver)			//Searching all Upcoming status
+	{
+		elementsList = driver.findElements(By.xpath("//*[@class='btnss']"));
+		return elementsList;
+	}
+	
 	
 	public static WebElement clickPTUpcomingInternal(WebDriver driver)	//
 	{

@@ -324,7 +324,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	@Test(priority = 7)  //pass
+	//@Test(priority = 7)  //pass
 	void InternalCheckListAction() throws InterruptedException
 	{
 		test = extent.startTest("Internal Checklist Count Through Action");
@@ -336,7 +336,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	@Test(priority = 8) // pass
+	//@Test(priority = 8) // pass
 	void DashboardRejectStatutory() throws InterruptedException
 	{
 		test = extent.startTest("Statutory Rejected Compliance Count - Dashboard");
@@ -348,7 +348,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	@Test(priority = 9)  // pass
+//	@Test(priority = 9)  // pass
 	void DashboardRejectInternal() throws InterruptedException
 	{
 		test = extent.startTest("Internal Rejected Compliance Count - Dashboard");
@@ -631,7 +631,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	@Test(priority = 17)		//Sever is blocking and not allowing to upload the file.
+//	@Test(priority = 17)		//Sever is blocking and not allowing to upload the file.
 	void ComplianceUpdateTask() throws InterruptedException
 	{
 		test = extent.startTest("My Workspace - 'Update Tasks' Verification");
@@ -646,9 +646,39 @@ public class OverdueCount
 		extent.flush();
 	}
 	
+//	@Test(priority = 18)		//Sever is blocking and not allowing to upload the file.
+	void ComplianceEditSatTask() throws InterruptedException
+	{
+		test = extent.startTest("My Workspace - 'Update Tasks' Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.EditTask(driver,test);
+		
+		OverduePOM.clickDashboard(driver).click();
 	
-  //    @Test(priority = 18)
-	void PerformerTaskUpcomingStatutory() throws InterruptedException{
+		test.log(LogStatus.PASS, "Test Passed.");
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 19)		//Sever is blocking and not allowing to upload the file.
+	void ComplianceEditINTask() throws InterruptedException
+	{
+		test = extent.startTest("My Workspace - 'Edit Tasks' Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.EditInternalTask(driver,test);
+		
+		OverduePOM.clickDashboard(driver).click();
+	
+		test.log(LogStatus.PASS, "Test Passed.");
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+  //   @Test(priority = 20)
+	void PerformerTaskAddUpcomingStatutory() throws InterruptedException{
 		test = extent.startTest("Dashboard Statutory Upcoming Performer Task Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
@@ -847,7 +877,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	// @Test(priority = 19)
+	//@Test(priority = 21)
 		void PerformerTaskUpcomingInternal() throws InterruptedException{
 		 test = extent.startTest("Dashboard Internal Upcoming Performer Task Verification");
 			test.log(LogStatus.INFO, "Test Initiated");
@@ -1050,7 +1080,7 @@ public class OverdueCount
 			extent.flush();
 	 }
 	 
-//	 @Test(priority = 20)
+//	 @Test(priority = 22)
 		void PerformerTaskOverdueStatutory() throws InterruptedException{
 		 
 		 test = extent.startTest("Dashboard Statutory Overdue Performer Task Verification");
@@ -1242,7 +1272,7 @@ public class OverdueCount
 				extent.endTest(test);
 				extent.flush();
 	 }
-	//	@Test(priority = 21)
+	//	@Test(priority = 23)
 		void PerformerTaskOverdueInternal() throws InterruptedException{
 		 
 		 test = extent.startTest("Dashboard Internal Overdue Performer Task Verification");
@@ -1437,7 +1467,7 @@ public class OverdueCount
 					extent.flush();
 		}
 		
-	//	 @Test(priority = 22)
+	//	 @Test(priority = 24)
 			void PerformerTaskRejectedStatutory() throws InterruptedException{
 			 
 			 test = extent.startTest("Dashboard Statutory Overdue Performer Task Verification");
@@ -1629,7 +1659,7 @@ public class OverdueCount
 			extent.flush();
 		 }
 			
-	//		@Test(priority = 23)
+	//		@Test(priority = 25)
 			void PerformerTaskRejectedInternal() throws InterruptedException{
 			 
 			 test = extent.startTest("Dashboard Internal Rejected Performer Task Verification");
@@ -1824,6 +1854,81 @@ public class OverdueCount
 						extent.flush();
 			}
 			
+		 @Test(priority = 26)
+				void PerformerTaskPerformUpcomingStatutory() throws InterruptedException{
+					test = extent.startTest("Dashboard Statutory Upcoming Performer Task Count Verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					MethodsPOM.PerformUpcomingStatutory(driver, test);
+					
+					extent.endTest(test);
+			  		extent.flush();
+			
+			 }
+				
+		 @Test(priority = 27)
+					void PerformerTaskPerformUpcomingInternal() throws InterruptedException{
+						test = extent.startTest("Dashboard Internal Upcoming Performer Task Count Verification");
+						test.log(LogStatus.INFO, "Test Initiated");
+						
+						MethodsPOM.PerformUpcomingInternal(driver, test);
+						
+						extent.endTest(test);
+				  		extent.flush();
+				
+				 }
+					
+		@Test(priority = 28)
+		void PerformerTaskPerformOverdueStatutory() throws InterruptedException{
+						test = extent.startTest("Dashboard Statutory Overdue Performer Task Count Verification");
+						test.log(LogStatus.INFO, "Test Initiated");
+						
+						MethodsPOM.PerformOverdueStatutory(driver, test);
+						
+						extent.endTest(test);
+				  		extent.flush();
+				
+				 }	
+		
+		 @Test(priority = 29)
+			void PerformerTaskPerformOverdueInternal() throws InterruptedException{
+				test = extent.startTest("Dashboard Internal Overdue Performer Task Count Verification");
+				test.log(LogStatus.INFO, "Test Initiated");
+				
+				MethodsPOM.PerformOverdueInternal(driver, test);
+				
+				extent.endTest(test);
+		  		extent.flush();
+		
+		 }
+			
+		@Test(priority = 30)
+			void PerformerTaskPerformRejectedStatutory() throws InterruptedException{
+							test = extent.startTest("Dashboard Statutory Rejected Performer Task Count Verification");
+							test.log(LogStatus.INFO, "Test Initiated");
+							
+							MethodsPOM.PerformRejectedStatutory(driver, test);
+							
+							extent.endTest(test);
+					  		extent.flush();
+					  		
+					 }	
+			
+    	@Test(priority = 31)
+				void PerformerTaskPerformRejectedInternal() throws InterruptedException{
+					test = extent.startTest("Dashboard Internal Rejected Performer Task Count Verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					MethodsPOM.PerformRejectedInternal(driver, test);
+					
+					extent.endTest(test);
+			  		extent.flush();
+			
+			 }
+						
+			
+			
+			
 			
 	//	@Test(priority = 24) //pass
 		       void ComplianceCalender() throws InterruptedException
@@ -1916,7 +2021,7 @@ public class OverdueCount
 				
 			}
       
-      @Test(priority = 26) 
+  //    @Test(priority = 26) 
       void PenaltyUpdation() throws InterruptedException
 			{
     	  test = extent.startTest("My Workspace - Penalty Updation");
