@@ -1608,7 +1608,13 @@ public class CFOcountPOM
 	public static WebElement clickDownloadBtn(WebDriver driver)					//Searching 'My Reports' element
 	{
 		documents = driver.findElement(By.xpath("//*[@id='rptComplianceVersion_btnComplinceVersionDoc_0']"));
-		return documents;                       
+		return documents;                      
+	}
+	
+	public static WebElement clickDownloadBtn1(WebDriver driver)					//Searching 'My Reports' element
+	{
+		documents = driver.findElement(By.xpath("//*[@id='rptIComplianceVersion_btnComplinceVersionDoc_0']"));
+		return documents;                      
 	}
 	
 	public static WebElement closeDownloadTab(WebDriver driver)					//Searching 'My Reports' element
@@ -3998,7 +4004,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 	
 	public static void AssignmentReport(ExtentTest test, WebDriver driver) throws InterruptedException, IOException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		
 	//	Thread.sleep(500);
 		wait.until(ExpectedConditions.elementToBeClickable(CFOcountPOM.clickReports(driver)));
@@ -4017,7 +4023,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		elementsList = clickType2(driver);
 		elementsList.get(1).click();
 		
-		String file = "C://Users//jiya//Downloads//StatutoryReport.xlsx";
+		String file = "C:/Users/sandip/Downloads/StatutoryReport.xlsx";
 		String compliance = "Statutory";
 		Assignment(driver, test, file, compliance);
 		
@@ -4035,22 +4041,25 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		file = "C://Users//jiya//Downloads//InternalReport.xlsx";
 		compliance = "Event Based";
 		Assignment(driver, test, file, compliance);
-		
+		*/
 		//------------------------------------- Internal ------------------------------------
 		
 		selectType2(driver).click();					//Clicking on Type drop down
 		Thread.sleep(500);
 		elementsList = clickType2(driver);
-		elementsList.get(3).click();					//Unselecting preselected 'Event Based' checkbox
+		elementsList.get(1).click();					//Unselecting preselected 'Event Based' checkbox
 		elementsList.get(4).click();					//Selecting 'Internal' checkbox.
 		
 		Thread.sleep(500);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
-		file = "C://Users//jiya//Downloads//InternalReport.xlsx";
+		file = "C:/Users/sandip/Downloads/InternalReport.xlsx";
 		compliance = "Internal";
 		Assignment(driver, test, file, compliance);
-	*/	
+		Thread.sleep(1000);
+		OverduePOM.clickClearBtn(driver).click();
+		Thread.sleep(1000);
+		test.log(LogStatus.PASS,"Clicking Clear Button - clear Data Succefully");
 		Thread.sleep(1000);
 		OverduePOM.clickDashboard(driver).click();
 	}
@@ -4084,10 +4093,10 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		Thread.sleep(500);
 		litigationPerformer.MethodsPOM.progress(driver);
 		
-		String	file = "C://Users//jiya//Downloads//InternalReport.xlsx";
+		String	file = "C:/Users/sandip/Downloads//InternalReport.xlsx";
 		String	compliance = "Internal";
 		Assignment(driver, test, file, compliance);
-		
+		Thread.sleep(1000);
 		Thread.sleep(1000);
 		OverduePOM.clickDashboard(driver).click();
 	}

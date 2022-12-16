@@ -5,9 +5,10 @@
     <classes>
       <class name="performer.OverdueCount">
         <methods>
-          <include name="PerformerTaskPerformRejectedInternal"/>
+          <include name="MyReminderInternal"/>
           <include name="setBrowser"/>
           <include name="Closing"/>
+          <include name="MyReminderStatutory"/>
         </methods>
       </class> <!-- performer.OverdueCount -->
     </classes>

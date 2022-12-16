@@ -13,13 +13,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
 public class LoginTest {
 	public static FileInputStream fis = null;	//File input stream variable
 	public static XSSFWorkbook workbook = null;	//Excel sheet workbook variable
 	public static XSSFSheet sheet = null;	
 	
+	
 	 @Test
 	  public void f() throws InterruptedException, IOException {
+		 
+		
 		  System.setProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver1/chromedriver.exe"); 
 		  
 		  WebDriver driver=new ChromeDriver();       //Created new Chrome driver instance.

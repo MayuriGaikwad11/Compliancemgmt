@@ -179,7 +179,7 @@ public class OverduePOM
 	public static WebElement remark(WebDriver driver)						//Method created to search text area 
 	{
 		value = driver.findElement(By.xpath("//textarea[@id='tbxRemarks']"));
-		return value;//*[@id="tbxRemarks"]
+		return value;//*[@id="tbxRemarks"]//*[@id="tbxRemarks"]
 	}
 	
 	public static WebElement remark1(WebDriver driver)						//Method created to search text area 
@@ -830,6 +830,36 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement clickClearBtn(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ClearfilterMain']"));
+		return performer;
+	}
+	
+	public static WebElement clickStatus(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
+	{
+		performer = driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div[1]/span[1]"));
+		return performer;
+	}
+	
+	public static WebElement SelectInternal(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
+	{
+		performer = driver.findElement(By.xpath("//*[@id='dropdownlistComplianceType_listbox']/li[2]"));
+		return performer;
+	}
+	
+	public static WebElement clickRisk(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
+	{
+		performer = driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div[1]/div[2]/div"));
+		return performer;
+	}
+	
+	public static WebElement clickRiskCritical(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
+	{
+		performer = driver.findElement(By.xpath("(//li[@class='k-item k-first'])[1]"));
+		return performer;
+	}
+	
 	public static WebElement clickIsUniversal(WebDriver driver)			//Searching Input box to write folder name
 	{
 		performer = driver.findElement(By.xpath("//input[@id = 'ContentPlaceHolder1_chkIsUnivers']"));
@@ -1470,6 +1500,20 @@ public class OverduePOM
 		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_DivPerformerRejectedInt']"));
 		return performer;
 	}
+	
+	public static WebElement clickStaBtnCale(WebDriver driver)	//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='collapsePerformerCalender']/div/div[1]/div[1]/div/div[3]/div[12]/a"));
+		return performer;
+	}
+	
+	public static WebElement clickInterBtnCale(WebDriver driver)	//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='collapsePerformerCalender']/div/div[1]/div[1]/div/div[3]/div[5]/a"));
+		return performer;
+	}
+
+	
 	public static WebElement sletre(WebDriver driver)					//
 	{
 		performer = driver.findElement(By.xpath(""));
