@@ -3602,6 +3602,22 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		}
 	}
 	
+	public static void DetailedReportIn(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickDetailedReport(driver).click();			//Clicking on 'Detailed Reports' 
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
+		
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.visibilityOf(clickComplianceDropDown(driver)));
+		clickComplianceDropDown(driver).click();		//Clicking on Compliance drop down.
+		Thread.sleep(500);
+	}
 	
 	public static void DetailedReport1(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
 	{		

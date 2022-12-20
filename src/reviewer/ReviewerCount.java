@@ -461,7 +461,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 9)
+	@Test(priority = 9)
 	void MyEscalation() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Escalation verification");

@@ -293,7 +293,8 @@ public class ReviewerPOM
 	
 	public static List<WebElement> clickCheckboxes(WebDriver driver)
 	{
-		elementsList = driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]/label"));
+		elementsList = driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+	//	elementsList = driver.findElements(By.xpath("//*[@class='k-checkbox-label k-no-text']"));
 		return elementsList;                          
 	}
 	
@@ -302,6 +303,25 @@ public class ReviewerPOM
 		statutoryAction = driver.findElement(By.xpath("//*[@id = 'btnsave']"));
 		return statutoryAction;
 	}
+	
+	public static WebElement clickRisk(WebDriver driver)			//Searching drop down of User to Assign
+	{
+		statutoryAction = driver.findElement(By.xpath("//*[@id='example']/div[1]/div[2]/div[2]"));
+		return statutoryAction;
+	}
+	
+	public static WebElement clickCritical(WebDriver driver)			//Searching drop down of User to Assign
+	{
+		statutoryAction = driver.findElement(By.xpath("(//li[@class='k-item k-first'])[1]"));
+		return statutoryAction;
+	}
+	
+	public static WebElement clickClear(WebDriver driver)			//Searching drop down of User to Assign
+	{
+		statutoryAction = driver.findElement(By.xpath("//*[@id='ClearfilterMain']"));
+		return statutoryAction;
+	}
+	
 	
 	public static WebElement selectUserAssign(WebDriver driver)			//Searching drop down of User to Assign
 	{

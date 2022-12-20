@@ -716,6 +716,18 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement ClickTaskReport(WebDriver driver)				//Searching 'Role' drop down
+	{
+		performer = driver.findElement(By.xpath("//*[@id='Myreporttask']"));
+		return performer;
+	}
+	
+	public static WebElement ClickEventReport(WebDriver driver)				//Searching 'Role' drop down
+	{
+		performer = driver.findElement(By.xpath("//*[@id='Eventreportnew']"));
+		return performer;
+	}
+	
 	public static WebElement clickRole(WebDriver driver)
 	{
 		performer = driver.findElement(By.xpath("//div[@id = 'ddlRole_chosen']"));
@@ -1257,7 +1269,7 @@ public class OverduePOM
 	public static WebElement clickStartDate1(WebDriver driver)			//Searching Start date box
 	{
 		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtStartDate']"));
-		return performer;
+		return performer;//*[@id="ContentPlaceHolder1_txtStartDateassign"]
 	}
 	
 	public static WebElement clickEndDate(WebDriver driver)				//Searching Start date box
@@ -1434,6 +1446,31 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement ClickShowAssignment(WebDriver driver)		//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdTask_LinkButton3_0']"));
+		return performer;
+	}
+	
+	public static WebElement ClickDeleteTask(WebDriver driver)		//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdTask_lbtDelete_0']"));
+		return performer;
+	}
+	
+	public static WebElement AfterClickDelete(WebDriver driver)		//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ctl02']/ul/li"));
+		return performer;
+	}
+	
+	
+	public static WebElement ComplianceLocation(WebDriver driver)		//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilterLocation1']"));
+		return performer;
+	}
+	
 	public static WebElement clickMyWorkspace2(WebDriver driver)					//
 	{
 		performer = driver.findElement(By.xpath("//*[@id = 'leftworkspacemenuLic']/a"));
@@ -1545,6 +1582,192 @@ public class OverduePOM
 	}
 	
 	public static WebElement seletdre(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath(""));
+		return performer;
+	}
+	
+	public static WebElement ClickBtn(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='main-content']/header/div[2]/ul/li[4]/a/b"));
+		return performer;
+	}
+	
+	public static WebElement ClickMyLeave(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='main-content']/header/div[2]/ul/li[4]/ul/li[3]"));
+		return performer;
+	}
+	
+	public static WebElement ClickAddNew(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnAddPromotor']"));
+		return performer;
+	}
+	
+	public static WebElement ClickTemAss(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_liSubmitted']"));
+		return performer;
+	}
+	
+	public static WebElement StartDate(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtStartDate']"));
+		return performer;
+	}
+	
+	public static WebElement StartDateAssign(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtStartDateassign']"));
+		return performer;
+	}
+	
+	public static WebElement EndDate(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtEndDate']"));
+		return performer;
+	}//*[@id="ContentPlaceHolder1_txtStartDateassign"]
+	
+	public static WebElement EndDateAssign(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtEndDateassign']"));
+		return performer;
+	}
+	
+	public static WebElement userPerformer(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNewPerformerUsers']"));
+		return performer;
+	}
+	
+	public static WebElement userPerformerAssign(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNewPerformerUsersassign']"));
+		return performer;
+	}
+	
+	public static WebElement userReviewer(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNewReviewerUsers']"));
+		return performer;
+	}
+	
+	public static WebElement userReviewerAsssign(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNewReviewerUsersassign']"));
+		return performer;
+	}
+	
+	public static WebElement ClickEventOwer(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_ddlNewEventOwnerUsersassign']"));
+		return performer;
+	}
+	
+	public static WebElement clickCheckBox(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdassignedcompliance_Chkselection_0']"));
+		return performer;
+	}
+	
+	public static WebElement saveBtn(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnSave']"));
+		return performer;
+	}
+	
+	public static WebElement saveBtnCancel(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnCancelSave']"));
+		return performer;
+	}
+	
+	public static WebElement saveBtnAssign(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnassignSave']"));
+		return performer;
+	}
+	
+	public static WebElement cancelLeave(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdLeave_lbtDelete_3']"));
+		return performer;
+	}
+	
+	public static WebElement searchBox(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtSearchType']"));
+		return performer;
+	}
+	
+	public static WebElement ClicksearchBtn(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnSearch1']"));
+		return performer;
+	}
+	
+	public static WebElement ClickClearBtn(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkBtnClearFilter']"));
+		return performer;
+	}
+	
+	public static WebElement ClickLivechat(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@class='tawk-custom-color tawk-custom-border-color tawk-button tawk-button-circle tawk-button-large']"));
+		return performer;                                    
+	}
+	
+	public static WebElement ClickInternalMsg(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='emailicon']"));
+		return performer;                                    
+	}
+	
+	public static WebElement ClickTo(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='txttomail']"));
+		return performer;                                    
+	}
+	
+	public static WebElement ClickSub(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='txtsub']"));
+		return performer;                                    
+	}
+	
+	public static WebElement TypeMsg(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='txtmsgbody']"));
+		return performer;                                    
+	}
+	
+	public static WebElement choosefile(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='FileUpload1']"));
+		return performer;                                    
+	}
+	
+	public static WebElement send(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id=btnsendmailNew']"));
+		return performer;                                    
+	}
+	
+	public static WebElement EmailtextBox(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='l6t4hrn3npk81671521536673']"));
+		return performer;
+	}
+	
+	public static WebElement StratChat(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='tawk-form-container']/div/div/div[2]/button[1]/p"));
+		return performer;
+	}
+	
+	public static WebElement cancelChat(WebDriver driver)					//
 	{
 		performer = driver.findElement(By.xpath(""));
 		return performer;

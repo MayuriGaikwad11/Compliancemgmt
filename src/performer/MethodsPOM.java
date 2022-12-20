@@ -1452,7 +1452,7 @@ public class MethodsPOM
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTask']")));	//Waiting for records table to get visible
 		
-		OverduePOM.ClickEditBtn(driver).click();
+	/*	OverduePOM.ClickEditBtn(driver).click();
 		Thread.sleep(5000);
 		OverduePOM.clickTaskTitle(driver).clear();
 		Thread.sleep(1000);
@@ -1480,7 +1480,37 @@ public class MethodsPOM
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='divTaskDetailsDialog']/div/div/div[1]/button")).click();
 		Thread.sleep(1000);
-		
+		Thread.sleep(500);
+		OverduePOM.ClickTaskCreation(driver).click();				//Clicking on 'Task Creation' tab
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_grdTask']")));	//Waiting for records table to get visible
+		//OverduePOM.ClickShowAssignment(driver).click();
+		Thread.sleep(5000);*/
+	//	OverduePOM.ComplianceLocation(driver).sendKeys("B Pvt Ltd");
+		OverduePOM.ClickDeleteTask(driver).click();
+		Thread.sleep(2000);
+		String deleteMsg=driver.switchTo().alert().getText();
+		Thread.sleep(1000);
+		if(deleteMsg.equalsIgnoreCase("Are you certain you want to delete this Task?"))
+		{
+			test.log(LogStatus.INFO, "Message displayed - 'Are you certain you want to delete this Task?'");
+		}
+		else
+		{
+			test.log(LogStatus.INFO, "Message displayed - 'Are you certain you want to delete this Task? this msg not show'");
+		}
+		Thread.sleep(500);
+		driver.switchTo().alert().accept();	
+		Thread.sleep(2000);
+		String DleMsg=OverduePOM.AfterClickDelete(driver).getText();
+		if(DleMsg.equalsIgnoreCase("Task can not delete, Task already assigned"))
+		{
+			test.log(LogStatus.INFO, "Message displayed - 'Task can not delete, Task already assigned'");
+		}
+		else
+		{
+			test.log(LogStatus.INFO, "Message displayed - 'Task can not delete, Task already assigned this msg not show'");
+		}
 		
 		
 	}
@@ -2945,6 +2975,57 @@ public class MethodsPOM
 		
 	}
 	
+	public static void TaskReport(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		wait.until(ExpectedConditions.elementToBeClickable(CFOcountPOM.clickReports(driver)));
+		CFOcountPOM.clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(1000);
+		OverduePOM.ClickTaskReport(driver).click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[4]")));	//Wait till records table gets visible
+		Thread.sleep(500);
+		CFOcountPOM.clickExportImage(driver).click();
+		Thread.sleep(1000);
+		test.log(LogStatus.PASS, "Export Succefully");
+		CFOcountPOM.clickAdvancedSearch(driver).click();
+		Thread.sleep(5000);
+		CFOcountPOM.clickExportExcel(driver).click();
+		Thread.sleep(2000);
+		test.log(LogStatus.PASS, "Advanced Search-Export Succefully");
+		driver.findElement(By.xpath("//*[@class='k-button k-bare k-button-icon k-window-action']")).click();
+		Thread.sleep(1000);
+		OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+	}
+	
+	public static void EventReport(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		wait.until(ExpectedConditions.elementToBeClickable(CFOcountPOM.clickReports(driver)));
+		Thread.sleep(2000);
+		CFOcountPOM.clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+	WebElement Scroll=	driver.findElement(By.xpath("//*[@id='ascrail2001']/div"));
+	((JavascriptExecutor)driver).executeScript("argument[0].scrollIntoView(true);",Scroll,500);
+		Thread.sleep(3000);
+		OverduePOM.ClickEventReport(driver).click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']")));	//Wait till records table gets visible
+		Thread.sleep(500);
+		CFOcountPOM.clickExportExcel(driver).click();
+		Thread.sleep(1000);
+		test.log(LogStatus.PASS, "Export Succefully");
+		driver.findElement(By.xpath("//*[@id='Startdatepicker']")).sendKeys("14-Dec-2022");
+	//	OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
+		Thread.sleep(1000);
+	}
 
 	
 }

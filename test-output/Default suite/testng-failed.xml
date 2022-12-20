@@ -3,14 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="performer.OverdueCount">
+      <class name="reviewer.ReviewerCount">
         <methods>
-          <include name="MyReminderInternal"/>
+          <include name="MyEscalation"/>
           <include name="setBrowser"/>
-          <include name="Closing"/>
-          <include name="MyReminderStatutory"/>
         </methods>
-      </class> <!-- performer.OverdueCount -->
+      </class> <!-- reviewer.ReviewerCount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

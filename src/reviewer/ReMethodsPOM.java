@@ -172,10 +172,10 @@ public class ReMethodsPOM
 		
 		elementsList = ReviewerPOM.clickCheckboxes(driver);
 		Thread.sleep(1500);
-		//wait.until(ExpectedConditions.elementToBeClickable(elementsList.get(2)));
-	/*	elementsList.get(2).click();
+		wait.until(ExpectedConditions.elementToBeClickable(elementsList.get(2)));
+		elementsList.get(2).click();
 		Thread.sleep(1500);
-		elementsList.get(3).click();*/
+		elementsList.get(3).click();
 		
 		//driver.findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[2]/td[1]/label")).click();
 		Thread.sleep(500);
@@ -222,7 +222,14 @@ public class ReMethodsPOM
 			test.log(LogStatus.INFO, "Message : "+msg);
 		}
 		
+	//	Thread.sleep(1000);
+	//	ReviewerPOM.clickRisk(driver).click();
+	//	Thread.sleep(1000);
+	//	ReviewerPOM.clickCritical(driver).click();
+		Thread.sleep(2000);
+	//	ReviewerPOM.clickClear(driver).click();
 		Thread.sleep(1000);
+		test.log(LogStatus.PASS, "Clear Button data ");
 		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard(driver)));
 		OverduePOM.clickDashboard(driver).click();
 		

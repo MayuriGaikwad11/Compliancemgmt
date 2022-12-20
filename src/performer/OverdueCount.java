@@ -24,6 +24,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import approval.ApprovalcountPOM;
 import cfo.CFOcountPOM;
 
 public class OverdueCount
@@ -567,7 +568,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	@Test(priority = 12) //pass today
+//	@Test(priority = 12) //pass fri
 	void AssignmentReport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Assignment Report count verification");
@@ -646,7 +647,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 18)		//Sever is blocking and not allowing to upload the file.
+	@Test(priority = 18)		//Sever is blocking and not allowing to upload the file.
 	void ComplianceEditSatTask() throws InterruptedException
 	{
 		test = extent.startTest("My Workspace - 'Update Tasks' Verification");
@@ -1708,7 +1709,7 @@ public class OverdueCount
 							row0= sheet.getRow(3);
 							c1 = row0.getCell(1);						//Selected cell (0 row,2 column)	(2 column = third column)
 						OverduePOM.clickTaskTitle(driver).sendKeys(c1.getStringCellValue());	//Writing Task title
-						
+								
 						row0 = sheet.getRow(4);							//Selected 1st index row (Second row)
 						c1 = row0.getCell(1);							//Selected cell (1 row,2 column)
 						OverduePOM.clickDescription(driver).sendKeys(c1.getStringCellValue());	//Writing description
@@ -1926,7 +1927,7 @@ public class OverdueCount
 			
 			 }
 						
-		@Test(priority = 32) //pass Today
+	//	@Test(priority = 32) //pass fri
 	       void ComplianceSatCalender() throws InterruptedException
 				{
 					test = extent.startTest("My Compliance Calender Statutory perform Verification");
@@ -1980,7 +1981,7 @@ public class OverdueCount
 					
 				}
 			
-	       @Test(priority = 33) //pass Today
+	  //     @Test(priority = 33) //pass fri
 	       void ComplianceInternalCalender() throws InterruptedException
 				{
 					test = extent.startTest("My Compliance Calender Internal perform Verification");
@@ -2043,7 +2044,7 @@ public class OverdueCount
 					
 				}
 	       
-	   	@Test(priority = 34)
+	//  	@Test(priority = 34) 
 		void ComplianceDocumentsSat() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Documents Statutory verification");
@@ -2160,7 +2161,7 @@ public class OverdueCount
 					extent.flush();
 		}
 		
-		@Test(priority = 35)
+	//	@Test(priority = 35) 
 		void ComplianceDocumentsInter() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Documents Internal verification");
@@ -2281,23 +2282,174 @@ public class OverdueCount
 					extent.flush();
 		}
 		
+		@Test(priority = 36) 
+		void DailyUpdates() throws InterruptedException, IOException
+		{
+			Thread.sleep(500);		
+			test = extent.startTest("'Daily Updates'  OverView");
+			test.log(LogStatus.INFO, "Test Initiated");
 			
-	       
-	       
-	       
-	       
-	       
-	       
-	       
-	       
-	       
-	       
-	       
-	       
-	       
-	       
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+		//	js.executeScript("window.scrollBy(0,4600)");					//Scrolling down window by 2600 px.
+			js.executeScript("window.scrollBy(0,1000)");
+			Thread.sleep(500);	
+			CFOcountPOM.clickViewAllDU(driver).click();
+			Thread.sleep(4000);	
+		//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showGRdetails"));	//Wait until frame get visible and switch to it.
+			CFOcountPOM.clickView1(driver).click();
+			Thread.sleep(4000);	
+			CFOcountPOM.closeNewsView(driver).click();
+			Thread.sleep(1000);
+			test.log(LogStatus.PASS, "view Succefully");
+			OverduePOM.searchBox(driver).sendKeys("Haryana Land Partnership Policy-2022");
+			Thread.sleep(500);
+			OverduePOM.ClicksearchBtn(driver).click();
+			Thread.sleep(7000);
+			test.log(LogStatus.PASS, "Search Succefully");
+			Thread.sleep(1000);
+			OverduePOM.ClickClearBtn(driver).click();
+			Thread.sleep(8000);
+			test.log(LogStatus.PASS, "Clear button Working Succefully");
+			performer.OverduePOM.clickDashboard(driver).click();
+			Thread.sleep(1000);
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+     //	@Test(priority = 37)
+		void NewsLetter() throws InterruptedException, IOException
+		{
+			Thread.sleep(500);		
+			test = extent.startTest("'News Letters'  OverView");
+			test.log(LogStatus.INFO, "Test Initiated");
+			Thread.sleep(500);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,1500)","");					//Scrolling down window by 2600 px.
 			
+			CFOcountPOM.clickViewAllNL(driver).click();
+			Thread.sleep(4000);	
+		//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showGRdetails"));	//Wait until frame get visible and switch to it.
+			CFOcountPOM.clickView2(driver).click();
+			Thread.sleep(4000);	
+			CFOcountPOM.closeNewsLView(driver).click();
+			Thread.sleep(1000);
+			performer.OverduePOM.clickDashboard(driver).click();
+			
+			extent.endTest(test);
+			extent.flush();
+		}	
+		
+		 @Test(priority = 38) //pass 
+	       void TaskReport() throws InterruptedException
+				{
+					test = extent.startTest("Task Report Verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					MethodsPOM.TaskReport(driver,test);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+	       
+	       @Test(priority = 39)
+			void InternalMsg() throws InterruptedException, IOException
+			{
+				Thread.sleep(500);		
+				test = extent.startTest("'Internal Msg  '  Verification");
+				test.log(LogStatus.INFO, "Test Initiated");
+					Thread.sleep(1000);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+				Thread.sleep(500);
+				OverduePOM.ClickInternalMsg(driver).click();
+				Thread.sleep(4000);
+				OverduePOM.ClickTo(driver).sendKeys("mayuri@tlregtech.in");
+				Thread.sleep(500);
+				OverduePOM.ClickSub(driver).sendKeys("Automation");
+				Thread.sleep(1000);
+				OverduePOM.TypeMsg(driver).sendKeys("Automation testing");
+				Thread.sleep(1000);
+				OverduePOM.choosefile(driver).sendKeys("C:/Users/sandip/Downloads/InternalReport.xlsx");
+				Thread.sleep(1000);
+				//OverduePOM.send(driver).click();
+				By locator = By.xpath("//*[@id='btnsendmailNew']");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+				Thread.sleep(4000);
+				
+				WebElement ViewButton = driver.findElement(locator);	
+				Thread.sleep(3000);
+			JavascriptExecutor jse=(JavascriptExecutor)driver;
+			jse.executeScript("arguments[0].click();", ViewButton);
+				Thread.sleep(5000);
+				test.log(LogStatus.INFO, "Internal Message working Succefully");
+				Thread.sleep(1000);
+				extent.endTest(test);
+				extent.flush();
+			}
+		 
+	   //    @Test(priority = 39)
+			void LiveChat() throws InterruptedException, IOException
+			{
+				Thread.sleep(500);		
+				test = extent.startTest("'Live Chat '  Verification");
+				test.log(LogStatus.INFO, "Test Initiated");
+				Thread.sleep(1000);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+				Thread.sleep(500);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='tawk-custom-color tawk-custom-border-color tawk-button tawk-button-circle tawk-button-large']")));
+				Thread.sleep(500);
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("jpu4a9g0g1io1671521533203"));	//Wait until frame get visible and switch to it.
+				Thread.sleep(3000);
+			//WebElement frame1=driver.findElement(By.xpath("//*[@id='jpu4a9g0g1io1671521533203']"));
+		//	driver.switchTo().frame(frame1);
+				OverduePOM.ClickLivechat(driver).click();
+				Thread.sleep(2000);
+				driver.switchTo().parentFrame();
+			/*	Thread.sleep(500);
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("vgchbp6p9au1671521533260"));	//Wait until frame get visible and switch to it.
+				Thread.sleep(500);
+				
+				OverduePOM.EmailtextBox(driver).sendKeys("deepali@tlregtech.in");
+				Thread.sleep(500);
+				OverduePOM.StratChat(driver).click();
+				Thread.sleep(500);
+				driver.switchTo().parentFrame();
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("jpu4a9g0g1io1671521533203"));	//Wait until frame get visible and switch to it.
+				Thread.sleep(500);
+				OverduePOM.ClickLivechat(driver).click();*/
+				extent.endTest(test);
+				extent.flush();
+			}   
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	//	 @Test(priority = 39) //pass 
+	       void EventReport() throws InterruptedException
+				{
+					test = extent.startTest("Event Report Verification");
+					test.log(LogStatus.INFO, "Test Initiated");
+					
+					MethodsPOM.EventReport(driver,test);
+					
+					extent.endTest(test);
+					extent.flush();
+				}
+	       
 	//	@Test(priority = 24) //pass
 		       void ComplianceCalender() throws InterruptedException
 			{
