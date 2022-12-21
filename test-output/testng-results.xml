@@ -2,24 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="125758" started-at="2022-12-20T19:33:42 IST" finished-at="2022-12-20T19:35:48 IST">
+  <suite name="Default suite" duration-ms="239510" started-at="2022-12-21T16:40:19 IST" finished-at="2022-12-21T16:44:18 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="125758" started-at="2022-12-20T19:33:42 IST" finished-at="2022-12-20T19:35:48 IST">
-      <class name="reviewer.ReviewerCount">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:reviewer.ReviewerCount@91771e]" name="setBrowser" is-config="true" duration-ms="35774" started-at="2022-12-20T19:33:42 IST" finished-at="2022-12-20T19:34:18 IST">
+    <test name="Default test" duration-ms="239510" started-at="2022-12-21T16:40:19 IST" finished-at="2022-12-21T16:44:18 IST">
+      <class name="cfo.CFOcountStatutory">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="setBrowser" is-config="true" duration-ms="12291" started-at="2022-12-21T16:40:19 IST" finished-at="2022-12-21T16:40:31 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:reviewer.ReviewerCount@91771e]" name="Login" duration-ms="45811" started-at="2022-12-20T19:34:18 IST" finished-at="2022-12-20T19:35:04 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@bf3d14]" name="Login" duration-ms="32955" started-at="2022-12-21T16:40:31 IST" finished-at="2022-12-21T16:41:04 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="MyEscalation()[pri:9, instance:reviewer.ReviewerCount@91771e]" name="MyEscalation" duration-ms="44066" started-at="2022-12-20T19:35:04 IST" finished-at="2022-12-20T19:35:48 IST">
+        <test-method status="PASS" signature="BargraphIndustrySpeCriticalStatutory()[pri:16, instance:cfo.CFOcountStatutory@bf3d14]" name="BargraphIndustrySpeCriticalStatutory" duration-ms="194155" started-at="2022-12-21T16:41:04 IST" finished-at="2022-12-21T16:44:18 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MyEscalation -->
-      </class> <!-- reviewer.ReviewerCount -->
+        </test-method> <!-- BargraphIndustrySpeCriticalStatutory -->
+        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="Closing" is-config="true" duration-ms="1" started-at="2022-12-21T16:44:18 IST" finished-at="2022-12-21T16:44:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closing -->
+      </class> <!-- cfo.CFOcountStatutory -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

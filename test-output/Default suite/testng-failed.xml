@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="reviewer.ReviewerCount">
+      <class name="cfo.CFOcountStatutory">
         <methods>
-          <include name="MyEscalation"/>
+          <include name="Closing"/>
+          <include name="DepartmentSummaryHumanResourceStatutory"/>
           <include name="setBrowser"/>
         </methods>
-      </class> <!-- reviewer.ReviewerCount -->
+      </class> <!-- cfo.CFOcountStatutory -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
