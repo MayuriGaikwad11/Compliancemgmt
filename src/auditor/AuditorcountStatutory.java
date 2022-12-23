@@ -206,15 +206,15 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 3)
+	@Test(priority = 3)
 	void ClosedDelayed_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Closed Delayed' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 		Actions action = new Actions(driver);
-	//	JavascriptExecutor js = (JavascriptExecutor) driver;
-	//	js.executeScript("window.scrollBy(0,200)");						//Scrolling down window by 1000 px.
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,200)");						//Scrolling down window by 1000 px.
 		
 		Thread.sleep(2000);
 		int ClosedDelayedValue = Integer.parseInt(CFOcountPOM.clickClosedDelayedA(driver).getText());	//Reading value of 'After Due Date'
@@ -292,7 +292,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 4)
+	@Test(priority = 4)
 	void ClosedTimely_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Closed Timely' Count Verification");
@@ -380,7 +380,7 @@ public class AuditorcountStatutory {
 		}
 	}
 	
-//	@Test(priority = 5)
+	@Test(priority = 5)
 	void NotApplicable_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Not Applicable' Count Verification");
@@ -657,7 +657,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 8)
+	@Test(priority = 8)
 	void pendingForReview_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Not Completed Status- 'Pending For Review' Count Verification");
@@ -750,7 +750,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 9)
+	@Test(priority = 9)
 	void inProgress_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Not Completed Status- 'In Progress' Count Verification");
@@ -843,7 +843,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 10)
+	@Test(priority = 10)
 	void rejected_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Not Completed Status- ' Rejected' Count Verification");
@@ -936,10 +936,10 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 11)
+	@Test(priority = 11)
 	void RiskSummaryCriticalStatutory() throws InterruptedException
 	{
-		driver.navigate().refresh();
+		//driver.navigate().refresh();
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 	//	js.executeScript("window.scrollBy(0,1450)");					//Scrolling down window by 1000 px.cfo
@@ -947,7 +947,7 @@ public class AuditorcountStatutory {
 		test = extent.startTest("Risk Summary - 'Critical' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		Thread.sleep(500);
+	/*	Thread.sleep(500);
 		String NotCompleted = CFOcountPOM.clickRiskCriticalNotCompleted(driver).getText();		//Reading the Closed Timely value of Human Resource
 		NotCompleted = NotCompleted.replaceAll(" ","");									//Removing all white spaces from string. 
 		int RiskCritical_NotCompleted = Integer.parseInt(NotCompleted);
@@ -961,7 +961,7 @@ public class AuditorcountStatutory {
 		else
 		{
 			test.log(LogStatus.SKIP, "'Critical - Not Completed' Count = "+RiskCritical_NotCompleted);
-		}
+		}*/
 		
 		Thread.sleep(2000);
 		int RiskCritical_ClosedDelayed = Integer.parseInt(CFOcountPOM.clickRiskCriticalClosedDelayedA(driver).getText());	//Reading the High Risk value of Not Completed compliance
@@ -992,14 +992,14 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 12)
+	@Test(priority = 12)
 	void RiskSummaryHighStatutory() throws InterruptedException
 	{		
 		test = extent.startTest("Risk Summary - 'High' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 	//	JavascriptExecutor js = (JavascriptExecutor) driver;
 	//	js.executeScript("window.scrollBy(0,1000)");	
-		Thread.sleep(500);
+	/*	Thread.sleep(500);
 		String NotCompleted = CFOcountPOM.clickRiskHighNotCompleted(driver).getText();		//Reading the Closed Timely value of Human Resource
 		NotCompleted = NotCompleted.replaceAll(" ","");									//Removing all white spaces from string. 
 		int RiskHigh_NotCompleted = Integer.parseInt(NotCompleted);
@@ -1015,7 +1015,7 @@ public class AuditorcountStatutory {
 		else
 		{
 			test.log(LogStatus.SKIP, "'High - Not Completed' Count = "+RiskHigh_NotCompleted);
-		}
+		}*/
 		
 		Thread.sleep(2000);
 	/*	int RiskHigh_ClosedDelayed = Integer.parseInt(CFOcountPOM.clickRiskHighClosedDelayed(driver).getText());	//Reading the High Risk value of Not Completed compliance
@@ -1048,7 +1048,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 13)
+	@Test(priority = 13)
 	void RiskSummaryMediumStatutory() throws InterruptedException
 	{
 		test = extent.startTest("Risk Summary - 'Medium' Count Verification");
@@ -1056,7 +1056,7 @@ public class AuditorcountStatutory {
 	//	JavascriptExecutor js = (JavascriptExecutor) driver;
 	//	js.executeScript("window.scrollBy(0,1450)");
 		Thread.sleep(500);
-		String NotCompleted = CFOcountPOM.clickRiskMediumNotCompleted(driver).getText();		//Reading the Closed Timely value of Human Resource
+	/*	String NotCompleted = CFOcountPOM.clickRiskMediumNotCompleted(driver).getText();		//Reading the Closed Timely value of Human Resource
 		NotCompleted = NotCompleted.replaceAll(" ","");									//Removing all white spaces from string. 
 		int RiskMedium_NotCompleted = Integer.parseInt(NotCompleted);
 	
@@ -1072,8 +1072,8 @@ public class AuditorcountStatutory {
 		{
 			test.log(LogStatus.SKIP, "'Medium - Not Completed' Count = "+RiskMedium_NotCompleted);
 		}
-		
-		driver.navigate().refresh();
+		*/
+	//	driver.navigate().refresh();
 		Thread.sleep(4000);
 		int RiskMedium_ClosedDelayed = Integer.parseInt(CFOcountPOM.clickRiskMediumClosedDelayedA(driver).getText());	//Reading the High Risk value of Not Completed compliance
 		if(RiskMedium_ClosedDelayed > 0)
@@ -1101,19 +1101,22 @@ public class AuditorcountStatutory {
 		{
 			test.log(LogStatus.SKIP, "'Medium - Closed Timely' Count = "+RiskMedium_ClosedTimely);
 		}*/
+		Thread.sleep(500);
+		performer.OverduePOM.clickDashboard(driver).click();			//Clicking on Dashboard
+		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-//	@Test(priority = 14)
+	//@Test(priority = 14)
 	void RiskSummaryLowStatutory() throws InterruptedException
 	{		
 		test = extent.startTest("Risk Summary - 'Low' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
-	//	driver.navigate().refresh();
-	//	JavascriptExecutor js = (JavascriptExecutor) driver;
-		//	js.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(500);
+		driver.navigate().refresh();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,700)");
+		/*Thread.sleep(500);
 		String NotCompleted = CFOcountPOM.clickRiskLowNotCompleted(driver).getText();		//Reading the Closed Timely value of Human Resource
 		NotCompleted = NotCompleted.replaceAll(" ","");									//Removing all white spaces from string. 
 		int RiskLow_NotCompleted = Integer.parseInt(NotCompleted);
@@ -1129,7 +1132,7 @@ public class AuditorcountStatutory {
 		else
 		{
 			test.log(LogStatus.SKIP, "'Low - Not Completed' Count = "+RiskLow_NotCompleted);
-		}
+		}*/
 		
 		Thread.sleep(3000);
 		int RiskLow_ClosedDelayed = Integer.parseInt(CFOcountPOM.clickRiskLowClosedDelayedA(driver).getText());	//Reading the High Risk value of Not Completed compliance
@@ -1166,14 +1169,14 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 15)
-	void DepartmentSummaryHumanResourceStatutory() throws InterruptedException
+	@Test(priority = 15)
+	void DepartmentSummaryFinanceStatutory() throws InterruptedException
 	{
 		Thread.sleep(500);		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1200)");					//Scrolling down window by 1500 px.
 		
-		test = extent.startTest("Department Summary - 'Human Resource' Count Verification");
+		test = extent.startTest("Department Summary - 'Finance' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
 	/*	Thread.sleep(500);
@@ -1211,7 +1214,7 @@ public class AuditorcountStatutory {
 		*/
 		//-----------------------------------------------------
 		
-		Thread.sleep(500);
+	/*	Thread.sleep(500);
 		String NotCompleted = CFOcountPOM.clickFinanceOverdue(driver).getText();			//Reading the Overdue value of Human Resource
 		NotCompleted = NotCompleted.replaceAll(" ","");									//Removing all white spaces from string. 
 		int Overdue = Integer.parseInt(NotCompleted);						
@@ -1224,7 +1227,7 @@ public class AuditorcountStatutory {
 		{
 			test.log(LogStatus.SKIP, "Overdue Complaince Count = "+ Overdue + ".");
 		}
-		
+		*/
 		//-----------------------------------------------------
 		
 		Thread.sleep(500);
@@ -1366,7 +1369,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 17)
+	@Test(priority = 17)
 	void ClosedDelayed_PieChartPe() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Completion Status- 'Closed Delayed' Count Verification");
@@ -1374,7 +1377,8 @@ public class AuditorcountStatutory {
 		
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,300)");						//Scrolling down window by 1000 px.
+	//	js.executeScript("window.scrollBy(0,300)");						//Scrolling down window by 1000 px.
+		js.executeScript("window.scrollBy(0,1700)");	
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
 		Thread.sleep(2000);
@@ -1459,7 +1463,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 18)
+	@Test(priority = 18)
 	void ClosedTimely_PieChartPe() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Completion Status- 'Closed Timely' Count Verification");
@@ -1659,7 +1663,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 20)
+	@Test(priority = 20)
 	void pendingForReview_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- 'Pending For Review' Count Verification");
@@ -1669,6 +1673,7 @@ public class AuditorcountStatutory {
 	//	Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1700)");			//Scrolling down window by 1000 px.
+	//	js.executeScript("window.scrollBy(0,300)");
 		Thread.sleep(1000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
@@ -1762,7 +1767,7 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 21)
+	@Test(priority = 21)
 	void inProgress_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- 'In Progress' Count Verification");
@@ -1863,12 +1868,12 @@ public class AuditorcountStatutory {
 		extent.flush();
 	}
 	
-//	@Test(priority = 22)
+	@Test(priority = 22)
 	void rejected_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- ' Rejected' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
-		driver.navigate().refresh();
+	//	driver.navigate().refresh();
 		Thread.sleep(2000);
 	//	Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -2018,7 +2023,7 @@ public class AuditorcountStatutory {
 			extent.flush();
 		}		
 		
-		@Test(priority = 25)
+	//	@Test(priority = 25)
 		void DetailedReport() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Detailed Report Count Verification");
@@ -2030,7 +2035,7 @@ public class AuditorcountStatutory {
 			extent.flush();
 		}
 		
-		@Test(priority = 26)
+	//	@Test(priority = 26)
 		void AssignmentReport() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Assignment Report verification");
@@ -2042,7 +2047,7 @@ public class AuditorcountStatutory {
 			extent.flush();
 		}
 		
-		@Test(priority = 27)
+	//	@Test(priority = 27)
 		void ActRepository() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Act Repository  verification");
@@ -2071,7 +2076,7 @@ public class AuditorcountStatutory {
 			extent.flush();
 		}
 		
-		@Test(priority = 28)
+	//	@Test(priority = 28)
 		void ComplianceDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Documents  verification");
@@ -2171,7 +2176,7 @@ public class AuditorcountStatutory {
 					extent.flush();
 		}
 		
-		@Test(priority = 29) //	pass	
+		//@Test(priority = 29) //	pass	
 		void CriticalDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Critical Document Verification");
@@ -2183,7 +2188,7 @@ public class AuditorcountStatutory {
 			extent.flush();
 		}
 		
-		@Test(priority = 30)
+	//	@Test(priority = 30)
 		void ActDocuments() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Act Documents  verification");
@@ -2223,7 +2228,7 @@ public class AuditorcountStatutory {
 			extent.flush();
 		}
 		
-		@Test(priority = 31) // pass
+		//@Test(priority = 31) // pass
 		void MyReminderStatutory() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Reminder - Statutory Count Verification");
@@ -2235,7 +2240,7 @@ public class AuditorcountStatutory {
 			extent.flush();
 		}
 		
-		@Test(priority = 32) // pass
+	//	@Test(priority = 32) // pass
 		void MyNotifications() throws InterruptedException, IOException
 		{
 			test = extent.startTest("My Notifications - Verification");

@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="239510" started-at="2022-12-21T16:40:19 IST" finished-at="2022-12-21T16:44:18 IST">
+  <suite name="Default suite" duration-ms="31053" started-at="2022-12-23T16:50:09 IST" finished-at="2022-12-23T16:50:40 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="239510" started-at="2022-12-21T16:40:19 IST" finished-at="2022-12-21T16:44:18 IST">
-      <class name="cfo.CFOcountStatutory">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="setBrowser" is-config="true" duration-ms="12291" started-at="2022-12-21T16:40:19 IST" finished-at="2022-12-21T16:40:31 IST">
+    <test name="Default test" duration-ms="31053" started-at="2022-12-23T16:50:09 IST" finished-at="2022-12-23T16:50:40 IST">
+      <class name="pom.TestCases">
+        <test-method status="PASS" signature="Login1()[pri:0, instance:pom.TestCases@3d45bd]" name="Login1" duration-ms="30965" started-at="2022-12-23T16:50:09 IST" finished-at="2022-12-23T16:50:40 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@bf3d14]" name="Login" duration-ms="32955" started-at="2022-12-21T16:40:31 IST" finished-at="2022-12-21T16:41:04 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="BargraphIndustrySpeCriticalStatutory()[pri:16, instance:cfo.CFOcountStatutory@bf3d14]" name="BargraphIndustrySpeCriticalStatutory" duration-ms="194155" started-at="2022-12-21T16:41:04 IST" finished-at="2022-12-21T16:44:18 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BargraphIndustrySpeCriticalStatutory -->
-        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="Closing" is-config="true" duration-ms="1" started-at="2022-12-21T16:44:18 IST" finished-at="2022-12-21T16:44:18 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Closing -->
-      </class> <!-- cfo.CFOcountStatutory -->
+        </test-method> <!-- Login1 -->
+      </class> <!-- pom.TestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

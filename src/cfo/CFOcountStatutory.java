@@ -494,7 +494,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 8)
+	//@Test(priority = 8)
 	void ClosedDelayed_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Closed Delayed' Count Verification");
@@ -673,8 +673,8 @@ public class CFOcountStatutory
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Not Applicable' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("window.scrollBy(0,500)");	
+	//	JavascriptExecutor js = (JavascriptExecutor) driver;
+		//	js.executeScript("window.scrollBy(0,500)");	
 		Actions action = new Actions(driver);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(CFOcountPOM.clickNotApplicable(driver)));
@@ -952,7 +952,7 @@ public class CFOcountStatutory
 		test = extent.startTest("Pie Chart -Not Completed Status- 'Pending For Review' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		Thread.sleep(500);
+		Thread.sleep(3000);
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");			//Scrolling down window by 1000 px.
@@ -1132,7 +1132,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 15)
+	@Test(priority = 15)
 	void rejected_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Not Completed Status- ' Rejected' Count Verification");
@@ -1225,7 +1225,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 16)
+	@Test(priority = 16)
 	void BargraphIndustrySpeCriticalStatutory() throws InterruptedException
 	{
 		test = extent.startTest("Bar Graph - 'Industry Specific' Count Verification with 'Critical' Risk");
@@ -1324,12 +1324,14 @@ public class CFOcountStatutory
 		test = extent.startTest("Bar Graph - 'Industry Specific' Count Verification with 'High' risk");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,925)");						//Scrolling down window by 1000 px.
+	//	JavascriptExecutor js = (JavascriptExecutor) driver;
+	//	js.executeScript("window.scrollBy(0,925)");						//Scrolling down window by 1000 px.
 		
+		String PendingReview = CFOcountPOM.clickIndustrySpeHigh(driver).getText();	//Reading the Pending For Review value of Human Resource
+		PendingReview = PendingReview.replaceAll(" ","");								//Removing all white spaces from string. 
 		
 		Thread.sleep(4000);
-		int IndustrySpeHigh = Integer.parseInt(CFOcountPOM.clickIndustrySpeHigh(driver).getText());	//Reading the Medium value of Labour compliance
+		int IndustrySpeHigh = Integer.parseInt(PendingReview);	//Reading the Medium value of Labour compliance
 		CFOcountPOM.clickIndustrySpeHigh(driver).click();					//Clicking on High bar of Labour  
 		
 		Thread.sleep(500);
@@ -1411,8 +1413,8 @@ public class CFOcountStatutory
 		test = extent.startTest("Bar Graph - 'Industry Specific' Count Verification with 'Medium' risk");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-	//	JavascriptExecutor js = (JavascriptExecutor) driver;
-	//	js.executeScript("window.scrollBy(0,925)");						//Scrolling down window by 1000 px.
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//js.executeScript("window.scrollBy(0,925)");						//Scrolling down window by 1000 px.
 		
 		Thread.sleep(4000);
 		int IndustrySpeMedium = Integer.parseInt(CFOcountPOM.clickIndustrySpeMedium(driver).getText());	//Reading the Medium value of Labour compliance
@@ -1584,7 +1586,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 20)
+	@Test(priority = 20)
 	void RiskSummaryCriticalStatutory() throws InterruptedException
 	{
 	//	driver.navigate().refresh();
@@ -1640,7 +1642,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 21)
+	@Test(priority = 21)
 	void RiskSummaryHighStatutory() throws InterruptedException
 	{		
 		test = extent.startTest("Risk Summary - 'High' Count Verification");
@@ -1696,7 +1698,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 22)
+	@Test(priority = 22)
 	void RiskSummaryMediumStatutory() throws InterruptedException
 	{
 		test = extent.startTest("Risk Summary - 'Medium' Count Verification");
@@ -1753,7 +1755,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 23)
+	@Test(priority = 23)
 	void RiskSummaryLowStatutory() throws InterruptedException
 	{		
 		test = extent.startTest("Risk Summary - 'Low' Count Verification");
@@ -1812,7 +1814,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 24)
+	@Test(priority = 24)
 	void DepartmentSummaryHumanResourceStatutory() throws InterruptedException
 	{
 		Thread.sleep(500);		
@@ -2018,7 +2020,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 26)
+	@Test(priority = 26)
 	void ClosedDelayed_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Closed Delayed' Count Verification");
@@ -2115,7 +2117,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	//@Test(priority = 27)
+	@Test(priority = 27)
 	void ClosedTimely_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Completion Status- 'Closed Timely' Count Verification");
@@ -2215,7 +2217,7 @@ public class CFOcountStatutory
 		}
 	}
 	
-	//@Test(priority = 28)
+	@Test(priority = 28)
 	void NotApplicable_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Completion Status- 'Not Applicable' Count Verification");
@@ -2509,7 +2511,7 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-	//@Test(priority = 31)
+	@Test(priority = 31)
 	void pendingForReview_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- 'Pending For Review' Count Verification");
@@ -2611,12 +2613,12 @@ public class CFOcountStatutory
 		extent.flush();
 	}
 	
-//	@Test(priority = 32)
+	@Test(priority = 32)
 	void rejected_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart -Not Completed Status- ' Rejected' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
-		driver.navigate().refresh();
+	//	driver.navigate().refresh();
 		Thread.sleep(2000);
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -3352,7 +3354,7 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
 		extent.flush();
 	}
 	
-	//@Test(priority = 40)
+	@Test(priority = 40)
 	void FilterWiseCategoriesCountMatch() throws InterruptedException
 	{
 		test = extent.startTest(" Count Match Filter Wise by Clicking on 'Categories' - Compliances ");
