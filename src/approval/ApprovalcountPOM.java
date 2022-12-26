@@ -256,34 +256,28 @@ public class ApprovalcountPOM {
 			test.log(LogStatus.PASS, "Excel file Export Successfully");
 			Thread.sleep(3000);
 			
-By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[19]/a[3]");
+By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[19]/a");
 			
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
-			// retrieving "foo-button" HTML element
-			WebElement ViewButton = driver.findElement(locator);	
+			
+			List<WebElement> ViewButton = driver.findElements(locator);	
+			Thread.sleep(3000);
+			ViewButton.get(0).click();
 			Thread.sleep(4000);
-		JavascriptExecutor jse=(JavascriptExecutor)driver;
-		Thread.sleep(2000);
-		jse.executeScript("arguments[0].click();", ViewButton);
+			CFOcountPOM.closeDocument1(driver).click();
+			test.log(LogStatus.INFO, "View successfully");
+			Thread.sleep(3000);
+			
+			ViewButton.get(1).click();
+			Thread.sleep(4000);
+			test.log(LogStatus.INFO, "Download Doc successfully");
+			ViewButton.get(2).click();
 			Thread.sleep(4000);
 			test.log(LogStatus.INFO, "overView success");
 			CFOcountPOM.closeDocument(driver).click();
-			Thread.sleep(1000);
-		
-		
-	//	elementsList = CFOcountPOM.selectDropdown(driver);				//It is a dropdown but don't have Select tag.
-		//elementsList.get(0).click();									//Clicking on first dropdown
-		Thread.sleep(500);
-		/*if(Complaince.equalsIgnoreCase("Internal"))
-		{
-			action.moveToElement(CFOcountPOM.selectFirst1(driver)).click().build().perform();	//Selecting first option of the drop down. (ABCD PVT LTD)
-		}
-		else
-		{
-			action.moveToElement(CFOcountPOM.selectFirst(driver)).click().build().perform();	//Selecting first option of the drop down. (BITA CONSULTING)
-		}
-		*/
+			Thread.sleep(3000);	
+	
 		Thread.sleep(1000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,300)");						//Scrolling down window by 1000 px.

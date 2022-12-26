@@ -96,10 +96,10 @@ public class ApprovalcountInternal {
 		driver = login.Login.UserLogin(uname,password,link);		//Method of Login class to login user.
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
+	//	wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
 
-		ApprovalcountPOM.clickManagement(driver).click();
-		Thread.sleep(5000);
+	//	ApprovalcountPOM.clickManagement(driver).click();
+	//	Thread.sleep(5000);
 		Thread.sleep(700);
 		Select drp = new Select(CFOcountPOM.selectInternal(driver));
 		drp.selectByIndex(1);
@@ -126,7 +126,7 @@ public class ApprovalcountInternal {
 		}
 	}
 	
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	void clickCategoriesInternal() throws InterruptedException
 	{
 		test = extent.startTest(" Count by Clicking on 'Categories'");
@@ -263,7 +263,7 @@ public class ApprovalcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 3)
+//	@Test(priority = 3)
 	void ClickCompliancesInternal() throws InterruptedException
 	{
 		test = extent.startTest("'Complainces' Count by Clicking on 'Compliances'");
@@ -326,7 +326,7 @@ public class ApprovalcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 4)
+//	@Test(priority = 4)
 	void clickUsersInternal() throws InterruptedException
 	{
 		test = extent.startTest("'Users' Count by Clicking on 'Users'");
@@ -386,7 +386,7 @@ public class ApprovalcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 5)
+//	@Test(priority = 5)
 	void SummaryofOverdueCompliances() throws InterruptedException
 	{
 		test = extent.startTest(" Summary of Overdue Compliances Internal");
@@ -434,7 +434,7 @@ public class ApprovalcountInternal {
 		
 	}
 	
-	@Test(priority = 6)
+//	@Test(priority = 6)
 	void NotCompleted_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart - 'Not Completed' Count Verification");
@@ -521,7 +521,7 @@ public class ApprovalcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 7)
+	//@Test(priority = 7)
 	void Overdue_PieChartInternal() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart - 'Overdue' Count Verification");
@@ -621,9 +621,9 @@ public class ApprovalcountInternal {
 		//driver.navigate().refresh();
 		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
+	//	wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
 
-		ApprovalcountPOM.clickManagement(driver).click();
+	/*	ApprovalcountPOM.clickManagement(driver).click();
 		Thread.sleep(5000);
 		Select drp = new Select(CFOcountPOM.selectInternal(driver));
 		drp.selectByIndex(1);
@@ -631,7 +631,7 @@ public class ApprovalcountInternal {
 		Thread.sleep(2000);
 		CFOcountPOM.clickApply(driver).click();
 		Thread.sleep(4000);
-		Thread.sleep(500);
+		Thread.sleep(500);*/
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
@@ -725,9 +725,9 @@ public class ApprovalcountInternal {
 		Thread.sleep(500);
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
+	//	wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
 
-		ApprovalcountPOM.clickManagement(driver).click();
+	//	ApprovalcountPOM.clickManagement(driver).click();
 		Thread.sleep(5000);
 		Select drp = new Select(CFOcountPOM.selectInternal(driver));
 		drp.selectByIndex(1);
@@ -802,7 +802,7 @@ public class ApprovalcountInternal {
 			
 			Thread.sleep(500);
 		//	action.moveToElement(CFOcountPOM.clickBack2(driver)).click().build().perform();	 //Clicking on Back button
-			performer.OverduePOM.clickDashboard(driver).click();			//Clicking on Dashboard
+		//	performer.OverduePOM.clickDashboard(driver).click();			//Clicking on Dashboard
 
 		}
 		else
@@ -811,20 +811,20 @@ public class ApprovalcountInternal {
 			
 			Thread.sleep(500);
 		//	action.moveToElement(CFOcountPOM.clickBack2(driver)).click().build().perform();	//Clicking on Dashboard
-			performer.OverduePOM.clickDashboard(driver).click();			//Clicking on Dashboard
+		//	performer.OverduePOM.clickDashboard(driver).click();			//Clicking on Dashboard
 
 		}
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-//	@Test(priority = 12)
+	//@Test(priority = 12)
 	void DepartmentSummaryInternal() throws InterruptedException
 	{
 		Thread.sleep(500);		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-	//	js.executeScript("window.scrollBy(0,500)");					//Scrolling down window by 1500 px.
-		js.executeScript("window.scrollBy(0,1500)");
+		js.executeScript("window.scrollBy(0,1000)");					//Scrolling down window by 1500 px.
+	//	js.executeScript("window.scrollBy(0,1500)");
 		
 		test = extent.startTest("Department Summary - 'Account-Closed Delayed' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
@@ -863,7 +863,7 @@ public class ApprovalcountInternal {
 		//-----------------------------------------------------
 		
 		Thread.sleep(500);
-		String FinaOverdue = CFOcountPOM.clickAccountOverdueInternal(driver).getText();			//Reading the Overdue value of Human Resource
+	/*	String FinaOverdue = CFOcountPOM.clickAccountOverdueInternal(driver).getText();			//Reading the Overdue value of Human Resource
 		FinaOverdue = FinaOverdue.replaceAll(" ","");									//Removing all white spaces from string. 
 		int Fina_Overdue = Integer.parseInt(FinaOverdue);						
 		if(Fina_Overdue > 0)
@@ -875,7 +875,7 @@ public class ApprovalcountInternal {
 		{
 			test.log(LogStatus.SKIP, "'Account - Overdue' Complaince Count = "+ Fina_Overdue + ".");
 		}
-		
+		*/
 		Thread.sleep(500);
 		String FinaPFReview = CFOcountPOM.clickAccountPenFReviewInternal(driver).getText();			//Reading the Overdue value of Human Resource
 		FinaPFReview = FinaPFReview.replaceAll(" ","");									//Removing all white spaces from string. 
@@ -941,7 +941,7 @@ public class ApprovalcountInternal {
 	}
 
 	
-	@Test(priority = 13)
+//	@Test(priority = 13)
 	void NotCompleted_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart - 'Not Completed' Count Verification");
@@ -1047,7 +1047,7 @@ public class ApprovalcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 14)
+	//@Test(priority = 14)
 	void Overdue_PieChartInternalPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart - 'Overdue' Count Verification");
@@ -1156,7 +1156,7 @@ public class ApprovalcountInternal {
 		
 		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
+	/*	wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
 
 		ApprovalcountPOM.clickManagement(driver).click();
 		Thread.sleep(5000);
@@ -1165,11 +1165,11 @@ public class ApprovalcountInternal {
 		
 		Thread.sleep(2000);
 		CFOcountPOM.clickApply(driver).click();
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		Thread.sleep(500);
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,2000)");						//Scrolling down window by 1000 px.
+		js.executeScript("window.scrollBy(0,1500)");						//Scrolling down window by 1000 px.
 		Thread.sleep(1000);
 	//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));
@@ -1262,9 +1262,9 @@ public class ApprovalcountInternal {
 		Thread.sleep(500);
 		Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
+	//	wait.until(ExpectedConditions.visibilityOf(ApprovalcountPOM.clickManagement(driver)));
 
-		ApprovalcountPOM.clickManagement(driver).click();
+		//ApprovalcountPOM.clickManagement(driver).click();
 		Thread.sleep(5000);
 		Select drp = new Select(CFOcountPOM.selectInternal(driver));
 		drp.selectByIndex(1);
@@ -1357,7 +1357,7 @@ public class ApprovalcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 17)
+//	@Test(priority = 17)
 	void AssignmentReportInternal() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Assignment Report verification");

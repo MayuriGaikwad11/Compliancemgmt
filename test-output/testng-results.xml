@@ -1,17 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="31053" started-at="2022-12-23T16:50:09 IST" finished-at="2022-12-23T16:50:40 IST">
+  <suite name="Default suite" duration-ms="513322" started-at="2022-12-26T18:30:49 IST" finished-at="2022-12-26T18:39:22 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="31053" started-at="2022-12-23T16:50:09 IST" finished-at="2022-12-23T16:50:40 IST">
-      <class name="pom.TestCases">
-        <test-method status="PASS" signature="Login1()[pri:0, instance:pom.TestCases@3d45bd]" name="Login1" duration-ms="30965" started-at="2022-12-23T16:50:09 IST" finished-at="2022-12-23T16:50:40 IST">
+    <test name="Default test" duration-ms="513322" started-at="2022-12-26T18:30:49 IST" finished-at="2022-12-26T18:39:22 IST">
+      <class name="approval.ApprovalcountStatutory">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:approval.ApprovalcountStatutory@bf3d14]" name="setBrowser" is-config="true" duration-ms="13654" started-at="2022-12-26T18:30:49 IST" finished-at="2022-12-26T18:31:03 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login1 -->
-      </class> <!-- pom.TestCases -->
+        </test-method> <!-- setBrowser -->
+        <test-method status="PASS" signature="Login()[pri:1, instance:approval.ApprovalcountStatutory@bf3d14]" name="Login" duration-ms="33684" started-at="2022-12-26T18:31:03 IST" finished-at="2022-12-26T18:31:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="ClosedDelayed_PieChart()[pri:8, instance:approval.ApprovalcountStatutory@bf3d14]" name="ClosedDelayed_PieChart" duration-ms="51419" started-at="2022-12-26T18:31:37 IST" finished-at="2022-12-26T18:32:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClosedDelayed_PieChart -->
+        <test-method status="PASS" signature="ClosedTimely_PieChart()[pri:9, instance:approval.ApprovalcountStatutory@bf3d14]" name="ClosedTimely_PieChart" duration-ms="47252" started-at="2022-12-26T18:32:28 IST" finished-at="2022-12-26T18:33:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClosedTimely_PieChart -->
+        <test-method status="PASS" signature="pendingForReview_PieChart()[pri:11, instance:approval.ApprovalcountStatutory@bf3d14]" name="pendingForReview_PieChart" duration-ms="56516" started-at="2022-12-26T18:33:15 IST" finished-at="2022-12-26T18:34:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pendingForReview_PieChart -->
+        <test-method status="PASS" signature="rejected_PieChart()[pri:12, instance:approval.ApprovalcountStatutory@bf3d14]" name="rejected_PieChart" duration-ms="56750" started-at="2022-12-26T18:34:12 IST" finished-at="2022-12-26T18:35:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rejected_PieChart -->
+        <test-method status="PASS" signature="RiskSummaryHighStatutory()[pri:13, instance:approval.ApprovalcountStatutory@bf3d14]" name="RiskSummaryHighStatutory" duration-ms="51694" started-at="2022-12-26T18:35:09 IST" finished-at="2022-12-26T18:36:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RiskSummaryHighStatutory -->
+        <test-method status="PASS" signature="DepartmentSummaryAccountStatutory()[pri:14, instance:approval.ApprovalcountStatutory@bf3d14]" name="DepartmentSummaryAccountStatutory" duration-ms="93911" started-at="2022-12-26T18:36:00 IST" finished-at="2022-12-26T18:37:34 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DepartmentSummaryAccountStatutory -->
+        <test-method status="PASS" signature="ClosedTimely_PieChartPeriod()[pri:16, instance:approval.ApprovalcountStatutory@bf3d14]" name="ClosedTimely_PieChartPeriod" duration-ms="52218" started-at="2022-12-26T18:37:34 IST" finished-at="2022-12-26T18:38:26 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClosedTimely_PieChartPeriod -->
+        <test-method status="PASS" signature="pendingForReview_PieChartPeriod()[pri:18, instance:approval.ApprovalcountStatutory@bf3d14]" name="pendingForReview_PieChartPeriod" duration-ms="55957" started-at="2022-12-26T18:38:26 IST" finished-at="2022-12-26T18:39:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pendingForReview_PieChartPeriod -->
+      </class> <!-- approval.ApprovalcountStatutory -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

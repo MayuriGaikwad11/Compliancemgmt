@@ -3,11 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pom.TestCases">
+      <class name="departmentHead.DeptcountStatutory">
         <methods>
-          <include name="Login1"/>
+          <include name="ClosedTimely_PieChartPeriod"/>
+          <include name="Inprogress_PieChartPeriod"/>
+          <include name="ClosedTimely_PieChart"/>
+          <include name="inProgress_PieChart"/>
+          <include name="pendingForReview_PieChart"/>
+          <include name="setBrowser"/>
+          <include name="DepartmentSummaryFinanceStatutory"/>
+          <include name="pendingForReview_PieChartPeriod"/>
+          <include name="Login"/>
         </methods>
-      </class> <!-- pom.TestCases -->
+      </class> <!-- departmentHead.DeptcountStatutory -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
