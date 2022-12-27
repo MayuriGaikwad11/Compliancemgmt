@@ -114,7 +114,87 @@ public class DeptcountStatutory {
 		}
 	}
 	
-	//@Test(priority = 2)
+	@Test(priority = 2)
+	void  FilterWiseDepartmentCountMatch() throws InterruptedException
+	{
+		test = extent.startTest(" Count Match Filter Wise by Clicking on 'Depatment' - Compliances");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String string_Categories =CFOcountPOM.clickCategories(driver).getText();		//Storing old value of Statutory overdue.
+	int	CategoriesCountDas = Integer.parseInt(string_Categories);
+		CFOcountPOM.clickCategories(driver).click();
+		Thread.sleep(500);
+		
+		litigationPerformer.MethodsPOM.progress(driver);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[3]/td[4]/div")));
+		Thread.sleep(3000);
+		CFOcountPOM.SelectLocation(driver).click();
+		Thread.sleep(3000);
+		CFOcountPOM.ClickIocon(driver).click();
+		CFOcountPOM.ClickABCMall(driver).click();
+		Thread.sleep(4000);
+		WebElement CompCat=	driver.findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[4]/div"));
+		int	value = Integer.parseInt(CompCat.getText());
+		Thread.sleep(1000);
+		CompCat.click();
+		Thread.sleep(500);
+
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));	//Wait until frame get visible and switch to it.
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-grid-content k-auto-scrollable']")));
+		Thread.sleep(4000);
+		js.executeScript("window.scrollBy(0,3000)");				//Scrolling down window by 2000 px.
+		Thread.sleep(1000);
+		CFOcountPOM.readTotalItemsD(driver).click();
+		
+		Thread.sleep(1000);
+		String item = CFOcountPOM.readTotalItemsD(driver).getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount1 = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		
+	int	count1 = Integer.parseInt(compliancesCount1);
+		
+		
+		if(value == count1)
+		{
+			test.log(LogStatus.PASS, "Compliances count matches. Clicked value = " + value+ ", Grid Records = "+count1);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Compliances count does not matches. Clicked value = "+value+", Grid Records = "+count1);
+		}
+		
+		driver.switchTo().parentFrame();	//Switching back to parent frame.
+		Thread.sleep(500);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		Thread.sleep(2000);
+		jse.executeScript("arguments[0].click();", CFOcountPOM.closeCategories_Compliances(driver));
+	//	CFOcountPOM.closeCategories_Compliances(driver).click();		//Closing the 'Compliances' pup up.
+		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='ClearfilterMain']")).click();
+		Thread.sleep(2000);
+		test.log(LogStatus.PASS, "Clear Button is working");
+	//	Thread.sleep(3000);
+		js.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
+		Thread.sleep(2000);
+		driver.switchTo().defaultContent();
+			
+		Thread.sleep(4000);
+		CFOcountPOM.closeCategories(driver).click();
+		Thread.sleep(2000);
+		extent.endTest(test);
+		extent.flush();
+	}
+		
+
+	
+	//@Test(priority = 3)
 	void DepartmentCountMatch() throws InterruptedException
 	{
 		test = extent.startTest(" Count by Clicking on 'Department'");

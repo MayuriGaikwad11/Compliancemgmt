@@ -119,6 +119,83 @@ public class DeptcountInternal {
 		}
 	}
 	
+	@Test(priority = 2)
+	void  FilterWiseDepartmentCountMatch() throws InterruptedException
+	{
+		test = extent.startTest(" Count Match Filter Wise by Clicking on 'Depatment' - Compliances");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String string_Categories =CFOcountPOM.clickCategories(driver).getText();		//Storing old value of Statutory overdue.
+	int	CategoriesCountDas = Integer.parseInt(string_Categories);
+		CFOcountPOM.clickCategories(driver).click();
+		Thread.sleep(500);
+		
+		litigationPerformer.MethodsPOM.progress(driver);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[3]/td[4]/div")));
+		Thread.sleep(3000);
+		CFOcountPOM.SelectLocation(driver).click();
+		Thread.sleep(3000);
+		CFOcountPOM.ClickIocon(driver).click();
+		CFOcountPOM.ClickABCMall(driver).click();
+		Thread.sleep(4000);
+		WebElement CompCat=	driver.findElement(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[4]/div"));
+		int	value = Integer.parseInt(CompCat.getText());
+		Thread.sleep(1000);
+		CompCat.click();
+		Thread.sleep(500);
+
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));	//Wait until frame get visible and switch to it.
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-grid-content k-auto-scrollable']")));
+		Thread.sleep(4000);
+		js.executeScript("window.scrollBy(0,3000)");				//Scrolling down window by 2000 px.
+		Thread.sleep(1000);
+		CFOcountPOM.readTotalItemsD(driver).click();
+		
+		Thread.sleep(1000);
+		String item = CFOcountPOM.readTotalItemsD(driver).getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount1 = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		
+	int	count1 = Integer.parseInt(compliancesCount1);
+		
+		
+		if(value == count1)
+		{
+			test.log(LogStatus.PASS, "Compliances count matches. Clicked value = " + value+ ", Grid Records = "+count1);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Compliances count does not matches. Clicked value = "+value+", Grid Records = "+count1);
+		}
+		
+		driver.switchTo().parentFrame();	//Switching back to parent frame.
+		Thread.sleep(500);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		Thread.sleep(2000);
+		jse.executeScript("arguments[0].click();", CFOcountPOM.closeCategories_Compliances(driver));
+	//	CFOcountPOM.closeCategories_Compliances(driver).click();		//Closing the 'Compliances' pup up.
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='ClearfilterMain']")).click();
+		Thread.sleep(3000);
+		test.log(LogStatus.PASS, "Clear Button is working");
+		js.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
+		Thread.sleep(3000);
+		driver.switchTo().defaultContent();
+			
+		Thread.sleep(4000);
+		CFOcountPOM.closeCategories(driver).click();
+		Thread.sleep(2000);
+		extent.endTest(test);
+		extent.flush();
+	}
+		
+	
 //	@Test(priority = 2)
 	void clickCategoriesInternal() throws InterruptedException
 	{
@@ -258,7 +335,7 @@ public class DeptcountInternal {
 	}
 	
 	
-	@Test(priority = 3)
+//	@Test(priority = 3)
 	void ClickCompliancesInternal() throws InterruptedException
 	{
 		test = extent.startTest("'Complainces' Count by Clicking on 'Compliances'");
@@ -321,7 +398,7 @@ public class DeptcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 4)
+//	@Test(priority = 4)
 	void clickUsersInternal() throws InterruptedException
 	{
 		test = extent.startTest("'Users' Count by Clicking on 'Users'");
@@ -381,7 +458,7 @@ public class DeptcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	void SummaryofOverdueCompliances() throws InterruptedException
 	{
 		test = extent.startTest(" Summary of Overdue Compliances Internal");
@@ -422,7 +499,7 @@ public class DeptcountInternal {
 		
 	}
 	
-	@Test(priority = 6)
+//	@Test(priority = 6)
 	void NotCompleted_PieChart() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart - 'Not Completed' Count Verification");
@@ -509,7 +586,7 @@ public class DeptcountInternal {
 		extent.flush();
 	}
 		
-	@Test(priority = 7)
+//	@Test(priority = 7)
 	void Overdue_PieChartInternal() throws InterruptedException
 	{
 		test = extent.startTest("Pie Chart - 'Overdue' Count Verification");
@@ -619,7 +696,7 @@ public class DeptcountInternal {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		int OverdueValue = Integer.parseInt(CFOcountPOM.clickpendingForReviewIND(driver).getText());	//Reading value of 'Not Completed'
 		CFOcountPOM.clickpendingForReviewIND(driver).click();									//CLicking on 'Not Completed' count
 		
@@ -804,7 +881,7 @@ public class DeptcountInternal {
 		js.executeScript("window.scrollBy(0,500)");					//Scrolling down window by 1500 px.
 	//	js.executeScript("window.scrollBy(0,1000)");
 		
-		test = extent.startTest("Department Summary - 'Finance-Closed Delayed' Count Verification");
+		test = extent.startTest("Department Summary - 'Account' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		test.log(LogStatus.INFO, "---After selecting all location from 'Entity/Sub-Entity/Location' drop down.");
 		
@@ -815,11 +892,11 @@ public class DeptcountInternal {
 		if(Finance_CloseDelayed > 0)
 		{
 			CFOcountPOM.clickFinanceClosedDelayedInternal(driver).click();
-			CFOcountPOM.RiskGraphCount(driver, test, "Finance -Closed Delayed ", Finance_CloseDelayed, "Internal");
+			CFOcountPOM.RiskGraphCount(driver, test, "Account -Closed Delayed ", Finance_CloseDelayed, "Internal");
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, "'Finance -Closed Delayed' Complaince Count = "+ Finance_CloseDelayed + ".");
+			test.log(LogStatus.SKIP, "'Account -Closed Delayed' Complaince Count = "+ Finance_CloseDelayed + ".");
 		}
 		
 		//------------------------------------------------------
@@ -831,29 +908,29 @@ public class DeptcountInternal {
 		if(Fina_ClosedTimely > 0)
 		{
 			CFOcountPOM.clickFinanceClosedTimelyInternal(driver).click();
-			CFOcountPOM.RiskGraphCount(driver, test, "Finance -Closed Timely", Fina_ClosedTimely, "Internal");
+			CFOcountPOM.RiskGraphCount(driver, test, "Account -Closed Timely", Fina_ClosedTimely, "Internal");
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, "'Finance -Closed Timely' Complaince Count = "+ Fina_ClosedTimely + ".");
+			test.log(LogStatus.SKIP, "'Account -Closed Timely' Complaince Count = "+ Fina_ClosedTimely + ".");
 		}
 		
 		//-----------------------------------------------------
 		*/
-		Thread.sleep(500);
+	/*	Thread.sleep(500);
 		String FinaOverdue = CFOcountPOM.clickAccountOverdueInternalD(driver).getText();			//Reading the Overdue value of Human Resource
 		FinaOverdue = FinaOverdue.replaceAll(" ","");									//Removing all white spaces from string. 
 		int Fina_Overdue = Integer.parseInt(FinaOverdue);						
 		if(Fina_Overdue > 0)
 		{
 			CFOcountPOM.clickAccountOverdueInternalD(driver).click();
-			DeptCountPOM.GraphCountIn(driver, test, "Finance -Overdue", Fina_Overdue, "Internal");
+			DeptCountPOM.GraphCountIn(driver, test, "Account -Overdue", Fina_Overdue, "Internal");
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, "'Finance - Overdue' Complaince Count = "+ Fina_Overdue + ".");
+			test.log(LogStatus.SKIP, "'Account - Overdue' Complaince Count = "+ Fina_Overdue + ".");
 		}
-		
+		*/
 		Thread.sleep(500);
 		String FinaPFReview = CFOcountPOM.clickAccountPenFReviewInternalD(driver).getText();			//Reading the Overdue value of Human Resource
 		FinaPFReview = FinaPFReview.replaceAll(" ","");									//Removing all white spaces from string. 
@@ -861,11 +938,11 @@ public class DeptcountInternal {
 		if(Fina_PFR > 0)
 		{
 			CFOcountPOM.clickAccountPenFReviewInternalD(driver).click();
-			DeptCountPOM.GraphCountIn1(driver, test, "Finance -Pending For Review", Fina_PFR, "Internal");
+			DeptCountPOM.GraphCountIn1(driver, test, "Account -Pending For Review", Fina_PFR, "Internal");
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, "'Finance - Pending For Review' Complaince Count = "+ Fina_PFR + ".");
+			test.log(LogStatus.SKIP, "'Account - Pending For Review' Complaince Count = "+ Fina_PFR + ".");
 		}
 		
 		Thread.sleep(3000);
@@ -876,11 +953,11 @@ public class DeptcountInternal {
 		if(Fina_InProgress > 0)
 		{
 			CFOcountPOM.clickFinanceInProgressInternal(driver).click();
-			CFOcountPOM.RiskGraphCount(driver, test, "Finance -In Progress", Fina_InProgress, "Internal");
+			CFOcountPOM.RiskGraphCount(driver, test, "Account -In Progress", Fina_InProgress, "Internal");
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, "'Finance - In Progress ' Complaince Count = "+ Fina_InProgress + ".");
+			test.log(LogStatus.SKIP, "'Account - In Progress ' Complaince Count = "+ Fina_InProgress + ".");
 		}
 		
 		Thread.sleep(3000);
@@ -890,11 +967,11 @@ public class DeptcountInternal {
 		if(Fina_Rejected > 0)
 		{
 			CFOcountPOM.clickFinanceRejectedInternal(driver).click();
-			CFOcountPOM.RiskGraphCount(driver, test, "Finance -Rejected", Fina_Rejected, "Internal");
+			CFOcountPOM.RiskGraphCount(driver, test, "Account -Rejected", Fina_Rejected, "Internal");
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, "'Finance - Rejected' Complaince Count = "+ Fina_Rejected + ".");
+			test.log(LogStatus.SKIP, "'Account - Rejected' Complaince Count = "+ Fina_Rejected + ".");
 		}
 		
 	/*	Thread.sleep(3000);
@@ -904,11 +981,11 @@ public class DeptcountInternal {
 		if(Fina_NotAppli > 0)
 		{
 			CFOcountPOM.clickFinanceRejectedInternal(driver).click();
-			CFOcountPOM.RiskGraphCount(driver, test, "Finance -Not Applicable", Fina_NotAppli, "Internal");
+			CFOcountPOM.RiskGraphCount(driver, test, "Account -Not Applicable", Fina_NotAppli, "Internal");
 		}
 		else
 		{
-			test.log(LogStatus.SKIP, "'Finance - Not Applicable' Complaince Count = "+ Fina_NotAppli + ".");
+			test.log(LogStatus.SKIP, "'Account - Not Applicable' Complaince Count = "+ Fina_NotAppli + ".");
 		}
 		*/
 		Thread.sleep(500);
@@ -918,7 +995,7 @@ public class DeptcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 11)
+	//@Test(priority = 11)
 	void NotCompleted_PieChartPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart - 'Not Completed' Count Verification");
@@ -1020,7 +1097,7 @@ public class DeptcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 12)
+//	@Test(priority = 12)
 	void Overdue_PieChartInternalPeriod() throws InterruptedException
 	{
 		test = extent.startTest("Period-Pie Chart - 'Overdue' Count Verification");
@@ -1122,7 +1199,7 @@ public class DeptcountInternal {
 	@Test(priority = 13)
 	void PFR_PieChartInternalPeriod() throws InterruptedException
 	{
-		test = extent.startTest("Period-Pie Chart - 'Overdue' Count Verification");
+		test = extent.startTest("Period-Pie Chart - 'PFR' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 	//	test.log(LogStatus.INFO, "---After selecting all location from 'Entity/Sub-Entity/Location' drop down.");
 		//driver.navigate().refresh();
@@ -1319,7 +1396,7 @@ public class DeptcountInternal {
 		extent.flush();
 	}
 	
-	@Test(priority = 15)
+//	@Test(priority = 15)
 	void GradingReportInternal() throws InterruptedException, IOException
 	{
 		Thread.sleep(500);		
@@ -1365,7 +1442,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[12]/a");
 		extent.flush();
 	}
 	
-	@Test(priority = 16)
+//	@Test(priority = 16)
 	void DailyUpdatesInternal() throws InterruptedException, IOException
 	{
 		Thread.sleep(500);		
@@ -1390,7 +1467,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[12]/a");
 		extent.flush();
 	}
 	
-	@Test(priority = 17)
+//	@Test(priority = 17)
 	void NewsLetterInternal() throws InterruptedException, IOException
 	{
 		Thread.sleep(500);		

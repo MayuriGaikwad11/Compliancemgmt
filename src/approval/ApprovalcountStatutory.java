@@ -123,6 +123,79 @@ public class ApprovalcountStatutory {
 		}
 	}
 	
+	@Test(priority = 2)
+	void FilterWiseCategoriesCountMatch() throws InterruptedException
+	{
+		test = extent.startTest(" Count Match Filter Wise by Clicking on 'Categories' - Compliances ");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		CFOcountPOM.clickCategories(driver).click();
+		Thread.sleep(500);
+		
+		litigationPerformer.MethodsPOM.progress(driver);
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(70));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetails"));	//Wait until frame get visible and switch to it.
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[3]/td[4]/div")));
+		Thread.sleep(3000);
+		CFOcountPOM.clickLocation(driver).click();
+		Thread.sleep(1000);
+		CFOcountPOM.clickBPVT(driver).click();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table")));
+	
+		Thread.sleep(8000);
+		elementsList1 = CFOcountPOM.readCompliancesList(driver);
+	int	value = Integer.parseInt(elementsList1.get(1).getText());
+	Thread.sleep(500);
+		elementsList1.get(1).click();
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("APIOverView"));	//Wait until frame get visible and switch to it.
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-grid-content k-auto-scrollable']")));
+		Thread.sleep(4000);
+		js.executeScript("window.scrollBy(0,3000)");				//Scrolling down window by 2000 px.
+		Thread.sleep(1000);
+		CFOcountPOM.readTotalItemsD(driver).click();
+		
+		Thread.sleep(1000);
+		String item = CFOcountPOM.readTotalItemsD(driver).getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount1 = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		
+	int	count1 = Integer.parseInt(compliancesCount1);
+		js.executeScript("window.scrollBy(0,3000)");
+		if(value == count1)
+		{
+			test.log(LogStatus.PASS, "Compliances count matches. Clicked value = " + value+ ", Grid Records = "+count1);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Compliances count does not matches. Clicked value = "+value+", Grid Records = "+count1);
+		}
+		
+		driver.switchTo().parentFrame();								//Switching back to parent frame.
+		Thread.sleep(3000);
+		CFOcountPOM.closeCategories_Compliances(driver).click();		//Closing the 'Compliances' pup up.
+		//Thread.sleep(2000);
+	
+	//	Thread.sleep(3000);
+		js.executeScript("window.scrollBy(2000,0)");     //Scrolling UP window by 2000 px.
+		Thread.sleep(3000);
+		driver.switchTo().defaultContent();
+			
+		Thread.sleep(4000);
+		CFOcountPOM.closeCategories(driver).click();
+		Thread.sleep(2000);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+
+	
 //	@Test(priority = 2)
 	void CategoriesCountMatch() throws InterruptedException
 	{
@@ -513,7 +586,7 @@ public class ApprovalcountStatutory {
 	{
 		test = extent.startTest("Pie Chart -Completion Status- 'Closed Delayed' Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
-		
+		Thread.sleep(1000);
 		Actions action = new Actions(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.

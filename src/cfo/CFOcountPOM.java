@@ -101,6 +101,13 @@ public class CFOcountPOM
 		return compliances;
 	} 
 	
+	public static WebElement clickBPVT(WebDriver driver)		//Method for reading Compliances value on Dashboard
+	{
+		compliances = driver.findElement(By.xpath("(//span[@class='k-in'])[7]"));
+		return compliances;
+	} 
+	
+	
 	public static List<WebElement> readCompliancesList(WebDriver driver)	//Method for reading list of compliances after clicking Categories. 
 	{
 		compliancesList = driver.findElements(By.xpath("//*[contains(@onclick,'openpopup')]"));
@@ -492,6 +499,25 @@ public class CFOcountPOM
 		piechart = driver.findElement(By.xpath("//*[contains(text(),'BITA Consulting Private Limited')][@class='k-in']"));
 		return piechart;
 	}
+	
+	public static WebElement SelectLocation(WebDriver driver)					//Method to select first option in the first drop down
+	{
+		piechart = driver.findElement(By.xpath("//*[@id='example']/div/div/div"));
+		return piechart;
+	}
+	
+	public static WebElement ClickIocon(WebDriver driver)					//Method to select first option in the first drop down
+	{
+		piechart = driver.findElement(By.xpath("//span[@class='k-icon k-i-expand']"));
+		return piechart;
+	}
+	
+	public static WebElement ClickABCMall(WebDriver driver)					//Method to select first option in the first drop down
+	{
+		piechart = driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[3]"));
+		return piechart;
+	}
+	
 	
 	public static WebElement selectFirst1(WebDriver driver)					//Method to select first option in the first drop down
 	{
