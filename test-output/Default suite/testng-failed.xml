@@ -3,19 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="approval.ApprovalcountStatutory">
+      <class name="performer.OverdueCount">
         <methods>
-          <include name="RiskSummaryHighStatutory"/>
-          <include name="DepartmentSummaryAccountStatutory"/>
-          <include name="rejected_PieChart"/>
-          <include name="pendingForReview_PieChartPeriod"/>
+          <include name="DetailedReportIn"/>
           <include name="setBrowser"/>
-          <include name="pendingForReview_PieChart"/>
-          <include name="ClosedTimely_PieChart"/>
-          <include name="ClosedDelayed_PieChart"/>
-          <include name="ClosedTimely_PieChartPeriod"/>
+          <include name="Closing"/>
         </methods>
-      </class> <!-- approval.ApprovalcountStatutory -->
+      </class> <!-- performer.OverdueCount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

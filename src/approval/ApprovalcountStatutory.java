@@ -123,7 +123,7 @@ public class ApprovalcountStatutory {
 		}
 	}
 	
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	void FilterWiseCategoriesCountMatch() throws InterruptedException
 	{
 		test = extent.startTest(" Count Match Filter Wise by Clicking on 'Categories' - Compliances ");

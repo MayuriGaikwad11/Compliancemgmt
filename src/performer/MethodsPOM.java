@@ -1,5 +1,6 @@
 package performer;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -3025,6 +3026,302 @@ public class MethodsPOM
 		driver.findElement(By.xpath("//*[@id='Startdatepicker']")).sendKeys("14-Dec-2022");
 	//	OverduePOM.clickDashboard(driver).click();						//Clicking on Dashboard link.
 		Thread.sleep(1000);
+	}
+	
+	public static void DetailedReport1(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		CFOcountPOM.clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		CFOcountPOM.clickDetailedReport(driver).click();			//Clicking on 'Detailed Reports' 
+		Thread.sleep(7000);
+		OverduePOM.ClickDropD(driver).click();
+		Thread.sleep(500);
+		OverduePOM.SelectPerformer(driver).click();
+		Thread.sleep(500);
+		OverduePOM.clickApply(driver).click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
+		
+		Thread.sleep(4000);
+		CFOcountPOM.clickExportImage(driver).click();			//Exporting (Downloading) file
+		Thread.sleep(500);
+		test.log(LogStatus.PASS, "Export successfully");
+		Thread.sleep(4000);
+		By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[27]/a[1]");
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	Thread.sleep(2000);
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(1000);
+		CFOcountPOM.closeDocument1(driver).click();
+		test.log(LogStatus.INFO, "overView success");
+	
+		Thread.sleep(3000);
+		OverduePOM.clickRiskD(driver).click();
+		Thread.sleep(1000);
+		By locatorR = By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[8]");
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		
+		WebElement clickHigh = driver.findElement(locatorR);	
+		Thread.sleep(4000);
+	jse.executeScript("arguments[0].click();", clickHigh);
+		Thread.sleep(4000);
+		
+		OverduePOM.clickclearBtn(driver).click();
+		test.log(LogStatus.PASS, "Clear Button is working");
+		Thread.sleep(7000);
+		CFOcountPOM.clickAdvancedSearch(driver).click();
+		Thread.sleep(7000);
+		OverduePOM.ClickDropDAd(driver).click();
+		Thread.sleep(500);
+		OverduePOM.SelectPerformerAd(driver).click();
+		Thread.sleep(500);
+		OverduePOM.clickApplyAd(driver).click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]")));	//Wait till records table gets visible
+	Thread.sleep(5000);
+	
+		Thread.sleep(3000);
+		By locator1 = By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr[1]/td[27]/a[1]");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton1 = driver.findElement(locator1);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse1=(JavascriptExecutor)driver;
+	Thread.sleep(2000);
+	jse1.executeScript("arguments[0].click();", ViewButton1);
+		Thread.sleep(5000);
+		
+		By locator3 = By.xpath("//*[@id='divOverView1']/div/div/div[1]/button");
+		  
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator3));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement close = driver.findElement(locator3);	
+		Thread.sleep(4000);
+	//JavascriptExecutor jse=(JavascriptExecutor)driver;
+	Thread.sleep(2000);
+	jse.executeScript("arguments[0].click();", close);
+	test.log(LogStatus.INFO, "Advanced Search-overView success");
+		Thread.sleep(4000);
+	//	CFOcountPOM.closeDocument2(driver).click();
+		Thread.sleep(4000);
+		CFOcountPOM.clickExportExcel(driver).click();
+		Thread.sleep(3000);
+		test.log(LogStatus.INFO, "Advanced Search-Export successfully");
+		CFOcountPOM.selectMonth1(driver).click();
+		Thread.sleep(3000);
+		
+		CFOcountPOM.selectLastSixMon(driver).click();
+		Thread.sleep(2000);
+		CFOcountPOM.clickApplyAd(driver).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]")));	//Wait till records table gets visible
+		Thread.sleep(5000);
+		//	clickExportExcel(driver).click();
+			Thread.sleep(2000);
+			By locator2 = By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr[1]/td[27]/a");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton2 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse2=(JavascriptExecutor)driver;
+		Thread.sleep(2000);
+		jse1.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(5000);
+			test.log(LogStatus.INFO, "Advanced Search-After Apply Month-overView success");
+			CFOcountPOM.closeDocument2(driver).click();
+			Thread.sleep(4000);
+			CFOcountPOM.clickExportExcel(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.INFO, "Advanced Search-After Apply Month-Export Succefully");
+			//clickStartDate1(driver).click();
+			CFOcountPOM.clickStartDate11(driver).sendKeys("23-Nov-2022");
+			CFOcountPOM.clickLastDate11(driver).sendKeys("30-Nov-2022");
+			Thread.sleep(2000);
+			CFOcountPOM.clickApplyAd(driver).click();
+			Thread.sleep(3000);
+			OverduePOM.clickRiskDA(driver).click();
+			Thread.sleep(1000);
+			By locatorRA = By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[72]");
+			wait.until(ExpectedConditions.presenceOfElementLocated(locatorRA));
+			Thread.sleep(4000);
+			
+			WebElement clickHighA = driver.findElement(locatorRA);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", clickHighA);
+			Thread.sleep(4000);
+			
+			OverduePOM.clickclearBtnA(driver).click();
+			Thread.sleep(4000);
+			test.log(LogStatus.INFO, "Advanced Search-Clear Button is working");
+			CFOcountPOM.closeDocumentAS(driver).click();
+			Thread.sleep(2000);
+			OverduePOM.clickDashboard(driver).click();
+	}
+
+	public static void DetailedReportIn(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		CFOcountPOM.clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		CFOcountPOM.clickDetailedReport(driver).click();			//Clicking on 'Detailed Reports' 
+		Thread.sleep(7000);
+		OverduePOM.ClickDropD(driver).click();
+		Thread.sleep(500);
+		OverduePOM.SelectPerformer(driver).click();
+		Thread.sleep(500);
+		OverduePOM.clickApply(driver).click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
+		Thread.sleep(1000);
+		OverduePOM.clickcomplianceType(driver).click();
+		Thread.sleep(1000);
+		OverduePOM.clickcomplianceSta(driver).click();
+		Thread.sleep(1000);
+		OverduePOM.clickcomplianceIN(driver).click();
+		Thread.sleep(4000);
+		CFOcountPOM.clickExportImage(driver).click();			//Exporting (Downloading) file
+		Thread.sleep(500);
+		test.log(LogStatus.PASS, "Export successfully");
+		Thread.sleep(4000);
+		By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[27]/a[1]");
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	Thread.sleep(2000);
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(1000);
+		CFOcountPOM.closeDocument1(driver).click();
+		test.log(LogStatus.INFO, "overView success");
+	
+		Thread.sleep(3000);
+		OverduePOM.clickRiskD(driver).click();
+		Thread.sleep(1000);
+		By locatorR = By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[8]");
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		
+		WebElement clickHigh = driver.findElement(locatorR);	
+		Thread.sleep(4000);
+	jse.executeScript("arguments[0].click();", clickHigh);
+		Thread.sleep(4000);
+		
+		OverduePOM.clickclearBtn(driver).click();
+		test.log(LogStatus.PASS, "Clear Button is working");
+		Thread.sleep(7000);
+		CFOcountPOM.clickAdvancedSearch(driver).click();
+		Thread.sleep(7000);
+		OverduePOM.ClickDropDAd(driver).click();
+		Thread.sleep(500);
+		OverduePOM.SelectPerformerAd(driver).click();
+		Thread.sleep(500);
+		OverduePOM.clickApplyAd(driver).click();
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]")));	//Wait till records table gets visible
+	Thread.sleep(1000);
+	OverduePOM.clickcomplianceTypeAS(driver).click();
+	Thread.sleep(1000);
+	OverduePOM.clickcomplianceStaAS(driver).click();
+	Thread.sleep(1000);
+	OverduePOM.clickcomplianceINAS(driver).click();
+	
+		Thread.sleep(3000);
+		By locator1 = By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr[1]/td[27]/a[1]");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton1 = driver.findElement(locator1);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse1=(JavascriptExecutor)driver;
+	Thread.sleep(2000);
+	jse1.executeScript("arguments[0].click();", ViewButton1);
+		Thread.sleep(5000);
+		
+		By locator3 = By.xpath("//*[@id='divOverView1']/div/div/div[1]/button");
+		  
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator3));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement close = driver.findElement(locator3);	
+		Thread.sleep(4000);
+	//JavascriptExecutor jse=(JavascriptExecutor)driver;
+	Thread.sleep(2000);
+	jse.executeScript("arguments[0].click();", close);
+	test.log(LogStatus.INFO, "Advanced Search-overView success");
+		Thread.sleep(4000);
+	//	CFOcountPOM.closeDocument2(driver).click();
+		Thread.sleep(4000);
+		CFOcountPOM.clickExportExcel(driver).click();
+		Thread.sleep(3000);
+		test.log(LogStatus.INFO, "Advanced Search-Export successfully");
+		CFOcountPOM.selectMonth1(driver).click();
+		Thread.sleep(3000);
+		
+		CFOcountPOM.selectLastSixMon(driver).click();
+		Thread.sleep(2000);
+		CFOcountPOM.clickApplyAd(driver).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]")));	//Wait till records table gets visible
+		Thread.sleep(5000);
+		//	clickExportExcel(driver).click();
+			Thread.sleep(2000);
+			By locator2 = By.xpath("//*[@id='grid1']/div[3]/table/tbody/tr[1]/td[27]/a");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			// retrieving "foo-button" HTML element
+			WebElement ViewButton2 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse2=(JavascriptExecutor)driver;
+		Thread.sleep(2000);
+		jse1.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(5000);
+			test.log(LogStatus.INFO, "Advanced Search-After Apply Month-overView success");
+			CFOcountPOM.closeDocument2(driver).click();
+			Thread.sleep(4000);
+			CFOcountPOM.clickExportExcel(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.INFO, "Advanced Search-After Apply Month-Export Succefully");
+			//clickStartDate1(driver).click();
+			CFOcountPOM.clickStartDate11(driver).sendKeys("23-Nov-2022");
+			CFOcountPOM.clickLastDate11(driver).sendKeys("30-Nov-2022");
+			Thread.sleep(2000);
+			CFOcountPOM.clickApplyAd(driver).click();
+			Thread.sleep(3000);
+			OverduePOM.clickRiskDA(driver).click();
+			Thread.sleep(1000);
+			By locatorRA = By.xpath("(//*[@class='k-checkbox-label checkbox-span'])[72]");
+			wait.until(ExpectedConditions.presenceOfElementLocated(locatorRA));
+			Thread.sleep(4000);
+			
+			WebElement clickHighA = driver.findElement(locatorRA);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", clickHighA);
+			Thread.sleep(4000);
+			
+			OverduePOM.clickclearBtnA(driver).click();
+			Thread.sleep(4000);
+			test.log(LogStatus.INFO, "Advanced Search-Clear Button is working");
+			CFOcountPOM.closeDocumentAS(driver).click();
+			Thread.sleep(2000);
+			OverduePOM.clickDashboard(driver).click();
 	}
 
 	

@@ -1,5 +1,6 @@
 package performer;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -519,6 +520,113 @@ public class OverduePOM
 		performer = driver.findElement(By.xpath("//*[@id='leftworkspacemenuLic']"));	//*[@onclick='CheckProduct();']
 		return performer;
 	}
+	
+	public static WebElement ClickDropD(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='example']/div/div[1]/div[1]/span/span/span[2]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement ClickDropDAd(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='divAdvanceSearchModel']/div[1]/div[1]/span/span/span[2]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	
+	public static WebElement SelectPerformer(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='dropdownlistUserRole_listbox']/li[1]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement SelectPerformerAd(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='dropdownlistUserRole1_listbox']/li[1]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickApply(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='Applybtn']"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickApplyAd(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='Applybtn1']"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickRiskD(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='example']/div/div[2]/div[1]/div"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickRiskDA(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='divAdvanceSearchModel']/div[1]/div[4]/div"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	
+	public static WebElement clickHigh(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//span[@class='k-in k-state-selected']"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickclearBtn(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ClearfilterMain']"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickclearBtnA(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='Clearfilter']"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+
+	public static WebElement clickcomplianceType(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='example']/div/div[1]/div[3]/div/div"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickcomplianceTypeAS(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("//*[@id='divAdvanceSearchModel']/div[2]/div[1]/div/span[1]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	
+	public static WebElement clickcomplianceSta(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-wrapper'])[1]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+
+	public static WebElement clickcomplianceStaAS(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-wrapper'])[54]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickcomplianceIN(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-wrapper'])[2]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickcomplianceINAS(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-wrapper'])[55]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+
+	
 	
 	public static WebElement clickMyWorkspace1(WebDriver driver)			//Searching 'My Workspace' element.
 	{
@@ -2212,10 +2320,31 @@ public class OverduePOM
 		
 		Thread.sleep(1000);
 		int complianceCountNew = Integer.parseInt(readReminder(driver).getText());		//Reading total number of compliances after action
-		
-		if(complianceCountNew < complianceCount)
+		Thread.sleep(1000);
+		if(complianceCountNew < complianceCount) {
 			test.log(LogStatus.PASS, compliance + " - Compliances count decreased. Old count = "+complianceCount+" | New count = "+complianceCountNew);
-		else
+		}else {
 			test.log(LogStatus.FAIL, compliance + " - Compliances count doesn't decreased. Old count = "+complianceCount+" | New count = "+complianceCountNew);
 	}
+		Thread.sleep(1000);
+		if(no == 1) {
+			Thread.sleep(500);
+		 driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upDocumentDownload']/div/div/div/section/div[2]/a")).click();
+		}else {
+			 driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_upDocumentDownload']/div/div/div[2]/section/div/div[1]/div[7]/a")).click();
+		}
+		test.log(LogStatus.PASS, "Back Button working Succefully ");
+		Thread.sleep(2000);
+		driver.navigate().back();
+		Thread.sleep(2000);
+	}
+	
+	
+	
 }
+	
+	
+	
+	
+	
+

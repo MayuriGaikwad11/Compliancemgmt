@@ -556,13 +556,25 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	//@Test(priority = 16)  Table not found
+	@Test(priority = 12) 
 	void DetailedReport() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Detailed Report Count Verification");
+		test = extent.startTest("Detailed Report -Statutory Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
 		
-		CFOcountPOM.DetailedReport(test, driver, "performer");
+		MethodsPOM.DetailedReport1(test, driver, "performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 13) 
+	void DetailedReportIn() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Detailed Report -Internal Count Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		MethodsPOM.DetailedReportIn(test, driver, "performer");
 		
 		extent.endTest(test);
 		extent.flush();
@@ -616,14 +628,14 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	//@Test(priority = 16) //pass
+	@Test(priority = 16) //pass
 	void ReviseCompliance() throws InterruptedException
 	{
-		test = extent.startTest("Revise Compliance Count Verification");
+		test = extent.startTest("Revise Compliance and Update Penalty  Count Verification");
 		test.log(LogStatus.INFO, "Test Initiated");
-		
-		//OverduePOM.ReviseCompliance(driver, test, 2);	//2 for 'Revised Compliance' from 'More Actions' drop down.
-		
+		Thread.sleep(1000);
+		OverduePOM.ReviseCompliance(driver, test, 2);	//2 for 'Revised Compliance' from 'More Actions' drop down.
+		Thread.sleep(4000);
 		OverduePOM.ReviseCompliance(driver, test, 1);	//1 for 'Update Penalty' from 'More Actions' drop down.
 		
 		OverduePOM.clickDashboard(driver).click();
@@ -647,7 +659,7 @@ public class OverdueCount
 		extent.flush();
 	}
 	
-	@Test(priority = 18)		//Sever is blocking and not allowing to upload the file.
+	//@Test(priority = 18)		//Sever is blocking and not allowing to upload the file.
 	void ComplianceEditSatTask() throws InterruptedException
 	{
 		test = extent.startTest("My Workspace - 'Update Tasks' Verification");
@@ -2282,7 +2294,7 @@ public class OverdueCount
 					extent.flush();
 		}
 		
-		@Test(priority = 36) 
+	//	@Test(priority = 36) 
 		void DailyUpdates() throws InterruptedException, IOException
 		{
 			Thread.sleep(500);		
@@ -2343,7 +2355,7 @@ public class OverdueCount
 			extent.flush();
 		}	
 		
-		 @Test(priority = 38) //pass 
+	//	 @Test(priority = 38) //pass 
 	       void TaskReport() throws InterruptedException
 				{
 					test = extent.startTest("Task Report Verification");
@@ -2355,7 +2367,7 @@ public class OverdueCount
 					extent.flush();
 				}
 	       
-	       @Test(priority = 39)
+	 //      @Test(priority = 39)
 			void InternalMsg() throws InterruptedException, IOException
 			{
 				Thread.sleep(500);		
@@ -2541,7 +2553,7 @@ public class OverdueCount
 				
 			}
       
-  //    @Test(priority = 26) 
+   //   @Test(priority = 26) 
       void PenaltyUpdation() throws InterruptedException
 			{
     	  test = extent.startTest("My Workspace - Penalty Updation");
