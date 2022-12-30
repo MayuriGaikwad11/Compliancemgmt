@@ -27,6 +27,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import cfo.CFOcountPOM;
+import performer.MethodsPOM;
 import performer.OverduePOM;
 
 public class ReviewerCount
@@ -91,8 +92,8 @@ public class ReviewerCount
 		extent.endTest(test);
 		extent.flush();
 	}
-	/*
-	@Test(priority = 2) //pass
+
+	//@Test(priority = 2) //pass
        void ReviewCountStatutoryApprove() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review Count when Approved");
@@ -256,7 +257,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-	@Test(priority = 3) //pass
+    //   @Test(priority = 3) //pass
 	void ReviewCountStatutoryReject() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory 'Pending For Review' and 'Rejected' Count when Rejected");
@@ -401,7 +402,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-	@Test(priority = 4) //pass
+//	@Test(priority = 4) //pass
 	void ReviewCountInternalApprove() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Internal 'Pending For Review' - Approved Verification");
@@ -413,7 +414,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-	@Test(priority = 5)  //pass
+//	@Test(priority = 5)  //pass
 	void ReviewCountInternalReject() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Internal 'Pending For Review' - Rejected Verification");
@@ -424,7 +425,7 @@ public class ReviewerCount
 		extent.endTest(test);
 		extent.flush();
 	}
-	*/
+	
 //	@Test(priority = 6) // pass
 	void MyReminderStatutory() throws InterruptedException, IOException
 	{
@@ -1248,167 +1249,185 @@ extent.flush();
         	  	extent.flush();
         	}
         	
-     //   @Test(priority = 16)  
-        	void DetailedReport() throws InterruptedException, IOException
+        	
+        //	@Test(priority = 15) 
+        	void DetailedReport1() throws InterruptedException, IOException
         	{
-        		test = extent.startTest("Detailed Report Count Verification");
+        		test = extent.startTest("Detailed Report -Statutory Count Verification");
         		test.log(LogStatus.INFO, "Test Initiated");
         		
-        		CFOcountPOM.DetailedReport(test, driver, "Reviewer");
+        		ReMethodsPOM.DetailedReport1(test, driver, "performer");
+        	//	MethodsPOM.DetailedReportRisk(test,driver,"performer");
+        		extent.endTest(test);
+        		extent.flush();
+        	}
+        	
+        	
+        //	@Test(priority = 16) //advance search
+        	void DetailedReportIn() throws InterruptedException, IOException
+        	{
+        		test = extent.startTest("Detailed Report -Internal Count Verification");
+        		test.log(LogStatus.INFO, "Test Initiated");
+        		
+        		ReMethodsPOM.DetailedReportIn(test, driver, "performer");
         		
         		extent.endTest(test);
         		extent.flush();
-        	}	
-        	
-      //  	@Test(priority = 16)  
-        	void DetailedReportStat() throws InterruptedException, IOException
-        	{
-        		test = extent.startTest("Detailed Report Count Internal Verification");
-        		test.log(LogStatus.INFO, "Test Initiated");
-        		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(70));
-        	    
-        		Thread.sleep(500);
-        		CFOcountPOM.clickReports(driver).click();					//Clicking on 'My Reports'
-        		Thread.sleep(3000);
-        		CFOcountPOM.clickDetailedReport(driver).click();			//Clicking on 'Detailed Reports' 
-        		
-        		Thread.sleep(3000);
-        		wait.until(ExpectedConditions.visibilityOf(OverduePOM.clickUserDropDown(driver)));
-        		OverduePOM.clickUserDropDown(driver).click();		//Clicking on User DropDown
-        		Thread.sleep(300);
-        		OverduePOM.clickReviewer(driver).click();			//CLicking on Performer under User DropDown.
-        		
-        		Thread.sleep(500);
-        		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
-        		Thread.sleep(3000);
-        		CFOcountPOM.selectMonth(driver).click();
-        		CFOcountPOM.clickAllMonths(driver).click();
-        		Thread.sleep(500);
-        		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
-        		Thread.sleep(500);
-        		
-        		JavascriptExecutor js = (JavascriptExecutor) driver;
-        		js.executeScript("window.scrollBy(0,-1000)");				//Scrolling window up.
-        		
-        		Thread.sleep(1000);
-        		wait.until(ExpectedConditions.visibilityOf(CFOcountPOM.clickComplianceDropDown(driver)));
-        		CFOcountPOM.clickComplianceDropDown(driver).click();		//Clicking on Compliance drop down.
-        		Thread.sleep(500);
-        		driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/span")).click();
-        		driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/span")).click();
-        		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[@id='1f607697-e9e7-4740-9d4a-1fa1bb84e40b']/ul"))));
-        		driver.findElement(By.xpath("//*[@id='1f607697-e9e7-4740-9d4a-1fa1bb84e40b']/ul/li[2]/div/span[2]")).click();	
-        		Thread.sleep(500);
-        		/*	try 
-        		{
-        			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));	//Wait till records table gets visible
-        		}
-        		catch(Exception e)
-        		{
-        			
-        		}
-        		
-        		js.executeScript("window.scrollBy(0,500)");					//Scrolling down window by 2600 px.
-        		Thread.sleep(500);
-        		String s1 = CFOcountPOM.readTotalItemsD(driver).getText();	//Reading the total items count in String
-        		String[] bits = s1.split(" ");								//Splitting the String
-        		String itomsCount = bits[bits.length - 2];					//Getting the second last word (total number of items)
-        		
-        		if(bits.length - 2 < 2)
-        		{
-        			Thread.sleep(1000);
-        			s1 = CFOcountPOM.readTotalItemsD(driver).getText();	//Reading the total items count in String
-        			bits = s1.split(" ");								//Splitting the String
-        			itomsCount = bits[bits.length - 2];					//Getting the second last word (total number of items)
-        		}
-        		if(itomsCount.equalsIgnoreCase("to"))						//If no records found, it shows 'No items to display'
-        		{
-        			test.log(LogStatus.INFO, "No records found for '"+Compliance+"'.");
-        			driver.navigate().refresh();
-        		}
-        		else
-        		{
-        			js.executeScript("window.scrollBy(0,-1000)");					//Scrolling down window by 2600 px.
-        			
-        		//	String file = "//home//ashitosh-avantis//Downloads//Detailed Report .xlsx";
-        			String file = "C:/Users/sandip/Downloads/Detailed Report .xlsx";
-        			File dir = new File("C:/Users/sandip/Downloads/");
-        			File[] allFiles = dir.listFiles();					//Counting number of files in directory before download
-        			
-        			Thread.sleep(1000);
-        			CFOcountPOM.clickExportImage(driver).click();			//Exporting (Downloading) file
-        			
-        			Thread.sleep(4000);
-        			File dir1 = new File("C:/Users/sandip/Downloads/");
-        			File[] allFilesNew = dir1.listFiles();					//Counting number of files in directory after download
-        			
-        			if(allFiles.length < allFilesNew.length)
-        			{
-        				test.log(LogStatus.PASS, Compliance+" :- File downloaded successfully.");
-        				
-        				File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
-        			    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-        			    {
-        			       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-        			       {
-        			           lastModifiedFile = allFilesNew[i];
-        			       }
-        			    }
-        				
-        				Thread.sleep(500);		
-        				fis = new FileInputStream(lastModifiedFile);	//Provided last modified / latest downloaded file.
-        				workbook = new XSSFWorkbook(fis);
-        				sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
-        				Row row4 = sheet.getRow(3);						//Selected 3rd index row (Fourth row)
-        				Cell c1 = row4.createCell(0);					//Selected cell (4th row, 1st column)
-        				c1.setCellValue("Test");						//Entered temp data at empty row, so that it could make easy to get Last Row Number
-        				FileOutputStream fos = new FileOutputStream(lastModifiedFile);
-        				workbook.write(fos);
-        				fos.close();
-        				
-        				int no = sheet.getLastRowNum();
-        				int SheetRecords = no - 4;						//Sheet have extra 5 lines of information at top (But row count started from 0, so -4)
-        				
-        				
-        				js.executeScript("window.scrollBy(0,500)");					//Scrolling down window by 2600 px.
-        				
-        				if(Compliance.equalsIgnoreCase("Statutory CheckList"))
-        					Thread.sleep(1500);
-        				else
-        					Thread.sleep(500);
-        				CFOcountPOM.readTotalItemsD(driver);				//clicking on Total items count to scroll down.
-        				
-        				String s11 = CFOcountPOM.readTotalItemsD(driver).getText();	//Reading the total items count in String
-        				String[] bits1 = s11.split(" ");								//Splitting the String
-        				String itomsCount1 = bits1[bits1.length - 2];					//Getting the second last word (total number of items)
-        				int count;
-        				if(itomsCount1.equalsIgnoreCase("to"))						//If no records found, it shows 'No items to display'
-        				{
-        					count = 0;
-        				}
-        				else
-        				{
-        					count = Integer.parseInt(itomsCount1);
-        				}
-        				
-        				if(count == SheetRecords)
-        				{
-        					test.log(LogStatus.PASS,  " :- No of Records in sheet matches to the number of items.");
-        					test.log(LogStatus.INFO, "Number of records in downloaded sheet = " +SheetRecords+ " | No of items in grid = "+count);
-        				}
-        				else
-        				{
-        					test.log(LogStatus.FAIL,  " :- No of Records in sheet doesn't matches to the number of items.");
-        					test.log(LogStatus.INFO, "Number of records in downloaded sheet = " +SheetRecords+ " | No of items in grid = "+count);
-        				}
-        			}
-        			else
-        			{
-        				test.log(LogStatus.FAIL, " :- File does not downloaded.");
-        			}
-        		}*/
-        		
         	}
+        	
+        //	@Test(priority = 17) //pass
+        	void AssignmentReport() throws InterruptedException, IOException
+        	{
+        		test = extent.startTest("Assignment Report count verification");
+        		test.log(LogStatus.INFO, "Test Initiated");
+        		
+        		CFOcountPOM.AssignmentReport(test, driver);
+        		
+        		extent.endTest(test);
+        		extent.flush();
+        	}
+        	
+        //	@Test(priority = 18) 
+        	void ComplianceDocumentsSat() throws InterruptedException, IOException
+        	{
+        		test = extent.startTest("Compliance Documents Statutory verification");
+        		test.log(LogStatus.INFO, "Test Initiated");
+        		
+        		MethodsPOM.complianceDocumentSta(test,driver);
+        		
+        	extent.endTest(test);
+        				extent.flush();
+        	}
+        	
+       // 	@Test(priority = 19) 
+        		void ComplianceDocumentsInter() throws InterruptedException, IOException
+        		{
+        			test = extent.startTest("Compliance Documents Internal verification");
+        			test.log(LogStatus.INFO, "Test Initiated");
+        			
+        			MethodsPOM.complianceDocumentIn(test,driver);
+        			
+        		extent.endTest(test);
+        					extent.flush();
+        		}
+        
+        //		@Test(priority = 20) 
+        		void Compliancecalendar() throws InterruptedException, IOException
+        		{
+        			test = extent.startTest("Compliance Documents Internal verification");
+        			test.log(LogStatus.INFO, "Test Initiated");
+        			
+        			ReMethodsPOM.CalendarApprove(test,driver);
+        			Thread.sleep(3000);
+        			ReMethodsPOM.CalendarReject(test,driver);
+        			
+        		extent.endTest(test);
+            	extent.flush();
+        		}
+        		
+        //		@Test(priority = 21)
+        		void DailyUpdates() throws InterruptedException, IOException
+        		{
+        			Thread.sleep(5000);		
+        			test = extent.startTest("'Daily Updates'  OverView");
+        			test.log(LogStatus.INFO, "Test Initiated");
+        			
+        			JavascriptExecutor js = (JavascriptExecutor) driver;
+        		//	js.executeScript("window.scrollBy(0,4600)");					//Scrolling down window by 2600 px.
+        			js.executeScript("window.scrollBy(0,900)");
+        			Thread.sleep(3000);	
+        			CFOcountPOM.clickViewAllDU(driver).click();
+        			Thread.sleep(4000);	
+        		//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showGRdetails"));	//Wait until frame get visible and switch to it.
+        			CFOcountPOM.clickView1(driver).click();
+        			Thread.sleep(4000);	
+        			CFOcountPOM.closeNewsView(driver).click();
+        			Thread.sleep(1000);
+        			performer.OverduePOM.clickDashboard(driver).click();
+        			
+        			extent.endTest(test);
+        			extent.flush();
+        		}
+        		
+        		
+        		@Test(priority = 22)
+        		void NewsLetter() throws InterruptedException, IOException
+        		{
+        			Thread.sleep(500);		
+        			test = extent.startTest("'News Letters'  OverView");
+        			test.log(LogStatus.INFO, "Test Initiated");
+        			Thread.sleep(3000);
+      
+        			
+        			JavascriptExecutor js = (JavascriptExecutor) driver;
+        			js.executeScript("window.scrollBy(0,900)");					//Scrolling down window by 2600 px.
+        			Thread.sleep(4000);
+        			CFOcountPOM.clickViewAllNL(driver).click();
+        			Thread.sleep(4000);	
+        		//	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        			//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showGRdetails"));	//Wait until frame get visible and switch to it.
+        			CFOcountPOM.clickView2(driver).click();
+        			Thread.sleep(4000);	
+        			CFOcountPOM.closeNewsLView(driver).click();
+        			Thread.sleep(1000);
+        			performer.OverduePOM.clickDashboard(driver).click();
+        			
+        			extent.endTest(test);
+        			extent.flush();
+        		}
+        		
+        		
+        		@Test(priority = 23) // pass
+        		void MessageCenter() throws InterruptedException, IOException
+        		{
+        			test = extent.startTest(" Message Center - Verification");
+        			test.log(LogStatus.INFO, "Test Initiated");
+        			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        			Thread.sleep(8000);
+        			CFOcountPOM.clickMessageCenter(driver).click();
+        			Thread.sleep(4000);
+        			CFOcountPOM.clickViewMsg(driver).click();
+        			Thread.sleep(4000);
+        			test.log(LogStatus.PASS, "View Button is clickable");
+        			Thread.sleep(1000);
+        			performer.OverduePOM.clickDashboard(driver).click();
+        			extent.endTest(test);
+        			extent.flush();
+        		}
+        		
+        		@Test(priority = 24) // pass
+        		void MyNotifications() throws InterruptedException, IOException
+        		{
+        			test = extent.startTest("My Notifications - Verification");
+        			test.log(LogStatus.INFO, "Test Initiated");
+        			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        			Thread.sleep(8000);
+        			CFOcountPOM.clickMyNotifications(driver).click();
+        			Thread.sleep(4000);
+        			CFOcountPOM.clickViewBtnNO(driver).click();
+        			Thread.sleep(4000);
+        			CFOcountPOM.CloseViewNO(driver).click();
+        			Thread.sleep(4000);
+        			test.log(LogStatus.INFO, "View Successfully");	
+        			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_GridNotifications_chkCompliances_0']")).click();
+        			Thread.sleep(1000);
+        			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_GridNotifications_chkCompliances_1']")).click();
+        			Thread.sleep(1000);
+        			JavascriptExecutor js = (JavascriptExecutor) driver;
+        			js.executeScript("window.scrollBy(0,500)");					//Scrolling down window by 2100 px.
+        			Thread.sleep(2000);
+        			driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnMarkasRead']")).click();
+        			test.log(LogStatus.PASS, "Read Successfully");	
+        			Thread.sleep(1000);
+        			performer.OverduePOM.clickDashboard(driver).click();
+        			extent.endTest(test);
+        			extent.flush();
+        		}
+        		
+        	
+        		
+        	
 	//@AfterTest
 	void Closing() throws InterruptedException
 	{

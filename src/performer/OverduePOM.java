@@ -186,7 +186,20 @@ public class OverduePOM
 	public static WebElement remark1(WebDriver driver)						//Method created to search text area 
 	{
 		value = driver.findElement(By.xpath("//*[@id='tbxRemarks2']"));
-		return value;//*[@id="tbxRemarks"]
+		return value;
+	}
+	
+	public static WebElement remark2(WebDriver driver)						//Method created to search text area 
+	{
+		value = driver.findElement(By.xpath("//*[@id='tbxRemarks3']"));
+		return value;
+	}
+	
+	
+	public static WebElement ClickRadioBtn(WebDriver driver)						//Method created to search text area 
+	{
+		value = driver.findElement(By.xpath("//*[@id='rdbtnStatus3_1']"));
+		return value;
 	}
 	
 	public static WebElement clickComplianceSubmit(WebDriver driver)		//Method for searching button for Submit Form
@@ -614,6 +627,12 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement clickcomplianceStaASR(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-wrapper'])[114]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
 	public static WebElement clickcomplianceIN(WebDriver driver)			//Searching 'My Workspace' element.
 	{
 		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-wrapper'])[2]"));	//*[@onclick='CheckProduct();']
@@ -623,6 +642,12 @@ public class OverduePOM
 	public static WebElement clickcomplianceINAS(WebDriver driver)			//Searching 'My Workspace' element.
 	{
 		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-wrapper'])[55]"));	//*[@onclick='CheckProduct();']
+		return performer;
+	}
+	
+	public static WebElement clickcomplianceINASR(WebDriver driver)			//Searching 'My Workspace' element.
+	{
+		performer = driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[115]"));	//*[@onclick='CheckProduct();']
 		return performer;
 	}
 
@@ -962,9 +987,22 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement clickStatusAS(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
+	{
+		performer = driver.findElement(By.xpath("//*[@id='dvdropdownlistComplianceType1']/span/span/span[2]"));
+		return performer;
+	}
+	
+	
 	public static WebElement SelectInternal(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
 	{
 		performer = driver.findElement(By.xpath("//*[@id='dropdownlistComplianceType_listbox']/li[2]"));
+		return performer;
+	}
+	
+	public static WebElement SelectInternalAS(WebDriver driver)			//Searching 'New Folder' after clicking on '+New'
+	{
+		performer = driver.findElement(By.xpath("//*[@id='dropdownlistComplianceType1_listbox']/li[2]"));
 		return performer;
 	}
 	
@@ -1652,6 +1690,12 @@ public class OverduePOM
 		return performer;
 	}
 	
+	public static WebElement clickStaBtnCaleRe(WebDriver driver)	//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='collapsePerformerCalender']/div/div[1]/div[1]/div/div[3]/div[16]/a"));
+		return performer;
+	}
+	
 	public static WebElement clickInterBtnCale(WebDriver driver)	//
 	{
 		performer = driver.findElement(By.xpath("//*[@id='collapsePerformerCalender']/div/div[1]/div[1]/div/div[3]/div[5]/a"));
@@ -1867,6 +1911,37 @@ public class OverduePOM
 	{
 		performer = driver.findElement(By.xpath("//*[@id='l6t4hrn3npk81671521536673']"));
 		return performer;
+	}
+	
+	public static WebElement TicketSub(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ticketsubject']"));
+		return performer;                                    
+	}
+	
+	public static WebElement ClickSelectIssue(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='issues']"));
+		return performer;                                    
+	}
+	
+	public static WebElement TicketMessage(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ticketmessage']"));
+		return performer;                                    
+	}
+	
+	public static WebElement ClickCreateTicket(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='btnsendmail']"));
+		return performer;                                    
+	}
+	
+	
+	public static WebElement ClickSupportTicket(WebDriver driver)					//
+	{
+		performer = driver.findElement(By.xpath("//*[@id='ticketicon']"));
+		return performer;                                    
 	}
 	
 	public static WebElement StratChat(WebDriver driver)					//

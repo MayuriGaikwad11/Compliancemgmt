@@ -4097,6 +4097,11 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		String file = "C:/Users/sandip/Downloads/StatutoryReport.xlsx";
 		String compliance = "Statutory";
 		Assignment(driver, test, file, compliance);
+		Thread.sleep(1000);
+		OverduePOM.clickClearBtn(driver).click();
+		Thread.sleep(1000);
+		test.log(LogStatus.PASS,"Clicking Clear Button - clear Data Succefully");
+		Thread.sleep(1000);
 		
 		//------------------------------------- Event Based ------------------------------------
 	/*	
@@ -4118,7 +4123,7 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		selectType2(driver).click();					//Clicking on Type drop down
 		Thread.sleep(500);
 		elementsList = clickType2(driver);
-		elementsList.get(1).click();					//Unselecting preselected 'Event Based' checkbox
+	//	elementsList.get(1).click();					//Unselecting preselected 'Event Based' checkbox
 		elementsList.get(4).click();					//Selecting 'Internal' checkbox.
 		
 		Thread.sleep(500);
