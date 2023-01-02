@@ -93,7 +93,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 
-	//@Test(priority = 2) //pass
+//	@Test(priority = 2) //pass
        void ReviewCountStatutoryApprove() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review Count when Approved");
@@ -402,6 +402,27 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
+//	@Test(priority = 2) //pass
+    void ReviewCountStatutoryA() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Review -Advanced Search-Count when Approved");
+		test.log(LogStatus.INFO, "Test initiated");
+		ReMethodsPOM.PendingReviewStatutoryASApprove(driver,test);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	//@Test(priority = 2) //pass
+    void ReviewCountStatutoryR() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Review -Advanced Search-Count when Rejected");
+		test.log(LogStatus.INFO, "Test initiated");
+		ReMethodsPOM.PendingReviewStatutoryASReject(driver,test);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
 //	@Test(priority = 4) //pass
 	void ReviewCountInternalApprove() throws InterruptedException, IOException
 	{
@@ -425,6 +446,79 @@ public class ReviewerCount
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+	@Test(priority = 3) //pass
+    void CompletedCountStatutory() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Completed Count Match");
+		test.log(LogStatus.INFO, "Test initiated");
+		
+		ReMethodsPOM.CompletedStatutory(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
+    @Test(priority = 4) //pass
+    void CompletedCountInternal() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Internal Completed Count Match");
+		test.log(LogStatus.INFO, "Test initiated");
+		
+		ReMethodsPOM.CompletedInternal(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
+   @Test(priority = 5) //pass
+    void OverdueCountStatutory() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Overdue Count Match");
+		test.log(LogStatus.INFO, "Test initiated");
+		
+		ReMethodsPOM.OverdueStatutory(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+    @Test(priority = 6) //pass
+    void OverdueCountInternal() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Overdue Count Match");
+		test.log(LogStatus.INFO, "Test initiated");
+		
+		ReMethodsPOM.OverdueInternal(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
+    @Test(priority = 7) //pass
+    void EventsCount() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Event Count Match");
+		test.log(LogStatus.INFO, "Test initiated");
+		
+		ReMethodsPOM.Events(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
+   @Test(priority = 8) //pass
+    void ActivatedEventsCount() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Activated Events Count Match");
+		test.log(LogStatus.INFO, "Test initiated");
+		
+		ReMethodsPOM.ActivatedEvents(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
 	
 //	@Test(priority = 6) // pass
 	void MyReminderStatutory() throws InterruptedException, IOException
@@ -1310,17 +1404,17 @@ extent.flush();
         		extent.endTest(test);
         					extent.flush();
         		}
-        
-        //		@Test(priority = 20) 
+       
+        		@Test(priority = 20) 
         		void Compliancecalendar() throws InterruptedException, IOException
         		{
         			test = extent.startTest("Compliance Documents Internal verification");
         			test.log(LogStatus.INFO, "Test Initiated");
         			
-        			ReMethodsPOM.CalendarApprove(test,driver);
+        		//	ReMethodsPOM.CalendarApprove(test,driver);
         			Thread.sleep(3000);
-        			ReMethodsPOM.CalendarReject(test,driver);
-        			
+        		//	ReMethodsPOM.CalendarReject(test,driver);
+        			ReMethodsPOM.CalendarDownload(test,driver);
         		extent.endTest(test);
             	extent.flush();
         		}
@@ -1351,7 +1445,7 @@ extent.flush();
         		}
         		
         		
-        		@Test(priority = 22)
+        	//	@Test(priority = 22)
         		void NewsLetter() throws InterruptedException, IOException
         		{
         			Thread.sleep(500);		
@@ -1378,7 +1472,7 @@ extent.flush();
         		}
         		
         		
-        		@Test(priority = 23) // pass
+        	//	@Test(priority = 23) // pass
         		void MessageCenter() throws InterruptedException, IOException
         		{
         			test = extent.startTest(" Message Center - Verification");
@@ -1396,7 +1490,7 @@ extent.flush();
         			extent.flush();
         		}
         		
-        		@Test(priority = 24) // pass
+        	//	@Test(priority = 24) // pass
         		void MyNotifications() throws InterruptedException, IOException
         		{
         			test = extent.startTest("My Notifications - Verification");
@@ -1424,6 +1518,56 @@ extent.flush();
         			extent.endTest(test);
         			extent.flush();
         		}
+        		
+        		 @Test(priority =25 )
+     			void InternalMsg() throws InterruptedException, IOException
+     			{
+     				Thread.sleep(500);		
+     				test = extent.startTest("'Internal Msg  '  Verification");
+     				test.log(LogStatus.INFO, "Test Initiated");
+     					Thread.sleep(1000);
+     				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+     				Thread.sleep(500);
+     				OverduePOM.ClickInternalMsg(driver).click();
+     				Thread.sleep(4000);
+     				OverduePOM.ClickTo(driver).sendKeys("mayuri@tlregtech.in");
+     				Thread.sleep(500);
+     				OverduePOM.ClickSub(driver).sendKeys("Automation");
+     				Thread.sleep(1000);
+     				OverduePOM.TypeMsg(driver).sendKeys("Automation testing");
+     				Thread.sleep(1000);
+     				OverduePOM.choosefile(driver).sendKeys("C:/Users/sandip/Downloads/InternalReport.xlsx");
+     				Thread.sleep(1000);
+     				//OverduePOM.send(driver).click();
+     				By locator = By.xpath("//*[@id='btnsendmailNew']");
+
+     				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+     				Thread.sleep(4000);
+     				
+     				WebElement ViewButton = driver.findElement(locator);	
+     				Thread.sleep(3000);
+     			JavascriptExecutor jse=(JavascriptExecutor)driver;
+     			jse.executeScript("arguments[0].click();", ViewButton);
+     				Thread.sleep(5000);
+     				test.log(LogStatus.INFO, "Internal Message working Succefully");
+     				Thread.sleep(1000);
+     				extent.endTest(test);
+     				extent.flush();
+     			}
+     			
+     			 @Test(priority = 26)
+     				void SupportTicket() throws InterruptedException, IOException
+     				{
+     					Thread.sleep(3000);		
+     					test = extent.startTest("'Support Ticket  '  Verification");
+     					test.log(LogStatus.INFO, "Test Initiated");
+     					
+     					MethodsPOM.SupportTicket(test,driver);
+     					
+     					extent.endTest(test);
+     					extent.flush();
+     				}
+     		 
         		
         	
         		

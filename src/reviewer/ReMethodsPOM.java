@@ -314,6 +314,121 @@ public class ReMethodsPOM
 		OverduePOM.clickDashboard(driver).click();
 	}
 	
+	public static void PendingReviewStatutoryASApprove(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview(driver)));	//Wait until Statutory Pending For Review count gets visible.
+		
+
+		ReviewerPOM.clickStatutoryReview(driver).click();		//Clicking on Statutory Review value.
+	
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@role='grid'][@class='k-selectable']")));
+		
+		
+		ReviewerPOM.clickAdavanceSearch(driver).click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]/table")));
+		elementsList=	ReviewerPOM.clickAction2(driver);
+		
+		elementsList.get(4).click();	
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("iReviewerFrame1"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)"," ");
+		ReviewerPOM.clickDownloadAS(driver).click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickClosedTimelyAS(driver)));
+		WebElement el = ReviewerPOM.clickClosedTimelyAS(driver);
+		ReviewerPOM.clickClosedTimelyAS(driver).click();	
+		Thread.sleep(1000);
+	//	ReviewerPOM.insertTextArea(driver).sendKeys("Automation");
+		Thread.sleep(500);
+		js.executeScript("window.scrollBy(0,500)"," ");
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickApprove(driver)));
+		ReviewerPOM.clickApprove(driver).click();	
+		Thread.sleep(500);
+		driver.switchTo().alert().accept();									//Accepting msg of Successful Submission.
+		driver.switchTo().parentFrame();
+		Thread.sleep(500);
+		ReviewerPOM.Clickclose(driver).click();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]/table")));
+		Thread.sleep(1000);
+		elementsList.get(4).click();
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("iReviewerFrame1"));
+		
+		js.executeScript("window.scrollBy(0,700)"," ");
+		Thread.sleep(1000);
+		ReviewerPOM.clickDownloadAS(driver).click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickClosedTimelyAS(driver)));
+		WebElement e2 = ReviewerPOM.clickClosedTimelyAS(driver);
+		ReviewerPOM.clickClosedTimelyAS(driver).click();	
+		Thread.sleep(1000);
+		js.executeScript("window.scrollBy(0,500)"," ");
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickApprove(driver)));
+		ReviewerPOM.clickReject(driver).click();	
+		Thread.sleep(500);
+		driver.switchTo().alert().accept();									//Accepting msg of Successful Submission.
+		driver.switchTo().parentFrame();
+		Thread.sleep(500);
+		ReviewerPOM.Clickclose(driver).click();
+		Thread.sleep(1000);
+		ReviewerPOM.closeAS(driver).click();
+		Thread.sleep(500);
+		OverduePOM.clickDashboard(driver).click();
+		
+		
+	}
+	
+	public static void PendingReviewStatutoryASReject(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.clickStatutoryReview(driver)));	//Wait until Statutory Pending For Review count gets visible.
+		
+
+		ReviewerPOM.clickStatutoryReview(driver).click();		//Clicking on Statutory Review value.
+	
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@role='grid'][@class='k-selectable']")));
+		
+		
+		ReviewerPOM.clickAdavanceSearch(driver).click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid1']/div[3]/table")));
+		elementsList=	ReviewerPOM.clickAction2(driver);
+		
+		elementsList.get(4).click();	
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("iReviewerFrame1"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)"," ");
+		ReviewerPOM.clickDownloadAS(driver).click();
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickClosedTimelyAS(driver)));
+		WebElement el = ReviewerPOM.clickClosedTimelyAS(driver);
+		ReviewerPOM.clickClosedTimelyAS(driver).click();	
+		Thread.sleep(1000);
+		ReviewerPOM.insertTextArea(driver).sendKeys("Automation");
+		Thread.sleep(500);
+		js.executeScript("window.scrollBy(0,500)"," ");
+		wait.until(ExpectedConditions.elementToBeClickable(ReviewerPOM.clickReject(driver)));
+		ReviewerPOM.clickReject(driver).click();	
+		Thread.sleep(500);
+		//driver.switchTo().alert().accept();									//Accepting msg of Successful Submission.
+		driver.switchTo().parentFrame();
+		Thread.sleep(500);
+		ReviewerPOM.Clickclose(driver).click();
+		Thread.sleep(6000);
+		ReviewerPOM.CloseAS(driver).click();		
+		Thread.sleep(3000);
+		OverduePOM.clickDashboard(driver).click();
+		Thread.sleep(3000);
+	
+	}
+		
+	
 	public static void PendingReviewInternal(WebDriver driver, ExtentTest test, XSSFSheet sheet, String clickButton)throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
@@ -515,6 +630,373 @@ public class ReMethodsPOM
 			test.log(LogStatus.INFO, "Internal Compliance (Pending for Review) doesn't performed as the Compliance Document didn't found.");
 		}
 	}
+	
+	public static void CompletedStatutory(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.ClickCompletedSta(driver)));	//Wait until Internal Pending For Review count gets visible.
+		
+		int DasCountCompletedSta = Integer.parseInt(ReviewerPOM.ClickCompletedSta(driver).getText());	//Reading old value of Internal Reject
+		
+		ReviewerPOM.ClickCompletedSta(driver).click();		//Clicking on Statutory Review value.
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[4]/table")));
+		elementsList = ReviewerPOM.clickOverView(driver);
+		elementsList.get(1).click();
+		Thread.sleep(2000);
+		ReviewerPOM.CloseOverview(driver).click();
+		Thread.sleep(2000);
+		test.log(LogStatus.PASS,"Overview Successfully");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
+		Thread.sleep(1000);
+		ReviewerPOM.ReadCount(driver).click();					//Clicking on Text of total items just to scroll down.
+		String s1 = ReviewerPOM.ReadCount(driver).getText();		//Reading total number of items.
+		String[] bits = s1.split(" ");									//Splitting the String
+		String itomsCount = bits[bits.length - 2];						//Getting the second last word (total number of items)
+		
+		int count = 0;
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			Thread.sleep(2500);
+			s1 = ReviewerPOM.ReadCount(driver).getText();
+			bits = s1.split(" ");										//Splitting the String
+			itomsCount = bits[bits.length - 2];
+		}
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			count = 0;
+		}
+		else
+		{
+			count = Integer.parseInt(itomsCount);
+		}
+		
+					
+		
+		if(count == DasCountCompletedSta)
+		{
+			test.log(LogStatus.PASS, "Number of Completed grid matches to Dashboard Completed  Count.");
+			test.log(LogStatus.INFO, "No of Completed in the grid = "+count+" | Dashboard Completed  Count = "+DasCountCompletedSta);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Number of Completed does not matches to Dashboard Completed  Count.");
+			test.log(LogStatus.INFO, "No of Completed in the grid = "+count+" | Dashboard Completed  Count = "+DasCountCompletedSta);
+		}
+		Thread.sleep(2000);
+		OverduePOM.clickDashboard(driver).click();
+		
+		
+		
+	}
+	
+	public static void CompletedInternal(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.ClickCompletedIn(driver)));	//Wait until Internal Pending For Review count gets visible.
+		
+		int DasCountCompletedSta = Integer.parseInt(ReviewerPOM.ClickCompletedIn(driver).getText());	//Reading old value of Internal Reject
+		
+		ReviewerPOM.ClickCompletedIn(driver).click();		//Clicking on Statutory Review value.
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[4]/table")));
+		elementsList = ReviewerPOM.clickOverView(driver);
+		elementsList.get(1).click();
+		Thread.sleep(2000);
+		ReviewerPOM.CloseOverview(driver).click();
+		Thread.sleep(2000);
+		test.log(LogStatus.PASS,"Overview Successfully");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
+		Thread.sleep(1000);
+		ReviewerPOM.ReadCount(driver).click();					//Clicking on Text of total items just to scroll down.
+		String s1 = ReviewerPOM.ReadCount(driver).getText();		//Reading total number of items.
+		String[] bits = s1.split(" ");									//Splitting the String
+		String itomsCount = bits[bits.length - 2];						//Getting the second last word (total number of items)
+		
+		int count = 0;
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			Thread.sleep(2500);
+			s1 = ReviewerPOM.ReadCount(driver).getText();
+			bits = s1.split(" ");										//Splitting the String
+			itomsCount = bits[bits.length - 2];
+		}
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			count = 0;
+		}
+		else
+		{
+			count = Integer.parseInt(itomsCount);
+		}
+		
+					
+		
+		if(count == DasCountCompletedSta)
+		{
+			test.log(LogStatus.PASS, "Number of Completed Internal grid matches to Dashboard Completed Internal Count.");
+			test.log(LogStatus.INFO, "No of Completed Internal in the grid = "+count+" | Dashboard Completed Internal Count = "+DasCountCompletedSta);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Number of Completed Internal does not matches to Dashboard Completed Internal Count.");
+			test.log(LogStatus.INFO, "No of Completed Internal in the grid = "+count+" | Dashboard Completed Internal Count = "+DasCountCompletedSta);
+		}
+		Thread.sleep(2000);
+		OverduePOM.clickDashboard(driver).click();
+		
+	}
+	
+	
+	public static void  OverdueStatutory(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.ClickOverdueSta(driver)));	//Wait until Internal Pending For Review count gets visible.
+		
+		int DasCountCompletedSta = Integer.parseInt(ReviewerPOM.ClickOverdueSta(driver).getText());	//Reading old value of Internal Reject
+		
+		ReviewerPOM.ClickOverdueSta(driver).click();		//Clicking on Statutory Review value.
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[4]/table")));
+		elementsList = ReviewerPOM.clickOverView(driver);
+		elementsList.get(1).click();
+		Thread.sleep(2000);
+		ReviewerPOM.CloseOverview(driver).click();
+		Thread.sleep(3000);
+		test.log(LogStatus.PASS,"Overview Successfully");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
+		Thread.sleep(1000);
+		ReviewerPOM.ReadCount(driver).click();					//Clicking on Text of total items just to scroll down.
+		String s1 = ReviewerPOM.ReadCount(driver).getText();		//Reading total number of items.
+		String[] bits = s1.split(" ");									//Splitting the String
+		String itomsCount = bits[bits.length - 2];						//Getting the second last word (total number of items)
+		
+		int count = 0;
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			Thread.sleep(2500);
+			s1 = ReviewerPOM.ReadCount(driver).getText();
+			bits = s1.split(" ");										//Splitting the String
+			itomsCount = bits[bits.length - 2];
+		}
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			count = 0;
+		}
+		else
+		{
+			count = Integer.parseInt(itomsCount);
+		}
+		
+					
+		
+		if(count == DasCountCompletedSta)
+		{
+			test.log(LogStatus.PASS, "Number of Overdue grid matches to Dashboard Overdue  Count.");
+			test.log(LogStatus.INFO, "No of Overdue in the grid = "+count+" | Dashboard Overdue  Count = "+DasCountCompletedSta);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Number of Overdue does not matches to Dashboard Overdue  Count.");
+			test.log(LogStatus.INFO, "No of Overdue in the grid = "+count+" | Dashboard Overdue  Count = "+DasCountCompletedSta);
+		}
+		Thread.sleep(2000);
+		OverduePOM.clickDashboard(driver).click();
+		
+		
+		
+	}
+	
+	public static void OverdueInternal(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.ClickOverdueIn(driver)));	//Wait until Internal Pending For Review count gets visible.
+		
+		int DasCountCompletedSta = Integer.parseInt(ReviewerPOM.ClickOverdueIn(driver).getText());	//Reading old value of Internal Reject
+		
+		ReviewerPOM.ClickOverdueIn(driver).click();		//Clicking on Statutory Review value.
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[4]/table")));
+		elementsList = ReviewerPOM.clickOverView(driver);
+		elementsList.get(1).click();
+		Thread.sleep(2000);
+		ReviewerPOM.CloseOverview(driver).click();
+		Thread.sleep(3000);
+		test.log(LogStatus.PASS,"Overview Successfully");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
+		Thread.sleep(1000);
+		ReviewerPOM.ReadCount(driver).click();					//Clicking on Text of total items just to scroll down.
+		String s1 = ReviewerPOM.ReadCount(driver).getText();		//Reading total number of items.
+		String[] bits = s1.split(" ");									//Splitting the String
+		String itomsCount = bits[bits.length - 2];						//Getting the second last word (total number of items)
+		
+		int count = 0;
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			Thread.sleep(2500);
+			s1 = ReviewerPOM.ReadCount(driver).getText();
+			bits = s1.split(" ");										//Splitting the String
+			itomsCount = bits[bits.length - 2];
+		}
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			count = 0;
+		}
+		else
+		{
+			count = Integer.parseInt(itomsCount);
+		}
+		
+					
+		
+		if(count == DasCountCompletedSta)
+		{
+			test.log(LogStatus.PASS, "Number of Overdue Internal grid matches to Dashboard Overdue Internal Count.");
+			test.log(LogStatus.INFO, "No of Overdue Internal in the grid = "+count+" | Dashboard Overdue Internal Count = "+DasCountCompletedSta);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Number of Overdue Internal does not matches to Dashboard Overdue Internal Count.");
+			test.log(LogStatus.INFO, "No of Overdue Internal in the grid = "+count+" | Dashboard Overdue Internal Count = "+DasCountCompletedSta);
+		}
+		Thread.sleep(2000);
+		OverduePOM.clickDashboard(driver).click();
+		
+	}
+	
+	public static void Events(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.ClickEvents(driver)));	//Wait until Internal Pending For Review count gets visible.
+		
+		int DasCountCompletedSta = Integer.parseInt(ReviewerPOM.ClickEvents(driver).getText());	//Reading old value of Internal Reject
+		
+		ReviewerPOM.ClickEvents(driver).click();		//Clicking on Statutory Review value.
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table")));
+		elementsList = ReviewerPOM.clickOverViewE(driver);
+		elementsList.get(1).click();
+		Thread.sleep(3000);
+		ReviewerPOM.CloseOverview1(driver).click();
+		Thread.sleep(3000);
+		test.log(LogStatus.PASS,"Overview Successfully");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
+		Thread.sleep(1000);
+		ReviewerPOM.ReadCountEvent(driver).click();					//Clicking on Text of total items just to scroll down.
+		String s1 = ReviewerPOM.ReadCountEvent(driver).getText();		//Reading total number of items.
+		String[] bits = s1.split(" ");									//Splitting the String
+		String itomsCount = bits[bits.length - 2];						//Getting the second last word (total number of items)
+		
+		int count = 0;
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			Thread.sleep(2500);
+			s1 = ReviewerPOM.ReadCountEvent(driver).getText();
+			bits = s1.split(" ");										//Splitting the String
+			itomsCount = bits[bits.length - 2];
+		}
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			count = 0;
+		}
+		else
+		{
+			count = Integer.parseInt(itomsCount);
+		}
+		
+					
+		
+		if(count == DasCountCompletedSta)
+		{
+			test.log(LogStatus.PASS, "Number of Overdue Internal grid matches to Dashboard Overdue Internal Count.");
+			test.log(LogStatus.INFO, "No of Overdue Internal in the grid = "+count+" | Dashboard Overdue Internal Count = "+DasCountCompletedSta);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Number of Overdue Internal does not matches to Dashboard Overdue Internal Count.");
+			test.log(LogStatus.INFO, "No of Overdue Internal in the grid = "+count+" | Dashboard Overdue Internal Count = "+DasCountCompletedSta);
+		}
+		Thread.sleep(2000);
+		OverduePOM.clickDashboard(driver).click();
+		
+	}
+	
+	public static void ActivatedEvents(WebDriver driver, ExtentTest test)throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(35));
+		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOf(ReviewerPOM.ClickActivatedEvents(driver)));	//Wait until Internal Pending For Review count gets visible.
+		
+		int DasCountCompletedSta = Integer.parseInt(ReviewerPOM.ClickActivatedEvents(driver).getText());	//Reading old value of Internal Reject
+		
+		ReviewerPOM.ClickActivatedEvents(driver).click();		//Clicking on Statutory Review value.
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='grid']/div[3]/table")));
+		elementsList = ReviewerPOM.clickOverViewAE(driver);
+		elementsList.get(1).click();
+		Thread.sleep(3000);
+		ReviewerPOM.CloseOverview1(driver).click();
+		Thread.sleep(3000);
+		test.log(LogStatus.PASS,"Overview Successfully");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");						//Scrolling down window by 1000 px.
+		Thread.sleep(1000);
+		ReviewerPOM.ReadCountEvent(driver).click();					//Clicking on Text of total items just to scroll down.
+		String s1 = ReviewerPOM.ReadCountEvent(driver).getText();		//Reading total number of items.
+		String[] bits = s1.split(" ");									//Splitting the String
+		String itomsCount = bits[bits.length - 2];						//Getting the second last word (total number of items)
+		
+		int count = 0;
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			Thread.sleep(2500);
+			s1 = ReviewerPOM.ReadCountEvent(driver).getText();
+			bits = s1.split(" ");										//Splitting the String
+			itomsCount = bits[bits.length - 2];
+		}
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			count = 0;
+		}
+		else
+		{
+			count = Integer.parseInt(itomsCount);
+		}
+		
+					
+		
+		if(count == DasCountCompletedSta)
+		{
+			test.log(LogStatus.PASS, "Number of Activated Events  grid matches to Dashboard Activated Events Count.");
+			test.log(LogStatus.INFO, "No of  Activated Events in the grid = "+count+" | Dashboard  Activated Events Count = "+DasCountCompletedSta);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Number of Activated Events  does not matches to Dashboard Activated Events  Count.");
+			test.log(LogStatus.INFO, "No of Activated Events in the grid = "+count+" | Dashboard Activated Events Count = "+DasCountCompletedSta);
+		}
+		Thread.sleep(2000);
+		OverduePOM.clickDashboard(driver).click();
+		
+	}
+	
+	
 	
 	public static void DetailedReport1(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
 	{		
@@ -799,6 +1281,26 @@ jse.executeScript("arguments[0].click();", ClickSta);
 			CFOcountPOM.closeDocumentAS(driver).click();*/
 			Thread.sleep(2000);
 			OverduePOM.clickDashboard(driver).click();
+	}
+	
+	public static void CalendarDownload(ExtentTest test, WebDriver driver) throws InterruptedException, IOException
+	{
+		
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,650)");					//Scrolling down window by 2600 px.
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("calframe"));
+		Thread.sleep(1000);
+		ReviewerPOM.CalendarDownload(driver).click();
+		Thread.sleep(3000);
+		driver.switchTo().parentFrame();
+		Thread.sleep(3000);
+		test.log(LogStatus.PASS, "Calendder Download Succefully");
+		Thread.sleep(3000);
+		OverduePOM.clickDashboard(driver).click();
+	
 	}
 	
 	public static void CalendarApprove(ExtentTest test, WebDriver driver) throws InterruptedException, IOException

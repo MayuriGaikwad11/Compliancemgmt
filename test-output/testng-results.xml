@@ -1,337 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="4" ignored="0" total="13" passed="9">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="901390" started-at="2022-12-30T17:26:03 IST" finished-at="2022-12-30T17:41:04 IST">
+  <suite name="Default suite" duration-ms="279157" started-at="2023-01-02T18:33:43 IST" finished-at="2023-01-02T18:38:22 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="901390" started-at="2022-12-30T17:26:03 IST" finished-at="2022-12-30T17:41:04 IST">
+    <test name="Default test" duration-ms="279157" started-at="2023-01-02T18:33:43 IST" finished-at="2023-01-02T18:38:22 IST">
       <class name="reviewer.ReviewerCount">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:reviewer.ReviewerCount@ac1102]" name="setBrowser" is-config="true" duration-ms="32417" started-at="2022-12-30T17:26:03 IST" finished-at="2022-12-30T17:26:35 IST">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:reviewer.ReviewerCount@ac1102]" name="setBrowser" is-config="true" duration-ms="14664" started-at="2023-01-02T18:33:43 IST" finished-at="2023-01-02T18:33:58 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:reviewer.ReviewerCount@ac1102]" name="Login" duration-ms="29252" started-at="2022-12-30T17:26:35 IST" finished-at="2022-12-30T17:27:05 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:reviewer.ReviewerCount@ac1102]" name="Login" duration-ms="41159" started-at="2023-01-02T18:33:58 IST" finished-at="2023-01-02T18:34:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="ReviewCountStatutoryReject()[pri:3, instance:reviewer.ReviewerCount@ac1102]" name="ReviewCountStatutoryReject" duration-ms="45793" started-at="2022-12-30T17:27:05 IST" finished-at="2022-12-30T17:27:50 IST">
+        <test-method status="PASS" signature="CompletedCountStatutory()[pri:3, instance:reviewer.ReviewerCount@ac1102]" name="CompletedCountStatutory" duration-ms="25365" started-at="2023-01-02T18:34:39 IST" finished-at="2023-01-02T18:35:05 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReviewCountStatutoryReject -->
-        <test-method status="PASS" signature="ReviewCountInternalReject()[pri:5, instance:reviewer.ReviewerCount@ac1102]" name="ReviewCountInternalReject" duration-ms="111030" started-at="2022-12-30T17:27:50 IST" finished-at="2022-12-30T17:29:41 IST">
+        </test-method> <!-- CompletedCountStatutory -->
+        <test-method status="PASS" signature="CompletedCountInternal()[pri:4, instance:reviewer.ReviewerCount@ac1102]" name="CompletedCountInternal" duration-ms="24168" started-at="2023-01-02T18:35:05 IST" finished-at="2023-01-02T18:35:29 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReviewCountInternalReject -->
-        <test-method status="PASS" signature="DetailedReport1()[pri:15, instance:reviewer.ReviewerCount@ac1102]" name="DetailedReport1" duration-ms="186420" started-at="2022-12-30T17:29:41 IST" finished-at="2022-12-30T17:32:48 IST">
+        </test-method> <!-- CompletedCountInternal -->
+        <test-method status="PASS" signature="OverdueCountStatutory()[pri:5, instance:reviewer.ReviewerCount@ac1102]" name="OverdueCountStatutory" duration-ms="28209" started-at="2023-01-02T18:35:29 IST" finished-at="2023-01-02T18:35:57 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DetailedReport1 -->
-        <test-method status="PASS" signature="DetailedReportIn()[pri:16, instance:reviewer.ReviewerCount@ac1102]" name="DetailedReportIn" duration-ms="73259" started-at="2022-12-30T17:32:48 IST" finished-at="2022-12-30T17:34:01 IST">
+        </test-method> <!-- OverdueCountStatutory -->
+        <test-method status="PASS" signature="OverdueCountInternal()[pri:6, instance:reviewer.ReviewerCount@ac1102]" name="OverdueCountInternal" duration-ms="27695" started-at="2023-01-02T18:35:57 IST" finished-at="2023-01-02T18:36:25 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DetailedReportIn -->
-        <test-method status="PASS" signature="AssignmentReport()[pri:17, instance:reviewer.ReviewerCount@ac1102]" name="AssignmentReport" duration-ms="43457" started-at="2022-12-30T17:34:01 IST" finished-at="2022-12-30T17:34:45 IST">
+        </test-method> <!-- OverdueCountInternal -->
+        <test-method status="PASS" signature="EventsCount()[pri:7, instance:reviewer.ReviewerCount@ac1102]" name="EventsCount" duration-ms="22080" started-at="2023-01-02T18:36:25 IST" finished-at="2023-01-02T18:36:47 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AssignmentReport -->
-        <test-method status="PASS" signature="ComplianceDocumentsSat()[pri:18, instance:reviewer.ReviewerCount@ac1102]" name="ComplianceDocumentsSat" duration-ms="136508" started-at="2022-12-30T17:34:45 IST" finished-at="2022-12-30T17:37:01 IST">
+        </test-method> <!-- EventsCount -->
+        <test-method status="PASS" signature="ActivatedEventsCount()[pri:8, instance:reviewer.ReviewerCount@ac1102]" name="ActivatedEventsCount" duration-ms="23603" started-at="2023-01-02T18:36:47 IST" finished-at="2023-01-02T18:37:10 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ComplianceDocumentsSat -->
-        <test-method status="PASS" signature="ComplianceDocumentsInter()[pri:19, instance:reviewer.ReviewerCount@ac1102]" name="ComplianceDocumentsInter" duration-ms="144436" started-at="2022-12-30T17:37:01 IST" finished-at="2022-12-30T17:39:26 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ComplianceDocumentsInter -->
-        <test-method status="FAIL" signature="Compliancecalendar()[pri:20, instance:reviewer.ReviewerCount@ac1102]" name="Compliancecalendar" duration-ms="47407" started-at="2022-12-30T17:39:26 IST" finished-at="2022-12-30T17:40:13 IST">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <li id="leftdashboardmenu" class="leftdummy menuactive">...</li> is not clickable at point (111, 135). Other element would receive the click: <div class="modal-content" style="width: 100%;">...</div>
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=f1b9898e-836c-49dc-a1cb-82018fac8520}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //*[@id='leftdashboardmenu']]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <li id="leftdashboardmenu" class="leftdummy menuactive">...</li> is not clickable at point (111, 135). Other element would receive the click: <div class="modal-content" style="width: 100%;">...</div>
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=f1b9898e-836c-49dc-a1cb-82018fac8520}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //*[@id='leftdashboardmenu']]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at reviewer.ReMethodsPOM.CalendarApprove(ReMethodsPOM.java:853)
-at reviewer.ReviewerCount.Compliancecalendar(ReviewerCount.java:1320)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+        </test-method> <!-- ActivatedEventsCount -->
+        <test-method status="PASS" signature="Compliancecalendar()[pri:20, instance:reviewer.ReviewerCount@ac1102]" name="Compliancecalendar" duration-ms="30396" started-at="2023-01-02T18:37:10 IST" finished-at="2023-01-02T18:37:41 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Compliancecalendar -->
-        <test-method status="PASS" signature="DailyUpdates()[pri:21, instance:reviewer.ReviewerCount@ac1102]" name="DailyUpdates" duration-ms="31308" started-at="2022-12-30T17:40:13 IST" finished-at="2022-12-30T17:40:44 IST">
+        <test-method status="PASS" signature="InternalMsg()[pri:25, instance:reviewer.ReviewerCount@ac1102]" name="InternalMsg" duration-ms="23675" started-at="2023-01-02T18:37:41 IST" finished-at="2023-01-02T18:38:05 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DailyUpdates -->
-        <test-method status="FAIL" signature="NewsLetter()[pri:22, instance:reviewer.ReviewerCount@ac1102]" name="NewsLetter" duration-ms="3617" started-at="2022-12-30T17:40:44 IST" finished-at="2022-12-30T17:40:48 IST">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
-            <message>
-              <![CDATA[element not interactable
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=37b51289-e060-4112-997f-96fa8a4df140}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //*[@id='collapseNewsletter']/div[3]/a]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=37b51289-e060-4112-997f-96fa8a4df140}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //*[@id='collapseNewsletter']/div[3]/a]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at reviewer.ReviewerCount.NewsLetter(ReviewerCount.java:1366)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+        </test-method> <!-- InternalMsg -->
+        <test-method status="PASS" signature="SupportTicket()[pri:26, instance:reviewer.ReviewerCount@ac1102]" name="SupportTicket" duration-ms="17941" started-at="2023-01-02T18:38:05 IST" finished-at="2023-01-02T18:38:22 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NewsLetter -->
-        <test-method status="FAIL" signature="MessageCenter()[pri:23, instance:reviewer.ReviewerCount@ac1102]" name="MessageCenter" duration-ms="8057" started-at="2022-12-30T17:40:48 IST" finished-at="2022-12-30T17:40:56 IST">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
-            <message>
-              <![CDATA[element not interactable
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=495cd38e-a6da-4a3a-a95a-879c86f8a4d8}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //i[@class='icon-envelope-l topmailbox']]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=495cd38e-a6da-4a3a-a95a-879c86f8a4d8}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //i[@class='icon-envelope-l topmailbox']]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at reviewer.ReviewerCount.MessageCenter(ReviewerCount.java:1388)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MessageCenter -->
-        <test-method status="FAIL" signature="MyNotifications()[pri:24, instance:reviewer.ReviewerCount@ac1102]" name="MyNotifications" duration-ms="8057" started-at="2022-12-30T17:40:56 IST" finished-at="2022-12-30T17:41:04 IST">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
-            <message>
-              <![CDATA[element not interactable
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=23b9c645-b48d-4708-8d46-52a55d71be0b}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //*[@id='alert_notificatoin_bar']/a/i]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=108.0.5359.125)
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'LAPTOP-TBA24BB5', ip: '169.254.196.149', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4be6816b2dcb05dc0f98d9e40186784f, clickElement {id=23b9c645-b48d-4708-8d46-52a55d71be0b}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\sandip\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59595}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59595/devtoo..., se:cdpVersion: 108.0.5359.125, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (4be6816b2dcb05dc0f98d9e40186784f)] -> xpath: //*[@id='alert_notificatoin_bar']/a/i]
-Session ID: 4be6816b2dcb05dc0f98d9e40186784f
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at reviewer.ReviewerCount.MyNotifications(ReviewerCount.java:1406)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MyNotifications -->
+        </test-method> <!-- SupportTicket -->
       </class> <!-- reviewer.ReviewerCount -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

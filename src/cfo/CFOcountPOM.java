@@ -549,7 +549,7 @@ public class CFOcountPOM
 	{
 	//	piechart = driver.findElement(By.xpath("//*[@class='k-pager-info k-label']"));
 		piechart = driver.findElement(By.xpath("//*[@id='grid']/div[4]/span[2]"));
-		return piechart;
+		return piechart;//*[@id="grid"]/div[5]/span[2]
 	}//*[@id="grid"]/div[4]/span[2]
 	
 	public static WebElement clickBack1(WebDriver driver)

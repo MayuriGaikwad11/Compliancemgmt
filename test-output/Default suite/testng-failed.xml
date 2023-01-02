@@ -5,11 +5,8 @@
     <classes>
       <class name="reviewer.ReviewerCount">
         <methods>
-          <include name="MyNotifications"/>
-          <include name="MessageCenter"/>
-          <include name="Compliancecalendar"/>
+          <include name="ReviewCountStatutoryR"/>
           <include name="setBrowser"/>
-          <include name="NewsLetter"/>
         </methods>
       </class> <!-- reviewer.ReviewerCount -->
     </classes>
