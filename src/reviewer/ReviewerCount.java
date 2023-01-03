@@ -403,7 +403,7 @@ public class ReviewerCount
 	}
 	
 //	@Test(priority = 2) //pass
-    void ReviewCountStatutoryA() throws InterruptedException, IOException
+    void ReviewCountStatutoryASA() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review -Advanced Search-Count when Approved");
 		test.log(LogStatus.INFO, "Test initiated");
@@ -412,8 +412,8 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-	//@Test(priority = 2) //pass
-    void ReviewCountStatutoryR() throws InterruptedException, IOException
+	//@Test(priority = 3) //pass
+    void ReviewCountStatutoryASR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review -Advanced Search-Count when Rejected");
 		test.log(LogStatus.INFO, "Test initiated");
@@ -447,7 +447,27 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
+//	@Test(priority = 4) //pass
+    void ReviewCountInternalASA() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Review -Advanced Search-Count when Approved");
+		test.log(LogStatus.INFO, "Test initiated");
+		ReMethodsPOM.PendingReviewInternalASApprove(driver,test);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
 	@Test(priority = 3) //pass
+    void ReviewCountInternalASR() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Review -Advanced Search-Count when Rejected");
+		test.log(LogStatus.INFO, "Test initiated");
+		ReMethodsPOM.PendingReviewInternalASReject(driver,test);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 3) //pass
     void CompletedCountStatutory() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Completed Count Match");
@@ -459,7 +479,7 @@ public class ReviewerCount
 		extent.flush();
 	}
     
-    @Test(priority = 4) //pass
+  //  @Test(priority = 4) //pass
     void CompletedCountInternal() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Internal Completed Count Match");
@@ -471,7 +491,7 @@ public class ReviewerCount
 		extent.flush();
 	}
     
-   @Test(priority = 5) //pass
+ //  @Test(priority = 5) //pass
     void OverdueCountStatutory() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Overdue Count Match");
@@ -483,7 +503,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-    @Test(priority = 6) //pass
+  //  @Test(priority = 6) //pass
     void OverdueCountInternal() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Overdue Count Match");
@@ -495,7 +515,7 @@ public class ReviewerCount
 		extent.flush();
 	}
     
-    @Test(priority = 7) //pass
+ //   @Test(priority = 7) //pass
     void EventsCount() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Event Count Match");
@@ -507,13 +527,25 @@ public class ReviewerCount
 		extent.flush();
 	}
     
-   @Test(priority = 8) //pass
+ //  @Test(priority = 8) //pass
     void ActivatedEventsCount() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Activated Events Count Match");
 		test.log(LogStatus.INFO, "Test initiated");
 		
 		ReMethodsPOM.ActivatedEvents(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+    
+   // @Test(priority = 8) //pass
+    void ClosedEventsCount() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Statutory Closed  Events Count Match");
+		test.log(LogStatus.INFO, "Test initiated");
+		
+		ReMethodsPOM.ClosedEvents(driver,test);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -1381,6 +1413,42 @@ extent.flush();
         		extent.flush();
         	}
         	
+        	// @Test(priority = 15) //pass 
+             void TaskReport() throws InterruptedException
+        			{
+        				test = extent.startTest("Task Report Verification");
+        				test.log(LogStatus.INFO, "Test Initiated");
+        				
+        				MethodsPOM.TaskReport(driver,test);
+        				
+        				extent.endTest(test);
+        				extent.flush();
+        			}
+             
+         //	@Test(priority = 16)
+         	void ComplianceRepository() throws InterruptedException, IOException
+         	{
+         		test = extent.startTest("Compliance Repository/Act Repository  verification");
+         		test.log(LogStatus.INFO, "Test Initiated");
+         		
+         		MethodsPOM.complianceRepository(test,driver);
+
+         		extent.endTest(test);
+         		extent.flush();
+         	}
+         	
+         	// @Test(priority = 17) //pass 
+  	       void EventReport() throws InterruptedException
+  				{
+  					test = extent.startTest("Event Report Verification");
+  					test.log(LogStatus.INFO, "Test Initiated");
+  					
+  					MethodsPOM.EventReport(driver,test);
+  					
+  					extent.endTest(test);
+  					extent.flush();
+  				}
+        	
         //	@Test(priority = 18) 
         	void ComplianceDocumentsSat() throws InterruptedException, IOException
         	{
@@ -1404,8 +1472,22 @@ extent.flush();
         		extent.endTest(test);
         					extent.flush();
         		}
+        		
+        	//	@Test(priority = 20) //	pass	
+        		void CriticalDocuments() throws InterruptedException, IOException
+        		{
+        			test = extent.startTest("Critical Document Verification");
+        			test.log(LogStatus.INFO, "Test Initiated");
+        			
+        			OverduePOM.CriticalDocuments(driver, test);
+        			
+        			extent.endTest(test);
+        			extent.flush();
+        		}
+        		
+        		
        
-        		@Test(priority = 20) 
+        	//	@Test(priority = 20) 
         		void Compliancecalendar() throws InterruptedException, IOException
         		{
         			test = extent.startTest("Compliance Documents Internal verification");
@@ -1519,7 +1601,7 @@ extent.flush();
         			extent.flush();
         		}
         		
-        		 @Test(priority =25 )
+        		// @Test(priority =25 )
      			void InternalMsg() throws InterruptedException, IOException
      			{
      				Thread.sleep(500);		
@@ -1555,7 +1637,7 @@ extent.flush();
      				extent.flush();
      			}
      			
-     			 @Test(priority = 26)
+     		//	 @Test(priority = 26)
      				void SupportTicket() throws InterruptedException, IOException
      				{
      					Thread.sleep(3000);		
@@ -1568,7 +1650,7 @@ extent.flush();
      					extent.flush();
      				}
      		 
-        		
+        	
         	
         		
         	

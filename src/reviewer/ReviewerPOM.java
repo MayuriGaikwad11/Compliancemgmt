@@ -166,7 +166,13 @@ public class ReviewerPOM
 	
 	public static WebElement clickDownloadAS(WebDriver driver)		//Method for searching Closed-Timely radio button
 	{
-		closedTimely = driver.findElement(By.xpath("//*[@id='rptComplianceVersion_lblpathDownload_0']"));
+		closedTimely = driver.findElement(By.xpath("//*[@id='rptComplianceVersion_btnComplinceVersionDoc_0']"));
+		return closedTimely;
+	}
+	
+	public static WebElement clickInternalDownloadAS(WebDriver driver)		//Method for searching Closed-Timely radio button
+	{
+		closedTimely = driver.findElement(By.xpath("//*[@id='rptComplianceVersion3_btnComplinceVersionDoc1_0']"));
 		return closedTimely;
 	}
 	
@@ -307,6 +313,12 @@ public class ReviewerPOM
 	public static List<WebElement> clickOverViewAE(WebDriver driver)	//Searching all 'Work File Timeline' text boxes
 	{
 		elementsList = driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[7]/a"));
+		return elementsList;
+	}
+	
+	public static List<WebElement> clickOverViewCE(WebDriver driver)	//Searching all 'Work File Timeline' text boxes
+	{
+		elementsList = driver.findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[11]/a"));
 		return elementsList;
 	}
 	
@@ -454,6 +466,12 @@ public class ReviewerPOM
 		return statutoryAction;
 	}
 	
+	public static WebElement ClickINclose(WebDriver driver)		//Searching first checkbox
+	{
+		statutoryAction = driver.findElement(By.xpath("//*[@id='ComplainceInternalReviewer1']/div/div/div[1]/button"));
+		return statutoryAction;
+	}
+	
 	public static WebElement ClickCompletedSta(WebDriver driver)		//Searching first checkbox
 	{
 		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divCompletedPREOcount']"));
@@ -487,6 +505,12 @@ public class ReviewerPOM
 	public static WebElement ClickActivatedEvents(WebDriver driver)		//Searching first checkbox
 	{
 		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divActivatedEventReviewer']"));
+		return statutoryAction;
+	}
+	
+	public static WebElement ClickClosedEvents(WebDriver driver)		//Searching first checkbox
+	{
+		statutoryAction = driver.findElement(By.xpath("//*[@id='ContentPlaceHolder1_divClosedEventReviewer']"));
 		return statutoryAction;
 	}
 	

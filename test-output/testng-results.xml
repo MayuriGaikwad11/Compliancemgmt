@@ -1,56 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="279157" started-at="2023-01-02T18:33:43 IST" finished-at="2023-01-02T18:38:22 IST">
+  <suite name="Default suite" duration-ms="91512" started-at="2023-01-03T17:40:12 IST" finished-at="2023-01-03T17:41:44 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="279157" started-at="2023-01-02T18:33:43 IST" finished-at="2023-01-02T18:38:22 IST">
+    <test name="Default test" duration-ms="91512" started-at="2023-01-03T17:40:12 IST" finished-at="2023-01-03T17:41:44 IST">
       <class name="reviewer.ReviewerCount">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:reviewer.ReviewerCount@ac1102]" name="setBrowser" is-config="true" duration-ms="14664" started-at="2023-01-02T18:33:43 IST" finished-at="2023-01-02T18:33:58 IST">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:reviewer.ReviewerCount@91771e]" name="setBrowser" is-config="true" duration-ms="20104" started-at="2023-01-03T17:40:12 IST" finished-at="2023-01-03T17:40:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:reviewer.ReviewerCount@ac1102]" name="Login" duration-ms="41159" started-at="2023-01-02T18:33:58 IST" finished-at="2023-01-02T18:34:39 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:reviewer.ReviewerCount@91771e]" name="Login" duration-ms="37386" started-at="2023-01-03T17:40:32 IST" finished-at="2023-01-03T17:41:10 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="CompletedCountStatutory()[pri:3, instance:reviewer.ReviewerCount@ac1102]" name="CompletedCountStatutory" duration-ms="25365" started-at="2023-01-02T18:34:39 IST" finished-at="2023-01-02T18:35:05 IST">
+        <test-method status="PASS" signature="ReviewCountInternalASR()[pri:3, instance:reviewer.ReviewerCount@91771e]" name="ReviewCountInternalASR" duration-ms="33917" started-at="2023-01-03T17:41:10 IST" finished-at="2023-01-03T17:41:44 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CompletedCountStatutory -->
-        <test-method status="PASS" signature="CompletedCountInternal()[pri:4, instance:reviewer.ReviewerCount@ac1102]" name="CompletedCountInternal" duration-ms="24168" started-at="2023-01-02T18:35:05 IST" finished-at="2023-01-02T18:35:29 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CompletedCountInternal -->
-        <test-method status="PASS" signature="OverdueCountStatutory()[pri:5, instance:reviewer.ReviewerCount@ac1102]" name="OverdueCountStatutory" duration-ms="28209" started-at="2023-01-02T18:35:29 IST" finished-at="2023-01-02T18:35:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OverdueCountStatutory -->
-        <test-method status="PASS" signature="OverdueCountInternal()[pri:6, instance:reviewer.ReviewerCount@ac1102]" name="OverdueCountInternal" duration-ms="27695" started-at="2023-01-02T18:35:57 IST" finished-at="2023-01-02T18:36:25 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OverdueCountInternal -->
-        <test-method status="PASS" signature="EventsCount()[pri:7, instance:reviewer.ReviewerCount@ac1102]" name="EventsCount" duration-ms="22080" started-at="2023-01-02T18:36:25 IST" finished-at="2023-01-02T18:36:47 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EventsCount -->
-        <test-method status="PASS" signature="ActivatedEventsCount()[pri:8, instance:reviewer.ReviewerCount@ac1102]" name="ActivatedEventsCount" duration-ms="23603" started-at="2023-01-02T18:36:47 IST" finished-at="2023-01-02T18:37:10 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ActivatedEventsCount -->
-        <test-method status="PASS" signature="Compliancecalendar()[pri:20, instance:reviewer.ReviewerCount@ac1102]" name="Compliancecalendar" duration-ms="30396" started-at="2023-01-02T18:37:10 IST" finished-at="2023-01-02T18:37:41 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Compliancecalendar -->
-        <test-method status="PASS" signature="InternalMsg()[pri:25, instance:reviewer.ReviewerCount@ac1102]" name="InternalMsg" duration-ms="23675" started-at="2023-01-02T18:37:41 IST" finished-at="2023-01-02T18:38:05 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InternalMsg -->
-        <test-method status="PASS" signature="SupportTicket()[pri:26, instance:reviewer.ReviewerCount@ac1102]" name="SupportTicket" duration-ms="17941" started-at="2023-01-02T18:38:05 IST" finished-at="2023-01-02T18:38:22 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SupportTicket -->
+        </test-method> <!-- ReviewCountInternalASR -->
       </class> <!-- reviewer.ReviewerCount -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
