@@ -5,7 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -95,6 +97,25 @@ public class CFOcountPOM
 		return compliances;
 	} 
 	
+	public static WebElement clickLocationPe(WebDriver driver)		//Method for reading Compliances value on Dashboard
+	{
+		compliances = driver.findElement(By.xpath("//*[@id='Details']/div[1]/div[1]/div/span[1]"));
+		return compliances;
+	} 
+	
+	public static WebElement clickExpand1(WebDriver driver)		//Method for reading Compliances value on Dashboard
+	{
+		compliances = driver.findElement(By.xpath("//span[@class='k-icon k-i-expand']"));
+		return compliances;
+	} 
+	
+	public static WebElement clickAR(WebDriver driver)		//Method for reading Compliances value on Dashboard
+	{
+		compliances = driver.findElement(By.xpath("(//span[@class='k-checkbox-label checkbox-span'])[10]"));
+		return compliances;
+	} 
+	
+	
 	public static WebElement clickAVIPL(WebDriver driver)		//Method for reading Compliances value on Dashboard
 	{
 		compliances = driver.findElement(By.xpath("(//span[@class='k-in'])[10]"));
@@ -106,6 +127,13 @@ public class CFOcountPOM
 		compliances = driver.findElement(By.xpath("(//span[@class='k-in'])[7]"));
 		return compliances;
 	} 
+	
+	public static WebElement clickClear(WebDriver driver)		//Method for reading Compliances value on Dashboard
+	{
+		compliances = driver.findElement(By.xpath("//*[@id='ClearfilterMain']"));
+		return compliances;
+	} 
+	
 	
 	
 	public static List<WebElement> readCompliancesList(WebDriver driver)	//Method for reading list of compliances after clicking Categories. 
@@ -1460,6 +1488,103 @@ public class CFOcountPOM
 		return reports;
 	}
 	
+	public static WebElement clickStandardReport(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='Kendoreport']"));
+		return reports;
+	}
+	
+	public static WebElement closeExport(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("(//*[@class='k-button k-bare k-button-icon k-window-action'])[3]"));
+		return reports;
+	}
+	
+	public static WebElement ClickDownload(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='grid12']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
+		return reports;
+	}
+	
+	public static WebElement ClickDownloadLocation(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridLocation']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
+		return reports;
+	}
+	
+	public static WebElement ClickDownloadUser(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridUser']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
+		return reports;
+	}
+	
+	public static WebElement ClickDownloadCategory(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridCategory']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
+		return reports;
+	}
+	
+	public static WebElement ClickDownloadRisk(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridRisk']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
+		return reports;
+	}
+	
+	public static WebElement ClickDownloadDetaild(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridDetaild']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
+		return reports;
+	}
+	
+	public static WebElement ClickDownloadCriticalRisk(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridCriticalRisk']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
+		return reports;
+	}
+	
+	
+	public static WebElement ClickPreview(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='grid12']/div[2]/table/tbody/tr[1]/td[4]/a[2]"));
+		return reports;
+	}
+	
+	public static WebElement ClickPreviewLocation(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridLocation']/div[2]/table/tbody/tr[1]/td[4]/a[2]"));
+		return reports;
+	}
+	
+	public static WebElement ClickPreviewUser(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridUser']/div[2]/table/tbody/tr[1]/td[4]/a[2]"));
+		return reports;
+	}
+	
+	public static WebElement ClickPreviewCategory(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridCategory']/div[2]/table/tbody/tr[1]/td[4]/a[2]"));
+		return reports;
+	}
+	
+	public static WebElement ClickPreviewRisk(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridRisk']/div[2]/table/tbody/tr[1]/td[4]/a[2]"));
+		return reports;
+	}
+	
+	public static WebElement ClickPreviewDetailed(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridDetaild']/div[2]/table/tbody/tr[1]/td[4]/a[2]"));
+		return reports;
+	}
+	
+	public static WebElement ClickPreviewCriticalR(WebDriver driver)					//Searching 'My Reports' element
+	{
+		reports = driver.findElement(By.xpath("//*[@id='gridCriticalRisk']/div[2]/table/tbody/tr[1]/td[4]/a[2]"));
+		return reports;
+	}
+	
 	public static WebElement clickDetailedReport(WebDriver driver)			//Searching 'Detailed Report' element under 'My reports'
 	{
 		reports = driver.findElement(By.xpath("//*[@id='Myreport']"));
@@ -1534,6 +1659,8 @@ public class CFOcountPOM
 		reports = driver.findElement(By.xpath("//*[@id='export']"));
 		return reports;
 	}
+	
+	
 	
 	public static WebElement clickStartDate1(WebDriver driver)
 	{
@@ -3673,6 +3800,310 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[1]/td[17]/a");
 		clickComplianceDropDown(driver).click();		//Clicking on Compliance drop down.
 		Thread.sleep(500);
 	}
+	
+	public static void StandardReportOverall(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickStandardReport(driver).click();
+		Thread.sleep(7000);
+	//	clickOverallImg(driver).click();
+		By locator = By.xpath("//*[@id='ContentPlaceHolder1_header1']");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(4000);
+		closeExport(driver).click();
+		Thread.sleep(4000);
+		ClickDownload(driver).click();
+		Thread.sleep(5000);
+		
+		ClickPreview(driver).click();
+		Thread.sleep(8000);
+		Set w = driver.getWindowHandles();    // window handles
+	      
+	      Iterator t = w.iterator();  // window handles iterate
+	      String pw = (String) t.next();
+	      String ch = (String) t.next();
+	      
+	      driver.switchTo().window(ch);         // switching child window
+	    
+	      driver.close();
+	     
+	      driver.switchTo().window(pw);         // switching parent window
+	    performer.OverduePOM.clickDashboard(driver).click();
+		Thread.sleep(5000);
+		
+	}
+	
+	public static void StandardReportLocation(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickStandardReport(driver).click();
+		Thread.sleep(7000);
+	//	clickOverallImg(driver).click();
+		By locator = By.xpath("//*[@id='ContentPlaceHolder1_ImageButton1']");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(4000);
+		closeExport(driver).click();
+		Thread.sleep(4000);
+		ClickDownloadLocation(driver).click();
+		Thread.sleep(5000);
+		ClickPreviewLocation(driver).click();
+		//Thread.sleep(5000);
+		Thread.sleep(8000);
+		Set w = driver.getWindowHandles();    // window handles
+	      
+	      Iterator t = w.iterator();  // window handles iterate
+	      String pw = (String) t.next();
+	      String ch = (String) t.next();
+	      
+	      driver.switchTo().window(ch);         // switching child window
+	    
+	      driver.close();
+	     
+	      driver.switchTo().window(pw);  
+		performer.OverduePOM.clickDashboard(driver).click();
+	//	ClickPreview(driver).click();
+		Thread.sleep(5000);
+		
+	}
+	
+	public static void StandardReportUser(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickStandardReport(driver).click();
+		Thread.sleep(7000);
+	//	clickOverallImg(driver).click();
+		By locator = By.xpath("//*[@id='ContentPlaceHolder1_ImageButton2']");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(4000);
+		closeExport(driver).click();
+		Thread.sleep(4000);
+		ClickDownloadUser(driver).click();
+		Thread.sleep(5000);
+		ClickPreviewUser(driver).click();
+		Thread.sleep(8000);
+		Set w = driver.getWindowHandles();    // window handles
+	      
+	      Iterator t = w.iterator();  // window handles iterate
+	      String pw = (String) t.next();
+	      String ch = (String) t.next();
+	      
+	      driver.switchTo().window(ch);         // switching child window
+	    
+	      driver.close();
+	     
+	      driver.switchTo().window(pw);  
+		performer.OverduePOM.clickDashboard(driver).click();
+	//	ClickPreview(driver).click();
+		Thread.sleep(5000);
+		
+	}
+	
+	public static void StandardReportCategory(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickStandardReport(driver).click();
+		Thread.sleep(7000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,600)");					//Scrolling down window by 2600 px.
+		Thread.sleep(1000);
+	//	clickOverallImg(driver).click();
+		By locator = By.xpath("//*[@id='ContentPlaceHolder1_ImageButton3']");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(4000);
+		closeExport(driver).click();
+		Thread.sleep(4000);
+		ClickDownloadCategory(driver).click();
+		Thread.sleep(5000);
+		ClickPreviewCategory(driver).click();
+		Thread.sleep(8000);
+		Set w = driver.getWindowHandles();    // window handles
+	      
+	      Iterator t = w.iterator();  // window handles iterate
+	      String pw = (String) t.next();
+	      String ch = (String) t.next();
+	      
+	      driver.switchTo().window(ch);         // switching child window
+	    
+	      driver.close();
+	     
+	      driver.switchTo().window(pw);  
+		performer.OverduePOM.clickDashboard(driver).click();
+	//	ClickPreview(driver).click();
+		Thread.sleep(5000);
+		
+	}
+	
+	public static void StandardReportRisk(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickStandardReport(driver).click();
+		Thread.sleep(7000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,600)");					//Scrolling down window by 2600 px.
+		Thread.sleep(1000);
+	//	clickOverallImg(driver).click();
+		By locator = By.xpath("//*[@id='ContentPlaceHolder1_ImageButton4']");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(4000);
+		closeExport(driver).click();
+		Thread.sleep(4000);
+		ClickDownloadRisk(driver).click();
+		Thread.sleep(5000);
+		ClickPreviewRisk(driver).click();
+		Thread.sleep(8000);
+		Set w = driver.getWindowHandles();    // window handles
+	      
+	      Iterator t = w.iterator();  // window handles iterate
+	      String pw = (String) t.next();
+	      String ch = (String) t.next();
+	      
+	      driver.switchTo().window(ch);         // switching child window
+	    
+	      driver.close();
+	     
+	      driver.switchTo().window(pw);  
+		performer.OverduePOM.clickDashboard(driver).click();
+	//	ClickPreview(driver).click();
+		Thread.sleep(5000);
+		
+	}
+	
+	public static void StandardReportDetailed (ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickStandardReport(driver).click();
+		Thread.sleep(7000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,600)");					//Scrolling down window by 2600 px.
+		Thread.sleep(1000);
+	
+		Thread.sleep(4000);
+		ClickDownloadDetaild(driver).click();
+		Thread.sleep(5000);
+		ClickPreviewDetailed(driver).click();
+		Thread.sleep(8000);
+		Set w = driver.getWindowHandles();    // window handles
+	      
+	      Iterator t = w.iterator();  // window handles iterate
+	      String pw = (String) t.next();
+	      String ch = (String) t.next();
+	      
+	      driver.switchTo().window(ch);         // switching child window
+	    
+	      driver.close();
+	     
+	      driver.switchTo().window(pw);  
+		performer.OverduePOM.clickDashboard(driver).click();
+	//	ClickPreview(driver).click();
+		Thread.sleep(5000);
+		
+	}
+	
+	public static void StandardReportCriticalRisk(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
+	{		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+	    
+		Thread.sleep(500);
+		clickReports(driver).click();					//Clicking on 'My Reports'
+		Thread.sleep(3000);
+		clickStandardReport(driver).click();
+		Thread.sleep(7000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1100)");					//Scrolling down window by 2600 px.
+		Thread.sleep(1000);
+	//	clickOverallImg(driver).click();
+		By locator = By.xpath("//*[@id='ContentPlaceHolder1_ImageButton6']");
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(4000);
+		closeExport(driver).click();
+		Thread.sleep(4000);
+		ClickDownloadCriticalRisk(driver).click();
+		Thread.sleep(5000);
+		ClickPreviewCriticalR(driver).click();
+		Thread.sleep(8000);
+		Set w = driver.getWindowHandles();    // window handles
+	      
+	      Iterator t = w.iterator();  // window handles iterate
+	      String pw = (String) t.next();
+	      String ch = (String) t.next();
+	      
+	      driver.switchTo().window(ch);         // switching child window
+	    
+	      driver.close();
+	     
+	      driver.switchTo().window(pw);  
+		performer.OverduePOM.clickDashboard(driver).click();
+	//	ClickPreview(driver).click();
+		Thread.sleep(5000);
+		
+	}
+	
 	
 	public static void DetailedReport1(ExtentTest test, WebDriver driver, String user) throws InterruptedException, IOException
 	{		

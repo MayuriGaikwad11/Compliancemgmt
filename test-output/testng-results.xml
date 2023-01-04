@@ -2,24 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="91512" started-at="2023-01-03T17:40:12 IST" finished-at="2023-01-03T17:41:44 IST">
+  <suite name="Default suite" duration-ms="101452" started-at="2023-01-04T15:46:01 IST" finished-at="2023-01-04T15:47:42 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="91512" started-at="2023-01-03T17:40:12 IST" finished-at="2023-01-03T17:41:44 IST">
-      <class name="reviewer.ReviewerCount">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:reviewer.ReviewerCount@91771e]" name="setBrowser" is-config="true" duration-ms="20104" started-at="2023-01-03T17:40:12 IST" finished-at="2023-01-03T17:40:32 IST">
+    <test name="Default test" duration-ms="101452" started-at="2023-01-04T15:46:01 IST" finished-at="2023-01-04T15:47:42 IST">
+      <class name="cfo.CFOcountStatutory">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="setBrowser" is-config="true" duration-ms="13932" started-at="2023-01-04T15:46:01 IST" finished-at="2023-01-04T15:46:15 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:reviewer.ReviewerCount@91771e]" name="Login" duration-ms="37386" started-at="2023-01-03T17:40:32 IST" finished-at="2023-01-03T17:41:10 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@bf3d14]" name="Login" duration-ms="28459" started-at="2023-01-04T15:46:15 IST" finished-at="2023-01-04T15:46:43 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="ReviewCountInternalASR()[pri:3, instance:reviewer.ReviewerCount@91771e]" name="ReviewCountInternalASR" duration-ms="33917" started-at="2023-01-03T17:41:10 IST" finished-at="2023-01-03T17:41:44 IST">
+        <test-method status="PASS" signature="StandardReportOverall()[pri:28, instance:cfo.CFOcountStatutory@bf3d14]" name="StandardReportOverall" duration-ms="58938" started-at="2023-01-04T15:46:43 IST" finished-at="2023-01-04T15:47:42 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReviewCountInternalASR -->
-      </class> <!-- reviewer.ReviewerCount -->
+        </test-method> <!-- StandardReportOverall -->
+        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="Closing" is-config="true" duration-ms="0" started-at="2023-01-04T15:47:42 IST" finished-at="2023-01-04T15:47:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closing -->
+      </class> <!-- cfo.CFOcountStatutory -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

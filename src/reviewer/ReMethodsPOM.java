@@ -397,7 +397,7 @@ public class ReMethodsPOM
 		Thread.sleep(500);
 		//driver.switchTo().alert().accept();									//Accepting msg of Successful Submission.
 		driver.switchTo().parentFrame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		ReviewerPOM.Clickclose(driver).click();
 		Thread.sleep(3000);
 		ReviewerPOM.closeAS(driver).click();		

@@ -250,6 +250,13 @@ public class CFOcountStatutory
 		CFOcountPOM.clickExportImage(driver).click();                    //export excel
 		Thread.sleep(5000);
 		test.log(LogStatus.PASS, "Excel file Export Successfully");	
+		CFOcountPOM.clickLocation(driver).click();
+		Thread.sleep(500);
+		CFOcountPOM.clickAVIPL(driver).click();
+		Thread.sleep(500);
+		CFOcountPOM.clickClear(driver).click();
+		Thread.sleep(2000);
+		test.log(LogStatus.PASS, "Clear Button is working");	
 		js.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(3000);
 		CFOcountPOM.readTotalItemsD(driver).click();					//Clicking on total items count
@@ -275,8 +282,8 @@ public class CFOcountStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	/*
-	@Test(priority = 4)
+	
+//	@Test(priority = 4)
 	void UsersCountMatch() throws InterruptedException
 	{
 		test = extent.startTest(" Count by Clicking on 'Users'");
@@ -345,7 +352,13 @@ public class CFOcountStatutory
 		CFOcountPOM.clickExportImage(driver).click();
 		Thread.sleep(5000);
 		test.log(LogStatus.PASS, "Excel file Export Successfully");
-	
+		CFOcountPOM.clickLocationPe(driver).click();
+		Thread.sleep(1000);
+		CFOcountPOM.clickExpand1(driver).click();
+		Thread.sleep(1000);
+		CFOcountPOM.clickAR(driver).click();
+		Thread.sleep(500);
+		CFOcountPOM.clickClear(driver).click();
 		driver.switchTo().defaultContent();
 		Thread.sleep(3000);
 		CFOcountPOM.closeCategories(driver).click();
@@ -357,8 +370,8 @@ public class CFOcountStatutory
 		extent.endTest(test);
 		extent.flush();
 	}
-	*/
-	@Test(priority = 6)
+	
+//	@Test(priority = 6)
 	void SummaryofOverdueCompliances() throws InterruptedException
 	{
 		test = extent.startTest(" Summary of Overdue Compliances");
@@ -3020,7 +3033,91 @@ By locator = By.xpath("//*[@id='grid']/div[3]/table/tbody/tr[2]/td[6]/a");
 			extent.flush();
 	}
 	
-//	@Test(priority = 28)
+	@Test(priority = 28)
+	void StandardReportOverall() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Standard Report -Overall Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.StandardReportOverall(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 29)
+	void StandardReportLocation() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Standard Report -Location Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.StandardReportLocation(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 30)
+	void StandardReportUser() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Standard Report -User Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.StandardReportUser(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 31)
+	void StandardReportCategory() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Standard Report -Category  Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.StandardReportCategory(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 32)
+	void StandardReportRisk() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Standard Report -Risk  Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.StandardReportRisk(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 33)
+	void StandardReportDetailed() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Standard Report -Detailed  Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.StandardReportDetailed(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 34)
+	void StandardReportCriticalRisk() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Standard Report -Critical Risk  Verification");
+		test.log(LogStatus.INFO, "Test Initiated");
+		
+		CFOcountPOM.StandardReportCriticalRisk(test, driver, "cfo");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 35)
 	void DetailedReport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Detailed Report Count Verification");
@@ -3354,7 +3451,7 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(140));
 		extent.flush();
 	}
 	
-	@Test(priority = 40)
+	//@Test(priority = 40)
 	void FilterWiseCategoriesCountMatch() throws InterruptedException
 	{
 		test = extent.startTest(" Count Match Filter Wise by Clicking on 'Categories' - Compliances ");

@@ -402,7 +402,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 2) //pass
+	@Test(priority = 2) //pass
     void ReviewCountStatutoryASA() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review -Advanced Search-Count when Approved");
@@ -412,7 +412,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-	//@Test(priority = 3) //pass
+	@Test(priority = 3) //pass
     void ReviewCountStatutoryASR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review -Advanced Search-Count when Rejected");
@@ -447,7 +447,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-//	@Test(priority = 4) //pass
+	@Test(priority = 4) //pass
     void ReviewCountInternalASA() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review -Advanced Search-Count when Approved");
@@ -457,7 +457,7 @@ public class ReviewerCount
 		extent.flush();
 	}
 	
-	@Test(priority = 3) //pass
+	@Test(priority = 5) //pass
     void ReviewCountInternalASR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Review -Advanced Search-Count when Rejected");
@@ -539,7 +539,7 @@ public class ReviewerCount
 		extent.flush();
 	}
     
-   // @Test(priority = 8) //pass
+    @Test(priority = 8) //pass
     void ClosedEventsCount() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Statutory Closed  Events Count Match");
@@ -1413,7 +1413,7 @@ extent.flush();
         		extent.flush();
         	}
         	
-        	// @Test(priority = 15) //pass 
+        	 @Test(priority = 15) //pass 
              void TaskReport() throws InterruptedException
         			{
         				test = extent.startTest("Task Report Verification");
@@ -1425,7 +1425,7 @@ extent.flush();
         				extent.flush();
         			}
              
-         //	@Test(priority = 16)
+         	@Test(priority = 16)
          	void ComplianceRepository() throws InterruptedException, IOException
          	{
          		test = extent.startTest("Compliance Repository/Act Repository  verification");
@@ -1437,7 +1437,7 @@ extent.flush();
          		extent.flush();
          	}
          	
-         	// @Test(priority = 17) //pass 
+         	 @Test(priority = 17) //pass 
   	       void EventReport() throws InterruptedException
   				{
   					test = extent.startTest("Event Report Verification");
@@ -1473,7 +1473,7 @@ extent.flush();
         					extent.flush();
         		}
         		
-        	//	@Test(priority = 20) //	pass	
+        		@Test(priority = 20) //	pass	
         		void CriticalDocuments() throws InterruptedException, IOException
         		{
         			test = extent.startTest("Critical Document Verification");
