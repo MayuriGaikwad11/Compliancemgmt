@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="14" passed="14">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="101452" started-at="2023-01-04T15:46:01 IST" finished-at="2023-01-04T15:47:42 IST">
+  <suite name="Default suite" duration-ms="788042" started-at="2023-01-05T18:14:37 IST" finished-at="2023-01-05T18:27:45 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="101452" started-at="2023-01-04T15:46:01 IST" finished-at="2023-01-04T15:47:42 IST">
+    <test name="Default test" duration-ms="788042" started-at="2023-01-05T18:14:37 IST" finished-at="2023-01-05T18:27:45 IST">
       <class name="cfo.CFOcountStatutory">
-        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="setBrowser" is-config="true" duration-ms="13932" started-at="2023-01-04T15:46:01 IST" finished-at="2023-01-04T15:46:15 IST">
+        <test-method status="PASS" signature="setBrowser()[pri:0, instance:cfo.CFOcountStatutory@1b64261]" name="setBrowser" is-config="true" duration-ms="33398" started-at="2023-01-05T18:14:37 IST" finished-at="2023-01-05T18:15:10 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@bf3d14]" name="Login" duration-ms="28459" started-at="2023-01-04T15:46:15 IST" finished-at="2023-01-04T15:46:43 IST">
+        <test-method status="PASS" signature="Login()[pri:1, instance:cfo.CFOcountStatutory@1b64261]" name="Login" duration-ms="24657" started-at="2023-01-05T18:15:11 IST" finished-at="2023-01-05T18:15:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="StandardReportOverall()[pri:28, instance:cfo.CFOcountStatutory@bf3d14]" name="StandardReportOverall" duration-ms="58938" started-at="2023-01-04T15:46:43 IST" finished-at="2023-01-04T15:47:42 IST">
+        <test-method status="PASS" signature="StandardReportOverallIN()[pri:35, instance:cfo.CFOcountStatutory@1b64261]" name="StandardReportOverallIN" duration-ms="65071" started-at="2023-01-05T18:15:35 IST" finished-at="2023-01-05T18:16:40 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- StandardReportOverall -->
-        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@bf3d14]" name="Closing" is-config="true" duration-ms="0" started-at="2023-01-04T15:47:42 IST" finished-at="2023-01-04T15:47:42 IST">
+        </test-method> <!-- StandardReportOverallIN -->
+        <test-method status="PASS" signature="StandardReportLocationIN()[pri:36, instance:cfo.CFOcountStatutory@1b64261]" name="StandardReportLocationIN" duration-ms="60387" started-at="2023-01-05T18:16:40 IST" finished-at="2023-01-05T18:17:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StandardReportLocationIN -->
+        <test-method status="PASS" signature="StandardReportUserIn()[pri:37, instance:cfo.CFOcountStatutory@1b64261]" name="StandardReportUserIn" duration-ms="58811" started-at="2023-01-05T18:17:41 IST" finished-at="2023-01-05T18:18:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StandardReportUserIn -->
+        <test-method status="PASS" signature="StandardReportCategoryIn()[pri:38, instance:cfo.CFOcountStatutory@1b64261]" name="StandardReportCategoryIn" duration-ms="59078" started-at="2023-01-05T18:18:39 IST" finished-at="2023-01-05T18:19:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StandardReportCategoryIn -->
+        <test-method status="PASS" signature="StandardReportRiskIN()[pri:39, instance:cfo.CFOcountStatutory@1b64261]" name="StandardReportRiskIN" duration-ms="61061" started-at="2023-01-05T18:19:39 IST" finished-at="2023-01-05T18:20:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StandardReportRiskIN -->
+        <test-method status="PASS" signature="StandardReportDetailedIN()[pri:40, instance:cfo.CFOcountStatutory@1b64261]" name="StandardReportDetailedIN" duration-ms="46252" started-at="2023-01-05T18:20:40 IST" finished-at="2023-01-05T18:21:26 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StandardReportDetailedIN -->
+        <test-method status="PASS" signature="StandardReportCriticalRiskIN()[pri:41, instance:cfo.CFOcountStatutory@1b64261]" name="StandardReportCriticalRiskIN" duration-ms="59089" started-at="2023-01-05T18:21:26 IST" finished-at="2023-01-05T18:22:25 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- StandardReportCriticalRiskIN -->
+        <test-method status="PASS" signature="DetailedReportIn()[pri:43, instance:cfo.CFOcountStatutory@1b64261]" name="DetailedReportIn" duration-ms="116313" started-at="2023-01-05T18:22:25 IST" finished-at="2023-01-05T18:24:21 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DetailedReportIn -->
+        <test-method status="PASS" signature="AssignmentReport()[pri:44, instance:cfo.CFOcountStatutory@1b64261]" name="AssignmentReport" duration-ms="51477" started-at="2023-01-05T18:24:21 IST" finished-at="2023-01-05T18:25:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssignmentReport -->
+        <test-method status="PASS" signature="AuditReport()[pri:46, instance:cfo.CFOcountStatutory@1b64261]" name="AuditReport" duration-ms="34142" started-at="2023-01-05T18:25:13 IST" finished-at="2023-01-05T18:25:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AuditReport -->
+        <test-method status="PASS" signature="ComplianceDocuments()[pri:48, instance:cfo.CFOcountStatutory@1b64261]" name="ComplianceDocuments" duration-ms="78447" started-at="2023-01-05T18:25:47 IST" finished-at="2023-01-05T18:27:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ComplianceDocuments -->
+        <test-method status="PASS" signature="InternalMsg()[pri:55, instance:cfo.CFOcountStatutory@1b64261]" name="InternalMsg" duration-ms="23705" started-at="2023-01-05T18:27:05 IST" finished-at="2023-01-05T18:27:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InternalMsg -->
+        <test-method status="PASS" signature="SupportTicket()[pri:56, instance:cfo.CFOcountStatutory@1b64261]" name="SupportTicket" duration-ms="15941" started-at="2023-01-05T18:27:29 IST" finished-at="2023-01-05T18:27:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SupportTicket -->
+        <test-method status="PASS" signature="Closing()[pri:0, instance:cfo.CFOcountStatutory@1b64261]" name="Closing" is-config="true" duration-ms="1" started-at="2023-01-05T18:27:45 IST" finished-at="2023-01-05T18:27:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Closing -->

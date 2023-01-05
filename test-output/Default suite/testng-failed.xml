@@ -5,8 +5,8 @@
     <classes>
       <class name="cfo.CFOcountStatutory">
         <methods>
-          <include name="StandardReportOverall"/>
           <include name="Closing"/>
+          <include name="AuditReport"/>
           <include name="setBrowser"/>
         </methods>
       </class> <!-- cfo.CFOcountStatutory -->
